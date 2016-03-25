@@ -12,7 +12,7 @@
         </id>
         <many-to-one name="teacher" class="edu.nefu.gdms.domain.Teacher" fetch="select">
             <column name="teid" not-null="true" />
-        </many-to-one>
+        </many-to-one> 
         <property name="number" type="java.lang.String">
             <column name="number" not-null="true" />
         </property>
@@ -34,7 +34,7 @@
         <property name="email" type="java.lang.String">
             <column name="email" not-null="true" />
         </property>
-        <set name="titles" inverse="true">
+       <!--  <set name="titles" inverse="true">
             <key>
                 <column name="tid" not-null="true" />
             </key>
@@ -45,6 +45,6 @@
                 <column name="pid" not-null="true" />
             </key>
             <one-to-many class="edu.nefu.gdms.domain.Paper" />
-        </set>
+        </set> -->
     </class>
 </hibernate-mapping>

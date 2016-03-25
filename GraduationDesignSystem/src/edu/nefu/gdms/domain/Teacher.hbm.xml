@@ -10,7 +10,7 @@
             <column name="teid" />
             <generator class="uuid.hex" />
         </id>
-        <many-to-one name="group" class="edu.nefu.gdms.domain.Group" fetch="select">
+        <many-to-one name="group" class="edu.nefu.gdms.domain.Grour" fetch="select">
             <column name="gid" not-null="true" />
         </many-to-one>
         <property name="number" type="java.lang.String">
@@ -34,23 +34,6 @@
         <property name="level" type="java.lang.String">
             <column name="level" not-null="true" />
         </property>
-        <set name="tepascores" inverse="true">
-            <key>
-                <column name="teid" not-null="true" />
-            </key>
-            <one-to-many class="edu.nefu.gdms.domain.Tepascore" />
-        </set>
-        <set name="students" inverse="true">
-            <key>
-                <column name="sid" not-null="true" />
-            </key>
-            <one-to-many class="edu.nefu.gdms.domain.Student" />
-        </set>
-        <set name="titles" inverse="true">
-            <key>
-                <column name="tid" not-null="true" />
-            </key>
-            <one-to-many class="edu.nefu.gdms.domain.Title" />
-        </set>
+        
     </class>
 </hibernate-mapping>

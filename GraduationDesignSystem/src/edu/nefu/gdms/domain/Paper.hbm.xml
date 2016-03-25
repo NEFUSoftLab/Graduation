@@ -22,11 +22,11 @@
         <property name="score" type="java.lang.String">
             <column name="score" not-null="true" />
         </property>
-        <set name="tepascores" inverse="true">
+        <!-- <set name="tepascores" inverse="true">
             <key>
                 <column name="id" not-null="true" />
             </key>
             <one-to-many class="edu.nefu.gdms.domain.Tepascore" />
-        </set>
+        </set> -->
     </class>
 </hibernate-mapping>

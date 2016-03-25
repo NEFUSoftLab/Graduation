@@ -10,12 +10,12 @@
             <column name="tid" />
             <generator class="uuid.hex" />
         </id>
-        <many-to-one name="student" class="edu.nefu.gdms.domain.Student" fetch="select">
+         <many-to-one name="student" class="edu.nefu.gdms.domain.Student" fetch="select">
             <column name="sid" not-null="true" />
         </many-to-one>
         <many-to-one name="teacher" class="edu.nefu.gdms.domain.Teacher" fetch="select">
             <column name="teid" not-null="true" />
-        </many-to-one>
+        </many-to-one>  
         <property name="tname" type="java.lang.String">
             <column name="tname" not-null="true" />
         </property>

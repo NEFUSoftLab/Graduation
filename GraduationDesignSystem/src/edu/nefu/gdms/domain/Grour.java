@@ -7,7 +7,7 @@ import java.util.Set;
  * Group entity. @author MyEclipse Persistence Tools
  */
 
-public class Group implements java.io.Serializable {
+public class Grour implements java.io.Serializable {
 
 	// Fields
 
@@ -18,16 +18,16 @@ public class Group implements java.io.Serializable {
 	// Constructors
 
 	/** default constructor */
-	public Group() {
+	public Grour() {
 	}
 
 	/** minimal constructor */
-	public Group(String name) {
+	public Grour(String name) {
 		this.name = name;
 	}
 
 	/** full constructor */
-	public Group(String name, Set teachers) {
+	public Grour(String name, Set teachers) {
 		this.name = name;
 		this.teachers = teachers;
 	}

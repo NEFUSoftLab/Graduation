@@ -19,11 +19,11 @@
         <property name="endtime" type="java.lang.String">
             <column name="endtime" not-null="true" />
         </property>
-        <set name="papers" inverse="true">
+        <!-- <set name="papers" inverse="true">
             <key>
                 <column name="pid" not-null="true" />
             </key>
             <one-to-many class="edu.nefu.gdms.domain.Paper" />
-        </set>
+        </set> -->
     </class>
 </hibernate-mapping>

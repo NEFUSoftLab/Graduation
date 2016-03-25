@@ -11,8 +11,7 @@ public class Teacher implements java.io.Serializable {
 
 	// Fields
 
-	private String teid;
-	private Group group;
+	private String teid; 
 	private String number;
 	private String name;
 	private String phone;
@@ -31,9 +30,8 @@ public class Teacher implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Teacher(Group group, String number, String name, String phone,
-			String pwd, String email, String major, String level) {
-		this.group = group;
+	public Teacher(  String number, String name, String phone,
+			String pwd, String email, String major, String level) { 
 		this.number = number;
 		this.name = name;
 		this.phone = phone;
@@ -44,10 +42,9 @@ public class Teacher implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Teacher(Group group, String number, String name, String phone,
+	public Teacher(  String number, String name, String phone,
 			String pwd, String email, String major, String level,
-			Set tepascores, Set students, Set titles) {
-		this.group = group;
+			Set tepascores, Set students, Set titles) { 
 		this.number = number;
 		this.name = name;
 		this.phone = phone;
@@ -69,14 +66,7 @@ public class Teacher implements java.io.Serializable {
 	public void setTeid(String teid) {
 		this.teid = teid;
 	}
-
-	public Group getGroup() {
-		return this.group;
-	}
-
-	public void setGroup(Group group) {
-		this.group = group;
-	}
+ 
 
 	public String getNumber() {
 		return this.number;
