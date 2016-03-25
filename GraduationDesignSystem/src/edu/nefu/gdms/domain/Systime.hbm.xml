@@ -11,13 +11,13 @@
             <generator class="uuid.hex" />
         </id>
         <property name="name" type="java.lang.String">
-            <column name="name" not-null="true" />
+            <column name="name"   />
         </property>
         <property name="starttime" type="java.lang.String">
-            <column name="starttime" not-null="true" />
+            <column name="starttime"  />
         </property>
         <property name="endtime" type="java.lang.String">
-            <column name="endtime" not-null="true" />
+            <column name="endtime" />
         </property>
         <!-- <set name="papers" inverse="true">
             <key>

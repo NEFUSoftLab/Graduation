@@ -11,19 +11,19 @@
             <generator class="uuid.hex" />
         </id>
          <many-to-one name="student" class="edu.nefu.gdms.domain.Student" fetch="select">
-            <column name="sid" not-null="true" />
+            <column name="sid"  />
         </many-to-one>
         <many-to-one name="teacher" class="edu.nefu.gdms.domain.Teacher" fetch="select">
-            <column name="teid" not-null="true" />
+            <column name="teid"  />
         </many-to-one>  
         <property name="tname" type="java.lang.String">
-            <column name="tname" not-null="true" />
+            <column name="tname"   />
         </property>
         <property name="filepath" type="java.lang.String">
-            <column name="filepath" not-null="true" />
+            <column name="filepath"  />
         </property>
         <property name="status" type="java.lang.String">
-            <column name="status" not-null="true" />
+            <column name="status"  />
         </property>
     </class>
 </hibernate-mapping>

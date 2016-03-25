@@ -11,13 +11,13 @@
             <generator class="uuid.hex" />
         </id>
          <many-to-one name="paper" class="edu.nefu.gdms.domain.Paper" fetch="select">
-            <column name="pid" not-null="true" />
+            <column name="pid"   />
         </many-to-one> 
          <many-to-one name="teacher" class="edu.nefu.gdms.domain.Teacher" fetch="select">
-            <column name="teid" not-null="true" />
+            <column name="teid"   />
         </many-to-one> 
         <property name="score" type="java.lang.String">
-            <column name="score" not-null="true" />
+            <column name="score"  />
         </property>
     </class>
 </hibernate-mapping>

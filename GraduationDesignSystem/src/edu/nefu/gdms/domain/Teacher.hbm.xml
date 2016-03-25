@@ -11,28 +11,28 @@
             <generator class="uuid.hex" />
         </id>
         <many-to-one name="group" class="edu.nefu.gdms.domain.Grour" fetch="select">
-            <column name="gid" not-null="true" />
+            <column name="gid"  />
         </many-to-one>
         <property name="number" type="java.lang.String">
-            <column name="number" not-null="true" />
+            <column name="number"   />
         </property>
         <property name="name" type="java.lang.String">
-            <column name="name" not-null="true" />
+            <column name="name"   />
         </property>
         <property name="phone" type="java.lang.String">
-            <column name="phone" not-null="true" />
+            <column name="phone"   />
         </property>
         <property name="pwd" type="java.lang.String">
-            <column name="pwd" not-null="true" />
+            <column name="pwd"   />
         </property>
         <property name="email" type="java.lang.String">
-            <column name="email" not-null="true" />
+            <column name="email"  />
         </property>
         <property name="major" type="java.lang.String">
-            <column name="major" not-null="true" />
+            <column name="major" />
         </property>
         <property name="level" type="java.lang.String">
-            <column name="level" not-null="true" />
+            <column name="level"   />
         </property>
         
     </class>
