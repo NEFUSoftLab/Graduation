@@ -32,7 +32,13 @@
 		<property name="mappingResources">
 			<list>
 				<!-- 以下用来列出Hibernate映射文件 -->
-				<value>edu/nefu/gdms/beans/Student.hbm.xml</value>
+				<value>edu/nefu/gdms/domain/Student.hbm.xml</value>
+				<value>edu/nefu/gdms/domain/Teacher.hbm.xml</value>
+				<value>edu/nefu/gdms/domain/Systime.hbm.xml</value>
+				<value>edu/nefu/gdms/domain/Paper.hbm.xml</value>
+				<value>edu/nefu/gdms/domain/Tepascore.hbm.xml</value>
+				<value>edu/nefu/gdms/domain/Title.hbm.xml</value>
+				<value>edu/nefu/gdms/domain/Group.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
