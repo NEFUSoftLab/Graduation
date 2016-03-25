@@ -19,6 +19,7 @@ public class Teacher implements java.io.Serializable {
 	private String email;
 	private String major;
 	private String level;
+	private Grour group;
 	private Set tepascores = new HashSet(0);
 	private Set students = new HashSet(0);
 	private Set titles = new HashSet(0);
@@ -30,37 +31,46 @@ public class Teacher implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Teacher(  String number, String name, String phone,
-			String pwd, String email, String major, String level) { 
-		this.number = number;
-		this.name = name;
-		this.phone = phone;
-		this.pwd = pwd;
-		this.email = email;
-		this.major = major;
-		this.level = level;
-	}
+	
 
 	/** full constructor */
-	public Teacher(  String number, String name, String phone,
-			String pwd, String email, String major, String level,
-			Set tepascores, Set students, Set titles) { 
-		this.number = number;
-		this.name = name;
-		this.phone = phone;
-		this.pwd = pwd;
-		this.email = email;
-		this.major = major;
-		this.level = level;
-		this.tepascores = tepascores;
-		this.students = students;
-		this.titles = titles;
-	}
+	
 
 	// Property accessors
 
 	public String getTeid() {
 		return this.teid;
+	}
+
+	public Teacher(String teid, String number, String name, String phone, String pwd, String email, String major,
+			String level, Grour group) {
+		super();
+		this.teid = teid;
+		this.number = number;
+		this.name = name;
+		this.phone = phone;
+		this.pwd = pwd;
+		this.email = email;
+		this.major = major;
+		this.level = level;
+		this.group = group;
+	}
+
+	public Teacher(String teid, String number, String name, String phone, String pwd, String email, String major,
+			String level, Grour group, Set tepascores, Set students, Set titles) {
+		super();
+		this.teid = teid;
+		this.number = number;
+		this.name = name;
+		this.phone = phone;
+		this.pwd = pwd;
+		this.email = email;
+		this.major = major;
+		this.level = level;
+		this.group = group;
+		this.tepascores = tepascores;
+		this.students = students;
+		this.titles = titles;
 	}
 
 	public void setTeid(String teid) {
@@ -146,6 +156,14 @@ public class Teacher implements java.io.Serializable {
 
 	public void setTitles(Set titles) {
 		this.titles = titles;
+	}
+
+	public Grour getGroup() {
+		return group;
+	}
+
+	public void setGroup(Grour group) {
+		this.group = group;
 	}
 
 }
