@@ -101,6 +101,21 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<bean id="teacherDao" class="edu.nefu.gdms.daoImpl.TeacherDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="titleDao" class="edu.nefu.gdms.daoImpl.TitleDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tepascoreDao" class="edu.nefu.gdms.daoImpl.TepascoreDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 
 	<!--业务逻辑类 -->
 	<bean id="studentManager" class="edu.nefu.gdms.serviceImpl.StudentManagerImpl" parent="managerTemplate">
