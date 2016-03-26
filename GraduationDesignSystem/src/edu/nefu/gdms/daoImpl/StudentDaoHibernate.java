@@ -4,7 +4,7 @@ import edu.nefu.gdms.dao.StudentDao;
 import edu.nefu.gdms.domain.Student;
 import edu.nefu.gdms.support.GdmsHibernateDaoSupport;
 
-public class StudenDaoHibernate extends GdmsHibernateDaoSupport implements StudentDao{
+public class StudentDaoHibernate extends GdmsHibernateDaoSupport implements StudentDao{
 
 	@Override
 	public Student get(String id) {

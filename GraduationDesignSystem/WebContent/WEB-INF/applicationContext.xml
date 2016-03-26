@@ -76,19 +76,22 @@
 		<!-- 指定在leePointcut切入点应用txAdvice事务增强处理 -->
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="leePointcut" />
 	</aop:config>
+	
+	
+	
 
 	<!-- Dao事物类 -->
-	<bean id="studentDao" class="edu.nefu.gdms.daoImpl.StudentDaoHibernate">
+	<bean id="studentDao" class="edu.nefu.gdms.daoImpl.StudentDaoHibernate" >
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 
 	<!--业务逻辑类 -->
-	<bean id="studentManager" class="edu.nefu.gdms.serviceImpl.StudentManagerImpl">
-		<property name="dao">
+	<bean id="studentManager" class="edu.nefu.gdms.serviceImpl.StudentManagerImpl" parent="managerTemplate">
+		<!-- <property name="dao">
 			<ref bean="studentDao" />
-		</property>
+		</property> -->
 	</bean>
 
 	<!-- Action类 -->
@@ -96,6 +99,12 @@
 		<property name="studentManager">
 			<ref bean="studentManager" />
 		</property>
+	</bean>
+	
+	
+	<!-- 定义业务逻辑组件 -->
+	<bean id="managerTemplate" class="edu.nefu.gdms.service.util.ManagerTemplate">
+		<property name="studentDao" ref="studentDao" />
 	</bean>
 	
 	<!-- 系统默认配置参数 -->

@@ -5,11 +5,11 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import edu.nefu.gdms.dao.StudentDao;
-import edu.nefu.gdms.daoImpl.StudenDaoHibernate;
+import edu.nefu.gdms.daoImpl.StudentDaoHibernate;
 import edu.nefu.gdms.domain.Student;
 
 public class StudentDaoImpTest {
-	StudentDao dao = new StudenDaoHibernate();
+	StudentDao dao = new StudentDaoHibernate();
 	
 	
 	

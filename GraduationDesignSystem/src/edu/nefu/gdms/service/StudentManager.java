@@ -13,7 +13,6 @@ public interface StudentManager {
 	
 	boolean login(String username,String password);
 	
-	
-	
 	void save(Student student);
+	
 }
