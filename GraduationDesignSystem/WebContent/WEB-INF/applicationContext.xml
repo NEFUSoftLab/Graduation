@@ -86,6 +86,21 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<bean id="grourDao" class="edu.nefu.gdms.daoImpl.GrourDaoHibernate" >
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="systimeDao" class="edu.nefu.gdms.daoImpl.SystimeDaoHibernate" >
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="paperDao" class="edu.nefu.gdms.daoImpl.PaperDaoHibernate" >
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 
 	<!--业务逻辑类 -->
 	<bean id="studentManager" class="edu.nefu.gdms.serviceImpl.StudentManagerImpl" parent="managerTemplate">
