@@ -1,10 +1,19 @@
 package edu.nefu.gdms.service;
 
-import org.hibernate.HibernateException;
-
-import edu.nefu.gdms.beans.StudentBean;
+import edu.nefu.gdms.domain.Student;
 
 public interface StudentManager {
-
-	public void regUser(StudentBean student) throws HibernateException;
+	
+	
+	/*
+	 * 学生登录
+	 * 
+	 * 
+	 */
+	
+	boolean login(String username,String password);
+	
+	
+	
+	void save(Student student);
 }
