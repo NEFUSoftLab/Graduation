@@ -11,7 +11,7 @@ import edu.nefu.gdms.serviceImpl.StudentManagerImpl;
 public class StudentManagetImpTest {
 	
 	
-	ApplicationContext ac = new FileSystemXmlApplicationContext("applicationContext.xml"); 
+	ApplicationContext ac = new FileSystemXmlApplicationContext("/WebContent/WEB-INF/applicationContext.xml"); 
 	StudentManager manager = (StudentManager)ac.getBean("studentManager");
 	
 	@Test

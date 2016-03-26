@@ -12,14 +12,14 @@ import edu.nefu.gdms.domain.Student;
 
 public class StudentDaoImpTest {
 	
-	ApplicationContext ac = new FileSystemXmlApplicationContext("applicationContext.xml"); 
+	ApplicationContext ac = new FileSystemXmlApplicationContext("/WebContent/WEB-INF/applicationContext.xml"); 
 	StudentDao dao = (StudentDao) ac.getBean("studentDao");
 	
 	
 	
 	@Test
 	public void test() {
-		Student student = new Student(null, "110", "name", "110", "112", "男", "xs", "hah");
+		Student student = new Student(null, "110", "name", "110", "112", "鐢�", "xs", "hah");
 		dao.save(student);
 	}
 	
