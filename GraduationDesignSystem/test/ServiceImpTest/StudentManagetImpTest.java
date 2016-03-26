@@ -1,6 +1,8 @@
 package ServiceImpTest;
 
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import edu.nefu.gdms.domain.Student;
 import edu.nefu.gdms.service.StudentManager;
@@ -8,7 +10,9 @@ import edu.nefu.gdms.serviceImpl.StudentManagerImpl;
 
 public class StudentManagetImpTest {
 	
-	private StudentManager manager = new StudentManagerImpl();
+	
+	ApplicationContext ac = new FileSystemXmlApplicationContext("applicationContext.xml"); 
+	StudentManager manager = (StudentManager)ac.getBean("studentManager");
 	
 	@Test
 	public void test() {

@@ -3,13 +3,17 @@ package HibernateDaoImpTest;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import edu.nefu.gdms.dao.StudentDao;
 import edu.nefu.gdms.daoImpl.StudentDaoHibernate;
 import edu.nefu.gdms.domain.Student;
 
 public class StudentDaoImpTest {
-	StudentDao dao = new StudentDaoHibernate();
+	
+	ApplicationContext ac = new FileSystemXmlApplicationContext("applicationContext.xml"); 
+	StudentDao dao = (StudentDao) ac.getBean("studentDao");
 	
 	
 	
