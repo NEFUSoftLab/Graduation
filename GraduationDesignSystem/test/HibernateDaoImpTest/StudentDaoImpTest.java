@@ -1,15 +1,11 @@
 package HibernateDaoImpTest;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.nefu.gdms.dao.GrourDao;
-import edu.nefu.gdms.dao.StudentDao;
-import edu.nefu.gdms.domain.Grour;
-import edu.nefu.gdms.domain.Student;
+import edu.nefu.gdms.dao.DlogDao;
+import edu.nefu.gdms.domain.Dlog;
 
 public class StudentDaoImpTest {
 	
@@ -20,31 +16,21 @@ public class StudentDaoImpTest {
 	 */
 	
 	ApplicationContext ac = new FileSystemXmlApplicationContext("/WebContent/WEB-INF/applicationContext.xml"); 
-	StudentDao dao = (StudentDao) ac.getBean("studentDao");
-	
-	GrourDao gdao = (GrourDao) ac.getBean("grourDao");
+	DlogDao dao = (DlogDao) ac.getBean("logDao"); 
 	
 	
 	
 	@Test
-	public void test() {
-//		Student student = new Student(null, "110", "name", "110", "112", "鐢�", "xs", "hah");
-//		dao.save(student);
-//		System.out.println("helli");
-		//dao.save(student);
-		List<Student> list = dao.getAll();
-		for(Student s:list){
-			System.out.println(s.getSid());
-			s.setEmail("1@qq.com");
-			dao.update(s);
+	public void test() { 
+		Dlog a = new Dlog("12","12","12","12");
+		dao.save(a);
+		System.out.println("succ");
+		for(Dlog d:dao.getAll()){
+			System.out.println(d);
 		}
 	}
 	
-	@Test
-	public void test1() {
-		Grour g = new Grour("yizu");
-		gdao.save(g);
-	}
+	
 	
 	
 	
