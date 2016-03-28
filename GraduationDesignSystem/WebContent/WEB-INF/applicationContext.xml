@@ -39,7 +39,7 @@
 				<value>edu/nefu/gdms/domain/Tepascore.hbm.xml</value>
 				<value>edu/nefu/gdms/domain/Title.hbm.xml</value>
 				<value>edu/nefu/gdms/domain/Grour.hbm.xml</value>
-				<value>edu/nefu/gdms/domain/DailyLog.hbm.xml</value>
+				<value>edu/nefu/gdms/domain/Dlog.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
@@ -113,6 +113,11 @@
 		</property>
 	</bean>
 	<bean id="tepascoreDao" class="edu.nefu.gdms.daoImpl.TepascoreDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="logDao" class="edu.nefu.gdms.daoImpl.DlogDaoHibernate">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

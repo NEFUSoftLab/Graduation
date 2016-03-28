@@ -2,7 +2,7 @@ package edu.nefu.gdms.domain;
 
 import java.util.Date;
 
-public class Log {
+public class Dlog {
 	
 	private String did;
 	
@@ -10,7 +10,7 @@ public class Log {
 	
 	private String desc;
 	
-	private Date date;
+	private String date;
 
 	public String getDid() {
 		return did;
@@ -36,25 +36,26 @@ public class Log {
 		this.desc = desc;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public Log() {
-		super();
-	}
-
-	public Log(String did, String id, String desc, Date date) {
+	public Dlog(String did, String id, String desc, String date) {
 		super();
 		this.did = did;
 		this.id = id;
 		this.desc = desc;
 		this.date = date;
 	}
+
+	public Dlog() {
+		super();
+	}
+ 
 	
 	
 	
