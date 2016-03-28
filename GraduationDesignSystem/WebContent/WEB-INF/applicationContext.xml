@@ -119,7 +119,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="logDao" class="edu.nefu.gdms.daoImpl.DlogDaoHibernate">
+	<bean id="logDao" class="edu.nefu.gdms.daoImpl.LogDaoHibernate">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

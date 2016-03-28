@@ -10,7 +10,7 @@ public class Log {
 	
 	private String cdesc;
 	
-	private Date cdate;
+	private String cdate;
 
 	public String getDid() {
 		return did;
@@ -39,24 +39,25 @@ public class Log {
 	public void setCdesc(String cdesc) {
 		this.cdesc = cdesc;
 	}
-
-	public Date getCdate() {
-		return cdate;
-	}
-
-	public void setCdate(Date cdate) {
-		this.cdate = cdate;
-	}
+ 
 
 	public Log() {
 		super();
 	}
 
-	public Log(String did, String id, String cdesc, Date cdate) {
+	public Log(String did, String id, String cdesc, String cdate) {
 		super();
 		this.did = did;
 		this.id = id;
 		this.cdesc = cdesc;
+		this.cdate = cdate;
+	}
+
+	public String getCdate() {
+		return cdate;
+	}
+
+	public void setCdate(String cdate) {
 		this.cdate = cdate;
 	}
 	

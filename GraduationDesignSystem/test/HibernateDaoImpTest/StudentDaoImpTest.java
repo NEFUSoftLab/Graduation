@@ -4,8 +4,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.nefu.gdms.dao.DlogDao;
-import edu.nefu.gdms.domain.Dlog;
+import edu.nefu.gdms.dao.LogDao;
+import edu.nefu.gdms.domain.Log;
 
 public class StudentDaoImpTest {
 	
@@ -16,16 +16,16 @@ public class StudentDaoImpTest {
 	 */
 	
 	ApplicationContext ac = new FileSystemXmlApplicationContext("/WebContent/WEB-INF/applicationContext.xml"); 
-	DlogDao dao = (DlogDao) ac.getBean("logDao"); 
+	LogDao dao = (LogDao) ac.getBean("logDao"); 
 	
 	
 	
 	@Test
 	public void test() { 
-		Dlog a = new Dlog("12","12","12","12");
+		Log a = new Log("12","12","12","12");
 		dao.save(a);
 		System.out.println("succ");
-		for(Dlog d:dao.getAll()){
+		for(Log d:dao.getAll()){
 			System.out.println(d);
 		}
 	}
