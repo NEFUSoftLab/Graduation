@@ -1,5 +1,8 @@
 package edu.nefu.gdms.action;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.nefu.gdms.beans.StudentBean;
@@ -25,4 +28,8 @@ public class StudentAction extends ActionSupport {
 	public void setStudent(StudentBean student) {
 		this.student = student;
 	}
+	
+	
+	
+	
 }

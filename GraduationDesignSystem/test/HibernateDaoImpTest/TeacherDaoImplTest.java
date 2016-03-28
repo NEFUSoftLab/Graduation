@@ -20,18 +20,17 @@ public class TeacherDaoImplTest {
 
 	@Test
 	public void test() {
-//		Teacher teacher = new Teacher(null, "111111", "111111", "111111", "111111", "111111", "111111", "111111", null);
-//		dao.save(teacher);
+		Teacher teacher = new Teacher(null, "1111111111", "111111", "111111", "111111", "111111", "111111", "111111", null);
+		dao.save(teacher);
+		
+		
+		
 //		
-//		teacher.setEmail("aaaaaaaaaaaaa");
-//		dao.update(teacher);
-		
-		
-		List<Teacher> list=dao.getAll();
-		
-		
-	Teacher t=list.get(0);
-	System.out.println(t.getEmail());
+//		List<Teacher> list=dao.getAll();
+//		
+//		
+//	Teacher t=list.get(0);
+//	System.out.println(t.getEmail());
 		
 		
 		

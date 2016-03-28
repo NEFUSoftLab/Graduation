@@ -8,9 +8,9 @@ public class Log {
 	
 	private String id;
 	
-	private String desc;
+	private String cdesc;
 	
-	private Date date;
+	private Date cdate;
 
 	public String getDid() {
 		return did;
@@ -28,32 +28,36 @@ public class Log {
 		this.id = id;
 	}
 
-	public String getDesc() {
-		return desc;
+
+
+	
+
+	public String getCdesc() {
+		return cdesc;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setCdesc(String cdesc) {
+		this.cdesc = cdesc;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getCdate() {
+		return cdate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setCdate(Date cdate) {
+		this.cdate = cdate;
 	}
 
 	public Log() {
 		super();
 	}
 
-	public Log(String did, String id, String desc, Date date) {
+	public Log(String did, String id, String cdesc, Date cdate) {
 		super();
 		this.did = did;
 		this.id = id;
-		this.desc = desc;
-		this.date = date;
+		this.cdesc = cdesc;
+		this.cdate = cdate;
 	}
 	
 	

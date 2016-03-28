@@ -16,9 +16,15 @@ public class StudentManagetImpTest {
 	
 	@Test
 	public void test() {
-		Student student = new Student(null, "110", "name", "110", "112", "男", "xs", "hah");
+		Student student = new Student(null, "11000000", "name11111", "110", "112", "男", "xs", "hah");
 		
 		manager.save(student);
+		System.out.println("awqwewqe");
+		
+		
+		
+		
+		
 	}
 	
 	
