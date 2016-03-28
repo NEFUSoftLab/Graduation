@@ -38,8 +38,10 @@
 				<value>edu/nefu/gdms/domain/Paper.hbm.xml</value>
 				<value>edu/nefu/gdms/domain/Tepascore.hbm.xml</value>
 				<value>edu/nefu/gdms/domain/Title.hbm.xml</value>
+  
 				<value>edu/nefu/gdms/domain/Grour.hbm.xml</value> 
 				  <value>edu/nefu/gdms/domain/Log.hbm.xml</value> 
+ 
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
