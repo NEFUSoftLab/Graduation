@@ -6,11 +6,12 @@
 <struts>
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	<include file="struts-default.xml" />
-	<package name="gdms" extends="struts-default">
-		<action name="student-*" method="{1}" class="jsonAction"> 
-			 <result type="json">
-			 	<param name="root">loginRs</param>
-			 </result>
+	<package name="gdms" extends="json-default">
+		<action name="student-*" method="{1}" class="jsonAction">  
+            <!-- 返回json类型数据 --> 
+            <result type="json"  > 
+                <param name="root">loginRs</param> 
+            </result>
 		</action>
 		
 		<action name="teacher-*" method="{1}" class="teacherAction"> 

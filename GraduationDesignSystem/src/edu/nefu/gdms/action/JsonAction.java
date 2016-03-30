@@ -47,12 +47,12 @@ public class JsonAction extends ActionSupport  {
 	public String login() {
 		if (studentManager.login(username, password)) {
 			loginRs = "success";
-			return SUCCESS;
+			
 		}
 		else {
-			loginRs = "fail";
-			return ERROR;
+			loginRs = "fail"; 
 		}
+		return SUCCESS;
 			
 	}
 	
