@@ -22,7 +22,7 @@ public class StudentDaoImpTest {
 	
 	@Test
 	public void test() { 
-		Log a = new Log("12","12","12","12");
+		Log a = new Log("1111112","12","12","12");
 		dao.save(a);
 		System.out.println("succ");
 		for(Log d:dao.getAll()){
