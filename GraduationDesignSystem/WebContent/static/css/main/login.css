@@ -37,6 +37,17 @@ sub {
     font-size: 16px;
 }
 
+.header .choose a:hover {
+	color: #333;
+}
+
+.header .choose .switch-line {
+	position: absolute;
+	width: 64px;
+	border: 2px solid #848484;
+	left: 0;
+	bottom: -1px;
+}
 .header .choose #switch-stu-login {
 	margin-right: 80px;
 }

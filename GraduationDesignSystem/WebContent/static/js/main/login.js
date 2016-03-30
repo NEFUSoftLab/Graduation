@@ -8,8 +8,8 @@ $(function() {
 				$.ajax({
 					method: 'POST',
 					data: {
-						'number' : number,
-						'pwd' : pwd
+						number : number,
+						pwd : pwd
 					},
 					dataType: 'json',
 					url:'student-login.action',
