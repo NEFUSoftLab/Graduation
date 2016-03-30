@@ -7,10 +7,10 @@
 
 	<include file="struts-default.xml" />
 	<package name="gdms" extends="struts-default">
-		<action name="login" class="studentAction">
-			<result name="input">/Register.jsp</result>
-			<result name="success">/Success.jsp</result>
-			<result name="error">/Fail.jsp</result>
+		<action name="student-*" method="{1}" class="studentAction"> 
+			<result name="success">Success.jsp</result>
+			<result name="error">Fail.jsp</result>
+			<result name="studentList" type="json"></result>
 		</action>
 	</package>
 

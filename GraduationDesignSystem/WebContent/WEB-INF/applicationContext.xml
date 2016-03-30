@@ -38,7 +38,10 @@
 				<value>edu/nefu/gdms/domain/Paper.hbm.xml</value>
 				<value>edu/nefu/gdms/domain/Tepascore.hbm.xml</value>
 				<value>edu/nefu/gdms/domain/Title.hbm.xml</value>
-				<value>edu/nefu/gdms/domain/Grour.hbm.xml</value>
+  
+				<value>edu/nefu/gdms/domain/Grour.hbm.xml</value> 
+				  <value>edu/nefu/gdms/domain/Log.hbm.xml</value> 
+ 
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
@@ -82,6 +85,41 @@
 
 	<!-- Dao事物类 -->
 	<bean id="studentDao" class="edu.nefu.gdms.daoImpl.StudentDaoHibernate" >
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="grourDao" class="edu.nefu.gdms.daoImpl.GrourDaoHibernate" >
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="systimeDao" class="edu.nefu.gdms.daoImpl.SystimeDaoHibernate" >
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="paperDao" class="edu.nefu.gdms.daoImpl.PaperDaoHibernate" >
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="teacherDao" class="edu.nefu.gdms.daoImpl.TeacherDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="titleDao" class="edu.nefu.gdms.daoImpl.TitleDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="tepascoreDao" class="edu.nefu.gdms.daoImpl.TepascoreDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="logDao" class="edu.nefu.gdms.daoImpl.LogDaoHibernate">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

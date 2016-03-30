@@ -1,5 +1,7 @@
 package edu.nefu.gdms.daoImpl;
 
+import java.util.List;
+
 import edu.nefu.gdms.dao.StudentDao;
 import edu.nefu.gdms.domain.Student;
 import edu.nefu.gdms.support.GdmsHibernateDaoSupport;
@@ -34,6 +36,18 @@ public class StudentDaoHibernate extends GdmsHibernateDaoSupport implements Stud
 		getHibernateTemplate().delete(student);
 		
 	}
-	
-	
+
+	@Override
+	public List<Student> getAll() { 
+		return    getHibernateTemplate().find("from Student");
+	}
+
+	@Override
+	public Student getByNumber(String number) { 
+		List<Student> list = getHibernateTemplate().find("from Student where number = ?",number);
+		if(list.size()!=0) 
+			return list.get(0);
+		else
+			return null;
+	}
 }
