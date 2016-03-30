@@ -41,7 +41,13 @@ public class StudentDaoHibernate extends GdmsHibernateDaoSupport implements Stud
 	public List<Student> getAll() { 
 		return    getHibernateTemplate().find("from Student");
 	}
- 
-	
-	
+
+	@Override
+	public Student getByNumber(String number) { 
+		List<Student> list = getHibernateTemplate().find("from Student where number = ?",number);
+		if(list.size()!=0) 
+			return list.get(0);
+		else
+			return null;
+	}
 }

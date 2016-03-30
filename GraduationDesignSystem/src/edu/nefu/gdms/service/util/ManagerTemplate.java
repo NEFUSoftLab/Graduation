@@ -1,5 +1,7 @@
 package edu.nefu.gdms.service.util;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import edu.nefu.gdms.dao.StudentDao;
 
 public class ManagerTemplate {
@@ -12,5 +14,8 @@ public class ManagerTemplate {
 	public void setStudentDao(StudentDao studentDao) {
 		this.studentDao = studentDao;
 	}
+	
+	
+	
 	
 }

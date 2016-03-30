@@ -3,6 +3,8 @@ package edu.nefu.gdms.action;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.nefu.gdms.beans.StudentBean;
@@ -13,23 +15,50 @@ public class StudentAction extends ActionSupport {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private String username;
+	private String password;
+	
+	
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+	
 	private StudentManager studentManager;
-	private StudentBean student;
 	
 	
+	public StudentManager getStudentManager() {
+		return studentManager;
+	}
+
 
 	public void setStudentManager(StudentManager studentManager) {
 		this.studentManager = studentManager;
 	}
-	public StudentBean getStudent() {
-		return student;
+
+
+	public String execute() throws Exception{
+		
+		if (studentManager.login(username, password)) {
+			return SUCCESS;
+		}
+		return ERROR;
 	}
-	public void setStudent(StudentBean student) {
-		this.student = student;
-	}
-	
-	
-	
 	
 }
