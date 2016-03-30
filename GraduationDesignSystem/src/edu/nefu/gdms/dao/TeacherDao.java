@@ -17,5 +17,7 @@ public interface TeacherDao {
 	void delete(String id);
 	
 	List<Teacher> getAll();
+	
+	Teacher getByNumber(String number);
 
 }
