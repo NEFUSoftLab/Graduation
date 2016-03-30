@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<form action="teacher-login.action" method="get">
-		用户名：<input name="username" type="text"><br>
-		密码：<input name="password" type="text"><br>
-		<input type="submit" value="提交">
-	</form>
-	
+	Success!
 </body>
 </html>

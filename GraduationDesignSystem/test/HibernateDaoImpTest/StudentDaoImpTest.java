@@ -16,14 +16,14 @@ public class StudentDaoImpTest {
 	
 	
 	@Test
-	public void test() { 
+	public void test() {  
 //		Log a = new Log("12","12","12","12");
 //		dao.save(a);
 //		System.out.println("succ");
 //		for(Log d:dao.getAll()){
 //			System.out.println(d);
 //		}
-		System.out.println(dao.getByNumber("110"));
+		System.out.println(dao.getByNumber("110")); 
 	}
 	
 	

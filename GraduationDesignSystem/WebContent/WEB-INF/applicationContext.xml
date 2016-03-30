@@ -126,23 +126,34 @@
 	</bean>
 
 	<!--业务逻辑类 -->
-	<bean id="studentManager" class="edu.nefu.gdms.serviceImpl.StudentManagerImpl" parent="managerTemplate">
-		<!-- <property name="dao">
-			<ref bean="studentDao" />
-		</property> -->
+	<bean id="studentManager" class="edu.nefu.gdms.serviceImpl.StudentManagerImpl" parent="managerTemplate"> 
+	</bean>
+	<bean id="teacherManager" class="edu.nefu.gdms.serviceImpl.TeacherManagerImpl" parent="managerTemplate"> 
 	</bean>
 
 	<!-- Action类 -->
 	<bean id="studentAction" class="edu.nefu.gdms.action.StudentAction">
-		<property name="studentManager">
+	 <property name="studentManager">
 			<ref bean="studentManager" />
-		</property>
+		</property>  
+	</bean>
+	<bean id="teacherAction" class="edu.nefu.gdms.action.TeacherAction">
+		 <property name="teacherManager">
+			<ref bean="teacherManager" />
+		</property>  
 	</bean>
 	
 	
 	<!-- 定义业务逻辑组件 -->
 	<bean id="managerTemplate" class="edu.nefu.gdms.service.util.ManagerTemplate">
 		<property name="studentDao" ref="studentDao" />
+		<property name="grourDao" ref="grourDao" />
+		<property name="logDao" ref="logDao" />
+		<property name="teacherDao" ref="teacherDao" />
+		<property name="systimeDao" ref="systimeDao" />
+		<property name="titleDao" ref="titleDao" />
+		<property name="tepascoreDao" ref="tepascoreDao" />
+		<property name="paperDao" ref="paperDao" />
 	</bean>
 	
 	<!-- 系统默认配置参数 -->

@@ -4,7 +4,7 @@ $(function() {
 		pwd : $("#pwd").val(),
 		login: function() {
 			$("#login").on('click', function() {
-				console.log('123');
+				console.log('456');
 				$.ajax({
 					method: 'POST',
 					data: 'number='+number&'pwd='+pwd,
