@@ -5,27 +5,42 @@
 	<title>毕业设计管理</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="static/css/main/bootstrap.min.css">
-	<link rel="stylesheet" href="text/css" href="static/css/main/login.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main/init.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main/login.css">
 	<script type="text/javascript" src="static/js/main/jquery.min.js"></script>
 	<script type="text/javascript" src="static/js/main/bootstrap.min.js"></script>
+	<script type="text/javascript" src="static/js/main/login.js"></script>
 
 </head>
 <body>
 	<h1>毕业设计管理系统<sub>信息学院</sub></h1>
-	<div>
+	<div class="content-panel">
 		<div class="header">
-			<a href=""></a>
-			<div></div>
+			<div class="choose">
+				<a class="switch-btn" id="switch-stu-login" href="javascript:void(0)">学生登录</a>
+				<a class="switch-btn" href="javascript:void(0)">教师登录</a>
+			</div>
 		</div>
-		<div class="content">
-			<div class="student">
+		<div class="wrapper">
+			<div class="wrapper-login">
 				<div class="login-box">
-					<form action="" method="post">
-						<div class="login-form">
-							
+					<form action="" method="post" class="form-horizontal">
+						<div class="row">
+							<div class="form-group">
+							    <label class="col-sm-2 control-label col-sm-offset-1">账号</label>
+							    <div class="col-sm-8">
+							    	<input type="text" id="number" class="form-control" id="inputEmail3" placeholder="请输入账号">
+							    </div>
+						    </div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label col-sm-offset-1">密码</label>
+								<div class="col-sm-8">
+								  <input type="password" id="pwd" class="form-control" id="inputPassword3" placeholder="请输入密码">
+								</div>
+							</div>
 						</div>
 						<div>
-							<button type="button" class="btn btn-primary">Primary</button>
+						  <button type="button" class="btn btn-width btn-primary center-block">登录</button>
 						</div>
 					</form>
 				</div>

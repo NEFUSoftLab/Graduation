@@ -1,5 +1,60 @@
 body {
-	font-family: "Microsoft Yahei";
-	font-size: 12px;
-	background: #fff url("static/images/background.jpg") center center no-repeat;
+	background: #fff url("../../../static/images/background.jpg") center center no-repeat;
+}
+h1 {
+    margin: 80px auto 50px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 0px 1px 1px #555;
+}
+sub {
+	margin-left: 10px;
+}
+
+.content-panel {
+	border: 0;
+    padding: 5px 0;
+    background: #fff;
+    margin: 0 auto;
+    width: 370px;
+    -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .3);
+}
+
+.header {
+    height: 50px;
+    border-bottom: 1px solid #e2e2e2;
+    position: relative;
+}
+
+.header .choose {
+    height: 45px;
+    position: absolute;
+    left: 60px;
+    bottom: 0;
+    font-size: 16px;
+}
+
+.header .choose #switch-stu-login {
+	margin-right: 80px;
+}
+
+.header .choose .switch-btn {
+    color: #999;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    outline: none;
+}
+
+.wrapper {
+	margin-top: 30px;
+}
+
+.btn-width {
+	margin-top: 10px;
+	width: 180px;
+	margin-bottom: 20px;
 }
