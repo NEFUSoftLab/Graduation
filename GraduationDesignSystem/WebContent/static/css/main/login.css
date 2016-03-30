@@ -44,7 +44,7 @@ sub {
 .header .choose .switch-line {
 	position: absolute;
 	width: 64px;
-	border: 2px solid #848484;
+	border: 1px solid #848484;
 	left: 0;
 	bottom: -1px;
 }
@@ -54,6 +54,14 @@ sub {
 
 .header .choose .switch-btn {
     color: #999;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    outline: none;
+}
+
+.header .choose .switch-btn-focus {
+    color: #333;
     display: inline-block;
     height: 45px;
     line-height: 45px;
