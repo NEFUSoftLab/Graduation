@@ -9,12 +9,7 @@ import edu.nefu.gdms.domain.Log;
 
 public class StudentDaoImpTest {
 	
-	/*
-	 * DyxTest
-	 * 
-	 * 
-	 */
-	
+ 
 	ApplicationContext ac = new FileSystemXmlApplicationContext("/WebContent/WEB-INF/applicationContext.xml"); 
 	StudentDao dao = (StudentDao) ac.getBean("studentDao"); 
 	
