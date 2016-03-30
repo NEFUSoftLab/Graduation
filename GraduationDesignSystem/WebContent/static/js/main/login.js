@@ -7,11 +7,14 @@ $(function() {
 				console.log('456');
 				$.ajax({
 					method: 'POST',
-					data: 'number='+number&'pwd='+pwd,
+					data: {
+						'number' : number,
+						'pwd' : pwd
+					},
 					dataType: 'json',
 					url:'student-login.action',
-					success: function() {
-						console.log('123');
+					success: function(data) {
+						console.log(data);
 					}
 				});
 			})
