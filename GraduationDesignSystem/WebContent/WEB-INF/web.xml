@@ -12,7 +12,7 @@
 
 	<filter-mapping>
 		<filter-name>SSH</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>*.action</url-pattern>
 	</filter-mapping>
 
 	<listener>

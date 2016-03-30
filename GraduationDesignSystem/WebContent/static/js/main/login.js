@@ -1,17 +1,22 @@
 $(function() {
 	var login = {
-		var number = $("#number").val();
-		var pwd = $("#pwd").val();
+		number : $("#number").val(),
+		pwd : $("#pwd").val(),
 		login: function() {
-			$.ajax({
-				method: 'POST',
-				data: 'number='+number&'pwd='+pwd,
-				dataType: 'json',
-				url:'',
-				success: function() {
-					console.log('123');
-				}
-			});
+			$("#login").on('click', function() {
+				console.log('123');
+				$.ajax({
+					method: 'POST',
+					data: 'number='+number&'pwd='+pwd,
+					dataType: 'json',
+					url:'student-login.action',
+					success: function() {
+						console.log('123');
+					}
+				});
+			})
+			
 		},
 	}
+	login.login();
 });
