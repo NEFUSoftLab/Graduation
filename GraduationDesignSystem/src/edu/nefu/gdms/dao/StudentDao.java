@@ -8,9 +8,10 @@ public interface StudentDao {
 	
 	Student get(String id);
 	
+	Student getByNumber(String number);
 	
 	String save(Student student);
-	
+	 
 	void update(Student student);
 	
 	void delete(Student student);

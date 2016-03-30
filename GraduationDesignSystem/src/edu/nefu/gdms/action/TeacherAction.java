@@ -4,17 +4,17 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import edu.nefu.gdms.domain.Student;
-import edu.nefu.gdms.service.StudentManager;
+import edu.nefu.gdms.domain.Teacher;
+import edu.nefu.gdms.service.TeacherManager;
 
-public class StudentAction extends ActionSupport {
+public class TeacherAction extends ActionSupport {
 
 	/**
 	 * 
 	 */
 	private String username;
 	private String password;
-	private StudentManager studentManager;
+	private TeacherManager teacherManager;
 	
 	public String getUsername() {
 		return username;
@@ -29,24 +29,24 @@ public class StudentAction extends ActionSupport {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public StudentManager getStudentManager() {
-		return studentManager;
-	}
-	public void setStudentManager(StudentManager studentManager) {
-		this.studentManager = studentManager;
-	}
+	} 
 
+	public TeacherManager getTeacherManager() {
+		return teacherManager;
+	}
+	public void setTeacherManager(TeacherManager teacherManager) {
+		this.teacherManager = teacherManager;
+	}
 	public String login() {
-		if (studentManager.login(username, password)) {
+		if (teacherManager.login(username, password)) {
 			return SUCCESS;
 		}
 		return ERROR;
 	}
 	
 	public String getAll(){
-		List<Student> studentList = studentManager.getAll();
-		return "studentList";
+		List<Teacher> teacherList = teacherManager.getAll();
+		return "teacherList";
 	}
 	
 }

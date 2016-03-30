@@ -14,7 +14,4 @@ public class Jsontool {
 		return gson.toJson(list);
 	}
 	
-	
-	
-
 }
