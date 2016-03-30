@@ -1,5 +1,7 @@
 package edu.nefu.gdms.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.nefu.gdms.dao.StudentDao;
@@ -24,6 +26,12 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 	@Override
 	public void save(Student student) {
 		studentDao.save(student);
+	}
+
+	@Override
+	public List<Student> getAll() {
+		
+		return studentDao.getAll();
 	}
 
 }

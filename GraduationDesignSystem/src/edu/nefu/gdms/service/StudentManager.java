@@ -1,5 +1,7 @@
 package edu.nefu.gdms.service;
 
+import java.util.List;
+
 import edu.nefu.gdms.domain.Student;
 
 public interface StudentManager {
@@ -14,5 +16,7 @@ public interface StudentManager {
 	boolean login(String username,String password);
 	
 	void save(Student student);
+	
+	List<Student> getAll();
 	
 }
