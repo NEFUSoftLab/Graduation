@@ -2,6 +2,8 @@ package edu.nefu.gdms.action;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.nefu.gdms.domain.Student;
@@ -14,6 +16,7 @@ public class StudentAction extends ActionSupport {
 	 */
 	private String username;
 	private String password;
+	private HttpServletRequest request;
 	private StudentManager studentManager;
 	
 	public String getUsername() {
@@ -38,6 +41,8 @@ public class StudentAction extends ActionSupport {
 	}
 
 	public String login() {
+		String aaa = request.getParameter("number");
+		System.out.println(aaa);
 		if (studentManager.login(username, password)) {
 			return SUCCESS;
 		}

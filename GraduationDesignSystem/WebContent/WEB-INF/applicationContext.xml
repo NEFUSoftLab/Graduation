@@ -142,11 +142,7 @@
 			<ref bean="teacherManager" />
 		</property>  
 	</bean>
-	<bean id="jsonAction" class="edu.nefu.gdms.action.StudentAction">
-	 <property name="studentManager">
-			<ref bean="studentManager" />
-		</property>  
-	</bean>
+
 	
 	
 	<!-- 定义业务逻辑组件 -->
