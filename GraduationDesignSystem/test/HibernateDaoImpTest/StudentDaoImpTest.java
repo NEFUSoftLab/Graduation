@@ -19,7 +19,7 @@ public class StudentDaoImpTest {
 	
 	@Test
 	public void test() {
-		Student student = new Student(null, "110", "name", "110", "112", "鐢�", "xs", "hah");
+		Student student = new Student(null, "110", "name", "110", "112", "男", "xs", "hah");
 		dao.save(student);
 	}
 	
