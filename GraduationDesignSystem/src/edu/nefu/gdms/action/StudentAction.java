@@ -22,23 +22,17 @@ public class StudentAction extends ActionSupport {
 	private String number;
 	private String pwd;
 	private StudentManager studentManager;
-	private String result;  
+	private String loginRs;  
 
-	/**
-	 * @return the result
-	 */
-	public String getResult() {
-		return result;
-	}
-
-	/**
-	 * @param result the result to set
-	 */
-	public void setResult(String result) {
-		this.result = result;
-	}
+	 
 	
 
+	public String getLoginRs() {
+		return loginRs;
+	}
+	public void setLoginRs(String loginRs) {
+		this.loginRs = loginRs;
+	}
 	public StudentManager getStudentManager() {
 		return studentManager;
 	}
@@ -47,18 +41,17 @@ public class StudentAction extends ActionSupport {
 	}
 
 	public String login() {
-		System.out.println("123");
 		try{
-			Map<String,Object> map = new HashMap<String,Object>();
-            map.put("number", 123);
-            map.put("pwd",456);
-            JSONObject json = JSONObject.fromObject(map);//将map对象转换成json类型数据
+			
+            //JSONObject json = JSONObject.fromObject(map);//将map对象转换成json类型数据
 			if (studentManager.login(number, pwd)) {
-				result = json.toString();
-				return SUCCESS;
+				loginRs = "success";
 			}
-            result = json.toString();
+			else{
+				loginRs = "fail";
+			}
 		}catch(Exception e) {
+			loginRs = "fail";
 			e.printStackTrace();
 		}
 		return SUCCESS;

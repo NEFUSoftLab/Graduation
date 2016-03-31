@@ -9,7 +9,7 @@
 		<action name="student-*" method="{1}" class="studentAction">  
             <!-- 返回json类型数据 --> 
             <result type="json"> 
-                <param name="root">result</param> 
+                <param name="root">loginRs</param> 
             </result>
 		</action>
 		
