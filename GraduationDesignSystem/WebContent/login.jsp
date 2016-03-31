@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -36,7 +38,7 @@
 							<div class="form-group">
 								<label class="col-sm-2 col-md-2 col-xs-2 control-label col-sm-offset-1 col-xs-offset-1 col-md-offset-1">密码</label>
 								<div class="col-sm-8 col-md-8 col-xs-8">
-								  <input type="password" id="pwd" class="form-control" id="inputPassword3" placeholder="请输入密码">
+								  <input type="password" id="pwd" name="pwd" class="form-control" id="inputPassword3" placeholder="请输入密码">
 								</div>
 							</div>
 						</div>
