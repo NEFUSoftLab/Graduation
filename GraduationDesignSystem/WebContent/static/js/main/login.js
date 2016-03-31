@@ -1,8 +1,9 @@
 $(function() {
 	var login = {
+		$number: $('#number').val(),
 		login: function() {
 			$("#login").on('click', function() {
-				console.log($("#number").val());
+				console.log(login.$number);
 				$.ajax({
 					type: 'POST',
 					data: {
