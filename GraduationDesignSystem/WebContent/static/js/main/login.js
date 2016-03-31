@@ -1,10 +1,7 @@
 $(function() {
 	var login = {
-//		number : $("#number").val(),
-//		pwd : $("#pwd").val(),
 		login: function() {
 			$("#login").on('click', function() {
-//				console.log(login.number);
 				$.ajax({
 					type: 'POST',
 					data: {
