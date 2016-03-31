@@ -6,6 +6,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.nefu.gdms.domain.Student;
@@ -18,20 +20,27 @@ public class StudentAction extends ActionSupport {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	Gson gson=new Gson();
+	
 	private String number;
 	private String pwd;
 	private StudentManager studentManager;
-	private String loginRs;  
-
-	 
+	//登录结果
+	private String login;  
+	//查询所有学生
+	private String getAll;
 	
-
-	public String getLoginRs() {
-		return loginRs;
+	public String getGetAll() {
+		return getAll;
 	}
-	public void setLoginRs(String loginRs) {
-		this.loginRs = loginRs;
+	public void setGetAll(String getAll) {
+		this.getAll = getAll;
+	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
 	}
 	public StudentManager getStudentManager() {
 		return studentManager;
@@ -40,27 +49,33 @@ public class StudentAction extends ActionSupport {
 		this.studentManager = studentManager;
 	}
 
+	//判断登录
 	public String login() {
+		login = "";
 		try{
-			
-            //JSONObject json = JSONObject.fromObject(map);//将map对象转换成json类型数据
 			if (studentManager.login(number, pwd)) {
-				loginRs = "success";
+				login = "success";
 			}
 			else{
-				loginRs = "fail";
+				login = "fail";
 			}
 		}catch(Exception e) {
-			loginRs = "fail";
+			login = "fail";
 			e.printStackTrace();
 		}
 		return SUCCESS;
 		
 	}
 	
+	
+	//取得所有学生数据
 	public String getAll(){
+		getAll = "";
+		System.out.println("yes");
 		List<Student> studentList = studentManager.getAll();
-		return "studentList";
+		getAll =  gson.toJson(studentList);
+		System.out.println(getAll);
+		return SUCCESS;
 	}
 
 	public String getNumber() {

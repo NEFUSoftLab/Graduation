@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../static/js/main/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/js/main/bootstrap.min.js"></script>
+	<script type="text/javascript" src="login.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-		FAIL
+	<a href = "" id = "login">121a>
+	<C：form>
 </body>
 </html>
