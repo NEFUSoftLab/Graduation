@@ -1,19 +1,21 @@
 $(function() {
 	var login = {
-		number : $("#number").val(),
-		pwd : $("#pwd").val(),
+		$number: $('#number').val(),
 		login: function() {
 			$("#login").on('click', function() {
-				console.log('456');
+				console.log(login.$number);
 				$.ajax({
-					method: 'POST',
-					data: 'number='+number&'pwd='+pwd,
-					dataType: 'json',
+					type: 'POST',
+					data: {
+						number : $("#number").val(),
+						pwd : $("#pwd").val()
+					},
 					url:'student-login.action',
-					success: function() {
-						console.log('123');
+					success: function(data) {
+						console.log(data);
 					}
 				});
+				
 			})
 			
 		},

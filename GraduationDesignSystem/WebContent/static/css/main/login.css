@@ -1,5 +1,21 @@
 body {
-	background: #fff url("../../../static/images/background.jpg") center center no-repeat;
+	/* 加载背景图 */
+	background-image: url("../../../static/images/background.jpg");
+	
+	/* 背景图垂直、水平均居中 */
+	background-position: center center;
+	
+	/* 背景图不平铺 */
+	background-repeat: no-repeat;
+	
+	/* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+	background-attachment: fixed;
+	
+	/* 让背景图基于容器大小伸缩 */
+	background-size: cover;
+	
+	/* 设置背景颜色，背景图加载过程中会显示背景色 */
+	background-color: #464646;
 }
 h1 {
     margin: 80px auto 50px auto;
@@ -37,12 +53,31 @@ sub {
     font-size: 16px;
 }
 
+.header .choose a:hover {
+	color: #333;
+}
+
+.header .choose .switch-line {
+	position: absolute;
+	width: 64px;
+	border: 1px solid #848484;
+	left: 0;
+	bottom: -1px;
+}
 .header .choose #switch-stu-login {
-	margin-right: 80px;
+	margin-right: 10em;
 }
 
 .header .choose .switch-btn {
     color: #999;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    outline: none;
+}
+
+.header .choose .switch-btn-focus {
+    color: #333;
     display: inline-block;
     height: 45px;
     line-height: 45px;

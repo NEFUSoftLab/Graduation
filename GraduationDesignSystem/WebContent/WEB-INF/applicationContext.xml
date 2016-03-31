@@ -142,6 +142,7 @@
 			<ref bean="teacherManager" />
 		</property>  
 	</bean>
+
 	
 	
 	<!-- 定义业务逻辑组件 -->

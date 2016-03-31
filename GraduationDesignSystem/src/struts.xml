@@ -4,13 +4,13 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-
-	<include file="struts-default.xml" />
-	<package name="gdms" extends="struts-default">
-		<action name="student-*" method="{1}" class="studentAction"> 
-			<result name="success">Success.jsp</result>
-			<result name="error">Fail.jsp</result>
-			<!-- <result name="studentList" type="json"></result> -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="gdms" extends="struts-default,json-default">
+		<action name="student-*" method="{1}" class="studentAction">  
+            <!-- 返回json类型数据 --> 
+            <result type="json"> 
+                <param name="root">result</param> 
+            </result>
 		</action>
 		
 		<action name="teacher-*" method="{1}" class="teacherAction"> 
