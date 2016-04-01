@@ -2,6 +2,7 @@ package edu.nefu.gdms.service;
 
 import java.util.List;
 
+import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.domain.Student;
 
 public interface StudentManager {
@@ -15,8 +16,10 @@ public interface StudentManager {
 	
 	boolean login(String username,String password);
 	
-	void save(Student student);
+	String save(String number,String name,String pwd,String phone,String sex,String major,String email);
 	
-	List<Student> getAll();
+	String  setTeacher(String studentNumber,String teacherNumber);
+	
+	List<StudentBean> getAll();
 	
 }

@@ -8,7 +8,10 @@
 </head>
 <body>
 	
-	<form ></form>
+	<form action="fileUpload.action"   enctype="multipart/form-data" method="post">
+            文件:<input type="file" name="image">
+                <input type="submit" value="上传" />
+        </form>
 	
 </body>
 </html>

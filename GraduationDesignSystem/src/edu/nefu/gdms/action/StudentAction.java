@@ -1,18 +1,12 @@
 package edu.nefu.gdms.action;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.opensymphony.xwork2.ActionSupport;
 
-import edu.nefu.gdms.domain.Student;
+import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.service.StudentManager;
-import net.sf.json.JSONObject;
 
 public class StudentAction extends ActionSupport {
 
@@ -22,8 +16,7 @@ public class StudentAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	Gson gson=new Gson();
 	
-	private String number;
-	private String pwd;
+	private StudentBean student;
 	private StudentManager studentManager;
 	//登录结果
 	private String login;  
@@ -52,8 +45,9 @@ public class StudentAction extends ActionSupport {
 	//判断登录
 	public String login() {
 		login = "";
+		System.out.println(student.getNumber()+".."+student.getPwd());
 		try{
-			if (studentManager.login(number, pwd)) {
+			if (studentManager.login("1","2")) {
 				login = "success";
 			}
 			else{
@@ -72,28 +66,15 @@ public class StudentAction extends ActionSupport {
 	public String getAll(){
 		getAll = "";
 		System.out.println("yes");
-		List<Student> studentList = studentManager.getAll();
+		List<StudentBean> studentList = studentManager.getAll();
 		getAll =  gson.toJson(studentList);
 		System.out.println(getAll);
 		return SUCCESS;
 	}
-
-	public String getNumber() {
-		return number;
+	public StudentBean getStudent() {
+		return student;
 	}
-
-	public void setNumber(String number) {
-		this.number = number;
+	public void setStudent(StudentBean student) {
+		this.student = student;
 	}
-
-	public String getPwd() {
-		return pwd;
-	}
-
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
-	}
-
-
-	
 }

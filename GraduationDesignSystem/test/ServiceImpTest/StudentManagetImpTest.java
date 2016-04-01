@@ -18,7 +18,7 @@ public class StudentManagetImpTest {
 	public void test() {
 		Student student = new Student(null, "11000000", "name11111", "110", "112", "男", "xs", "hah");
 		
-		manager.save(student);
+	//	manager.save(student);
 		System.out.println("awqwewqe");
 		
 		

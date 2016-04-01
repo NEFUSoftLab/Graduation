@@ -142,6 +142,7 @@
 			<ref bean="teacherManager" />
 		</property>  
 	</bean>
+	<bean id="fileUploadAction" class="edu.nefu.gdms.action.FileUploadAction"> </bean>
 
 	
 	
