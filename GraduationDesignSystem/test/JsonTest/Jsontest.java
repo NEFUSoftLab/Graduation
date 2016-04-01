@@ -11,6 +11,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 import edu.nefu.gdms.dao.StudentDao;
 import edu.nefu.gdms.domain.Student;
@@ -30,10 +32,10 @@ public class Jsontest {
 	@Test
 	public void test() {
 		
-		List<Student> list=dao.getAll();
+		//
 		
-		Jsontool jt=new Jsontool();
-		System.out.println(jt.toJson(list));
+		
+		//System.out.println(jt.toJson(list));
 		
 		
 		

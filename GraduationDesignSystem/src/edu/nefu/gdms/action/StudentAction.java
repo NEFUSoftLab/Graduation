@@ -4,11 +4,12 @@ import java.util.List;
 
 import com.google.gson.Gson;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
 import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.service.StudentManager;
 
-public class StudentAction extends ActionSupport {
+public class StudentAction extends ActionSupport implements ModelDriven{
 
 	/**
 	 * 
@@ -16,7 +17,16 @@ public class StudentAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	Gson gson=new Gson();
 	
-	private StudentBean student;
+	private StudentBean userBean;
+	public StudentBean getUserBean() {
+		return userBean;
+	}
+	public void setUserBean(StudentBean userBean) {
+		this.userBean = userBean;
+	}
+	
+	
+
 	private StudentManager studentManager;
 	//登录结果
 	private String login;  
@@ -45,7 +55,7 @@ public class StudentAction extends ActionSupport {
 	//判断登录
 	public String login() {
 		login = "";
-		System.out.println(student.getNumber()+".."+student.getPwd());
+		System.out.println(userBean.getNumber()+".."+userBean.getPwd());
 		try{
 			if (studentManager.login("1","2")) {
 				login = "success";
@@ -71,10 +81,8 @@ public class StudentAction extends ActionSupport {
 		System.out.println(getAll);
 		return SUCCESS;
 	}
-	public StudentBean getStudent() {
-		return student;
-	}
-	public void setStudent(StudentBean student) {
-		this.student = student;
-	}
+	@Override
+	public StudentBean getModel() { 
+		return userBean;
+	} 
 }
