@@ -40,7 +40,8 @@
 				<value>edu/nefu/gdms/domain/Title.hbm.xml</value>
   
 				<value>edu/nefu/gdms/domain/Grour.hbm.xml</value> 
-				  <value>edu/nefu/gdms/domain/Log.hbm.xml</value> 
+				<value>edu/nefu/gdms/domain/Log.hbm.xml</value> 
+				<value>edu/nefu/gdms/domain/Admin.hbm.xml</value> 
  
 			</list>
 		</property>
@@ -124,11 +125,18 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<bean id="adminDao" class="edu.nefu.gdms.daoImpl.AdminDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 
 	<!--业务逻辑类 -->
 	<bean id="studentManager" class="edu.nefu.gdms.serviceImpl.StudentManagerImpl" parent="managerTemplate"> 
 	</bean>
 	<bean id="teacherManager" class="edu.nefu.gdms.serviceImpl.TeacherManagerImpl" parent="managerTemplate"> 
+	</bean>
+	<bean id="adminManager" class="edu.nefu.gdms.serviceImpl.AdminManagerImpl" parent="managerTemplate"> 
 	</bean>
 
 	<!-- Action类 -->
@@ -140,6 +148,11 @@
 	<bean id="teacherAction" class="edu.nefu.gdms.action.TeacherAction">
 		 <property name="teacherManager">
 			<ref bean="teacherManager" />
+		</property>  
+	</bean>
+	<bean id="adminAction" class="edu.nefu.gdms.action.AdminAction">
+		 <property name="adminManager">
+			<ref bean="adminManager" />
 		</property>  
 	</bean>
 	<bean id="fileUploadAction" class="edu.nefu.gdms.action.FileUploadAction"> </bean>
@@ -156,6 +169,7 @@
 		<property name="titleDao" ref="titleDao" />
 		<property name="tepascoreDao" ref="tepascoreDao" />
 		<property name="paperDao" ref="paperDao" />
+		<property name="adminDao" ref="adminDao" />
 	</bean>
 	
 	<!-- 系统默认配置参数 -->

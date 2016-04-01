@@ -21,6 +21,8 @@ public class TeacherDaoImplTest {
 	@Test
 	public void test() {
 		Teacher teacher = new Teacher(null, "1111111111", "111111", "111111", "111111", "111111", "111111", "111111", null);
+		teacher.setNumber("110");
+		teacher.setPwd("110");
 		dao.save(teacher);
 		
 		

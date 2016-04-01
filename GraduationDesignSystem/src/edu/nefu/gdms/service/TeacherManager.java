@@ -3,8 +3,8 @@ package edu.nefu.gdms.service;
 
 import java.util.List;
 
-import edu.nefu.gdms.domain.Student;
-import edu.nefu.gdms.domain.Teacher;
+import edu.nefu.gdms.beans.TeacherBean;
+
 
 public interface TeacherManager {
 	
@@ -17,9 +17,9 @@ public interface TeacherManager {
 	
 	boolean login(String username,String password);
 	
-	void save(Teacher student);
+	void save(TeacherBean teacher);
 	
-	List<Teacher> getAll();
+	List<TeacherBean> getAll();
 	
 }
  

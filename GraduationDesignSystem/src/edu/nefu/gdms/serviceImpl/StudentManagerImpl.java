@@ -16,7 +16,7 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 
 	@Override
 	public boolean login(String username, String password) {
-		Student student = studentDao.getByNumber(username);
+		Student student = studentDao.getByNumber(username); 
 		if (student!=null &&  password.equals(student.getPwd()))
 			return true;
 		else 
@@ -39,9 +39,10 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 
 
 	@Override
-	public String save(String number, String name, String pwd, String phone, String sex, String major, String email) {
+	public String save(StudentBean studentBean) {
 		
-		 return studentDao.save(new Student(null, number, name, pwd, phone, sex, major, email));
+		 return studentDao.save(new Student(null, studentBean.getNumber(),studentBean.getName(),studentBean.getPwd(),
+				 studentBean.getPhone(),studentBean.getSex(),studentBean.getMajor(),studentBean.getEmail()));
 		
 	}
 
@@ -60,6 +61,43 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 			return "fail";
 		}
 	}
+
+
+
+	@Override
+	public void modify(StudentBean studentBean) {
+		Student student=studentDao.getByNumber(studentBean.getNumber());
+		student.setName(studentBean.getName());
+		student.setPwd(studentBean.getPwd());
+		student.setPhone(studentBean.getPhone());
+		student.setSex(studentBean.getSex());
+		student.setMajor(studentBean.getMajor());
+		student.setEmail(studentBean.getEmail());
+		studentDao.update(student);
+		
+	}
+
+
+
+	@Override
+	public void remove(String sid) {
+		studentDao.delete(sid);
+		
+	}
+
+
+
+	@Override
+	public StudentBean getBySid(String sid) {
+		// TODO Auto-generated method stub
+		Student student=studentDao.get(sid);
+		StudentBean studentBean=new StudentBean(student);
+		return studentBean;
+	}
+	
+	
+	
+	
 
 
 
