@@ -24,25 +24,39 @@ public class StudentAction extends ActionSupport{
 	private String login;  
 	//查询所有学生
 	private String getAll;
-	
+	//移除
+	private String remove;
+	//修改
+	private String modify;
+	//保存
 	private String save;
 	
-	public String getGetAll() {
-		return getAll;
-	}
-	public void setGetAll(String getAll) {
-		this.getAll = getAll;
-	}
+	 
+	 
 	public String getLogin() {
 		return login;
 	}
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	
-	
-	
-	
+	public String getGetAll() {
+		return getAll;
+	}
+	public void setGetAll(String getAll) {
+		this.getAll = getAll;
+	}
+	public String getRemove() {
+		return remove;
+	}
+	public void setRemove(String remove) {
+		this.remove = remove;
+	}
+	public String getModify() {
+		return modify;
+	}
+	public void setModify(String modify) {
+		this.modify = modify;
+	}
 	public String getSave() {
 		return save;
 	}
@@ -61,6 +75,9 @@ public class StudentAction extends ActionSupport{
 	public void setStudentBean(StudentBean studentBean) {
 		this.studentBean = studentBean;
 	}
+	
+	
+	
 
 	//判断登录
 	public String login() {
@@ -89,6 +106,7 @@ public class StudentAction extends ActionSupport{
 			save="success";
 			
 		}catch (Exception e) {
+			save = "fail";
 			e.printStackTrace();
 		}
 		return SUCCESS;
@@ -98,9 +116,11 @@ public class StudentAction extends ActionSupport{
 	
 	public String modify() {
 		try {
+			modify = "success";
 			studentManager.modify(studentBean);
 			
 		}catch (Exception e) {
+			modify = "fail";
 			e.printStackTrace();
 			
 		}
@@ -110,9 +130,12 @@ public class StudentAction extends ActionSupport{
 	
 	
 	public String remove() {
+		remove = "";
 		try {
 			studentManager.remove(studentBean.getSid());
+			save="success";
 		}catch (Exception e){
+			save="fail";
 			e.printStackTrace();
 		}
 		return SUCCESS;
