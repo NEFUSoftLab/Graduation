@@ -16,7 +16,7 @@ public interface StudentManager {
 	
 	boolean login(String username,String password);
 	
-	String save(String number,String name,String pwd,String phone,String sex,String major,String email);
+	String save(StudentBean studentBean);
 	
 	
 	void modify(StudentBean studentBean);

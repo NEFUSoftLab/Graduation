@@ -39,9 +39,10 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 
 
 	@Override
-	public String save(String number, String name, String pwd, String phone, String sex, String major, String email) {
+	public String save(StudentBean studentBean) {
 		
-		 return studentDao.save(new Student(null, number, name, pwd, phone, sex, major, email));
+		 return studentDao.save(new Student(null, studentBean.getNumber(),studentBean.getName(),studentBean.getPwd(),
+				 studentBean.getPhone(),studentBean.getSex(),studentBean.getMajor(),studentBean.getEmail()));
 		
 	}
 

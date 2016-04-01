@@ -85,8 +85,7 @@ public class StudentAction extends ActionSupport{
 	public String save() {
 		save = "";
 		try{
-			studentManager.save(studentBean.getNumber(), studentBean.getName(), studentBean.getPwd(), 
-					studentBean.getPhone(),studentBean.getSex(),studentBean.getMajor(),studentBean.getEmail());
+			studentManager.save(studentBean);
 			save="success";
 			
 		}catch (Exception e) {
