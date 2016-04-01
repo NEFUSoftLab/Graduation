@@ -57,6 +57,10 @@ sub {
 	color: #333;
 }
 
+.header .choose a:focus {
+	text-decoration: none;
+}
+
 .header .choose .switch-line {
 	position: absolute;
 	width: 64px;
