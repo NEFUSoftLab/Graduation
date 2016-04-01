@@ -34,7 +34,7 @@ sub {
     padding: 5px 0;
     background: #fff;
     margin: 0 auto;
-    width: 370px;
+    width: 400px;
     -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .3);
     box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .3);
 }
@@ -63,9 +63,9 @@ sub {
 
 .header .choose .switch-line {
 	position: absolute;
-	width: 64px;
+	width: 70px;
 	border: 1px solid #848484;
-	left: 0;
+	left: -4px;
 	bottom: -1px;
 }
 .header .choose #switch-stu-login {
@@ -87,12 +87,20 @@ sub {
     outline: none;
 }
 
-.wrapper {
+.content-panel .wrapper {
 	margin-top: 30px;
+	display: none;
+}
+
+.content-panel .wrapper.show {
+	display: block;
 }
 
 .btn-width {
-	margin-top: 10px;
 	width: 180px;
-	margin-bottom: 20px;
+}
+
+.login-btn {
+	margin-top: 10px;
+	margin-bottom: 30px;
 }
