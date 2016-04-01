@@ -6,6 +6,7 @@
     margin-bottom:0;
     border-radius:0;
 	background: -webkit-linear-gradient(top, #3993ba 0%,#067ead 100%);
+	background: -ms-linear-gradient(top, #3993ba 0%,#067ead 100%);
 	z-index: 10;
 	border: 0px;
 }
@@ -33,7 +34,11 @@
     line-height: 48px;
     cursor: pointer;
 }
+.myrow{
+	margin:0;
+}
 aside{
+	height:100%;
 	background-color:#eee;
 }
 aside,section{
@@ -45,9 +50,6 @@ aside,section{
  	width: 100%;
  	margin: 30px auto 20px;
  	background: transparent;
- 	-webkit-border-radius: 4px;
- 	-moz-border-radius: 4px;
- 	border-radius: 4px;
  }
 
 .accordion .title {
@@ -74,15 +76,16 @@ aside,section{
 	left: 12px;
 	font-size: 1.125em;
 	color: #595959;
-	-webkit-transition: all 0.4s ease;
-	-o-transition: all 0.4s ease;
-	transition: all 0.4s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 .accordion li span.glyphicon-chevron-down {
 	right: 12px;
 	left: auto;
-	font-size: 16px;
+	font-size: 1em;
 }
 
 .accordion li.open .title {
@@ -116,6 +119,7 @@ aside,section{
  	padding-left: 42px;
  	-webkit-transition: all 0.25s ease;
  	-o-transition: all 0.25s ease;
+ 	-ms-transition: all 0.25s ease;
  	transition: all 0.25s ease;
  }
 
@@ -125,6 +129,7 @@ aside,section{
  }
 #wrapper{
 	width:100%;
+	height:100%;
 	margin: 0 auto;
 }
 

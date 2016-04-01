@@ -14,6 +14,7 @@
 	<!-- js  -->
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/main//index.js"></script>
 </head>
 <body>
 	<div id="wrapper" class="container-fulid">
@@ -41,7 +42,7 @@
 	            </div><!-- /.navbar-collapse -->
 		    </div><!-- /.container-fluid -->
 		</nav>
-		<div class="row">
+		<div class="row myrow">
 			<aside class="col-md-3 col-xs-12">
 				<ul id="accordion" class="accordion">
 					<li>
@@ -81,5 +82,8 @@
 			<section class="col-md-9 col-xs-12">213213</section>
 		</div>
 	</div>
+	<script>
+		var accordion = new Accordion($('#accordion'));
+	</script>
 </body>
 </html>
