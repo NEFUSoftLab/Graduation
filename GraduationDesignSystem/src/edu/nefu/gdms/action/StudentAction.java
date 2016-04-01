@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ModelDriven;
 import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.service.StudentManager;
 
-public class StudentAction extends ActionSupport implements ModelDriven{
+public class StudentAction extends ActionSupport{
 
 	/**
 	 * 
@@ -81,8 +81,4 @@ public class StudentAction extends ActionSupport implements ModelDriven{
 		System.out.println(getAll);
 		return SUCCESS;
 	}
-	@Override
-	public StudentBean getModel() { 
-		return userBean;
-	} 
 }
