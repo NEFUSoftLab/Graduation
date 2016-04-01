@@ -40,6 +40,11 @@
             </div><!-- /.navbar-collapse -->
 	    </div><!-- /.container-fluid -->
 	</nav>
-	<div id="wrapper" class="container-fluid"></div>
+	<div id="wrapper" class="container-fluid">
+		<div class="row">
+			<aside class="col-md-5">1231</aside>
+			<section class="col-md-7">213213</section>
+		</div>
+	</div>
 </body>
 </html>

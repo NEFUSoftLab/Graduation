@@ -16,30 +16,70 @@
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<nav class="navbar my-navbar navbar-inverse">
-	    <div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed my-navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-      			</button>
-				<h2>毕业设计管理系统</h2>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">郑垒<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#" data-toggle="modal" data-target="#update-password">修改密码</a></li>
-							<li><a href="#">退出</a></li>
+	<div id="wrapper" class="container-fulid">
+		<nav class="navbar my-navbar navbar-inverse">
+		    <div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed my-navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+	      			</button>
+					<h2>毕业设计管理系统</h2>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">郑垒<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#" data-toggle="modal" data-target="#update-password">修改密码</a></li>
+								<li><a href="#">退出</a></li>
+							</ul>
+						</li>
+					</ul>
+	            </div><!-- /.navbar-collapse -->
+		    </div><!-- /.container-fluid -->
+		</nav>
+		<div class="row">
+			<aside class="col-md-3 col-xs-12">
+				<ul id="accordion" class="accordion">
+					<li>
+						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<ul class="submenu">
+							<li><a href="#">个人信息</a></li>
+							<li><a href="#">修改信息</a></li>
+							<li><a href="#">添加信息</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<ul class="submenu">
+							<li><a href="#">个人信息</a></li>
+							<li><a href="#">修改信息</a></li>
+							<li><a href="#">添加信息</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<ul class="submenu">
+							<li><a href="#">个人信息</a></li>
+							<li><a href="#">修改信息</a></li>
+							<li><a href="#">添加信息</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<ul class="submenu">
+							<li><a href="#">个人信息</a></li>
+							<li><a href="#">修改信息</a></li>
+							<li><a href="#">添加信息</a></li>
 						</ul>
 					</li>
 				</ul>
-            </div><!-- /.navbar-collapse -->
-	    </div><!-- /.container-fluid -->
-	</nav>
-	<div id="wrapper" class="container-fluid"></div>
+			</aside>
+			<section class="col-md-9 col-xs-12">213213</section>
+		</div>
+	</div>
 </body>
 </html>
