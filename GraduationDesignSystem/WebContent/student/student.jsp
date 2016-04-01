@@ -82,8 +82,5 @@
 			<section class="col-md-9 col-xs-12">213213</section>
 		</div>
 	</div>
-	<script>
-	var accordion = new Accordion($('#accordion'));
-	</script>
 </body>
 </html>

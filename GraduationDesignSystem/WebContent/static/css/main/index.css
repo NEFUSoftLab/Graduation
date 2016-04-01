@@ -36,10 +36,11 @@
 }
 .myrow{
 	margin:0;
-}
-aside{
-	height:100%;
 	background-color:#eee;
+}
+section{
+	background-color:#fff;
+	height:100%;
 }
 aside,section{
 	display:inline-block;

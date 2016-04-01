@@ -2,14 +2,25 @@
 var Accordion = function(el) {
 		this.el = el || {};
 		var links = this.el.find('.title');
-		links.on('click',this.el, this.dropdown)
+		links.on('click',this.el, this.dropdown);
 	}
 
-Accordion.prototype.dropdown = function(e) {
+Accordion.prototype.dropdown = function(e,state) {
 	var $el = e.data;
 		$this = $(this),
 		$next = $this.next();
+	if($next.is(":animated"))return;
 	$next.slideToggle("normal");
 	$this.parent().toggleClass('open');
 	$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
 }
+//初始化row的高度
+var Row = function(el){
+	this.el = el || {};
+	var total = document.documentElement.clientHeight;
+	this.el.height(total-50);
+}
+$(function(){
+	var accordion = new Accordion($('#accordion'),false);
+	var row = new Row($(".myrow"));
+})
