@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<title>毕业设计管理</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="static/css/main/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="static/css/main/init.css">
 	<link rel="stylesheet" type="text/css" href="static/css/main/login.css">
-	<script type="text/javascript" src="static/js/main/jquery.min.js"></script>
-	<script type="text/javascript" src="static/js/main/bootstrap.min.js"></script>
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="static/js/main/login.js"></script>
 
 </head>
@@ -20,7 +20,7 @@
 		<div class="header">
 			<div class="choose">
 				<a class="switch-btn-focus" id="switch-stu-login" href="javascript:void(0)">学生登录</a>
-				<a class="switch-btn" href="javascript:void(0)">教师登录</a>
+				<a class="switch-btn" id="switch-tea-login" href="javascript:void(0)">教师登录</a>
 				<div class="switch-line" ></div>
 			</div>
 		</div>
