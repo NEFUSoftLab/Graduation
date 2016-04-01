@@ -65,7 +65,7 @@ sub {
 	bottom: -1px;
 }
 .header .choose #switch-stu-login {
-	margin-right: 10em;
+	margin-right: 6em;
 }
 
 .header .choose .switch-btn {
@@ -73,7 +73,6 @@ sub {
     display: inline-block;
     height: 45px;
     line-height: 45px;
-    outline: none;
 }
 
 .header .choose .switch-btn-focus {

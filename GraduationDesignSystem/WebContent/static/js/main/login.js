@@ -1,9 +1,8 @@
 $(function() {
 	var login = {
-		$number: $('#number').val(),
+		number: $('#number').val(),
 		login: function() {
 			$("#login").on('click', function() {
-				console.log(login.$number);
 				$.ajax({
 					type: 'POST',
 					data: {
@@ -17,8 +16,11 @@ $(function() {
 				});
 				
 			})
-			
+			return this;
 		},
+		cswitch: function() {
+			
+		}
 	}
-	login.login();
+	login.login().cswitch();
 });
