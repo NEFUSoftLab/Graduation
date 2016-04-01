@@ -18,7 +18,15 @@ public interface StudentManager {
 	
 	String save(String number,String name,String pwd,String phone,String sex,String major,String email);
 	
+	
+	void modify(StudentBean studentBean);
+	
+	void remove(String sid);
+	
 	String  setTeacher(String studentNumber,String teacherNumber);
+	
+	
+	StudentBean getBySid(String sid); 
 	
 	List<StudentBean> getAll();
 	

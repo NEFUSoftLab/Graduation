@@ -36,6 +36,8 @@ public class StudentAction extends ActionSupport{
 	//查询所有学生
 	private String getAll;
 	
+	private String save;
+	
 	public String getGetAll() {
 		return getAll;
 	}
@@ -47,6 +49,16 @@ public class StudentAction extends ActionSupport{
 	}
 	public void setLogin(String login) {
 		this.login = login;
+	}
+	
+	
+	
+	
+	public String getSave() {
+		return save;
+	}
+	public void setSave(String save) {
+		this.save = save;
 	}
 	public StudentManager getStudentManager() {
 		return studentManager;
@@ -60,7 +72,7 @@ public class StudentAction extends ActionSupport{
 		login = "";
 		//System.out.println(studentBean.getNumber()+".."+studentBean.getPwd());
 		try{
-			if (studentManager.login(studentBean.getNumber(),studentBean.getNumber())) {
+			if (studentManager.login(studentBean.getNumber(),studentBean.getPwd())) {
 				login = "success";
 			}
 			else{
@@ -72,6 +84,44 @@ public class StudentAction extends ActionSupport{
 		}
 		return SUCCESS;
 		
+	}
+	
+	
+	public String save() {
+		save = "";
+		try{
+			studentManager.save(studentBean.getNumber(), studentBean.getName(), studentBean.getPwd(), 
+					studentBean.getPhone(),studentBean.getSex(),studentBean.getMajor(),studentBean.getEmail());
+			save="success";
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
+	
+	
+	
+	public String modify() {
+		try {
+			studentManager.modify(studentBean);
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+		return SUCCESS;
+	}
+	
+	
+	public String remove() {
+		try {
+			studentManager.remove(studentBean.getSid());
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return SUCCESS;
 	}
 	
 	

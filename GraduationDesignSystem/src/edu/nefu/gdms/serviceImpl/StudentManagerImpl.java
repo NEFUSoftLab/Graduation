@@ -63,5 +63,42 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 
 
 
+	@Override
+	public void modify(StudentBean studentBean) {
+		Student student=studentDao.getByNumber(studentBean.getNumber());
+		student.setName(studentBean.getName());
+		student.setPwd(studentBean.getPwd());
+		student.setPhone(studentBean.getPhone());
+		student.setSex(studentBean.getSex());
+		student.setMajor(studentBean.getMajor());
+		student.setEmail(studentBean.getEmail());
+		studentDao.update(student);
+		
+	}
+
+
+
+	@Override
+	public void remove(String sid) {
+		studentDao.delete(sid);
+		
+	}
+
+
+
+	@Override
+	public StudentBean getBySid(String sid) {
+		// TODO Auto-generated method stub
+		Student student=studentDao.get(sid);
+		StudentBean studentBean=new StudentBean(student);
+		return studentBean;
+	}
+	
+	
+	
+	
+
+
+
 
 }
