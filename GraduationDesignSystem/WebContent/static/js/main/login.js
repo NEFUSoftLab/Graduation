@@ -3,6 +3,7 @@ $(function() {
 		url: 'student-login.action',
 		login: function() {
 			$("#login").on('click', function() {
+				console.log('123');
 				var number = $("input[name='number']").val();
 				var pwd = $("input[name='pwd']").val();
 				if(number == "" || pwd == "") {
@@ -17,11 +18,7 @@ $(function() {
 						dataType: 'json',
 						url: login.url,
 						success: function(data) {
-							if(data == 'success') {
-								window.location = '';
-							}else {
-								$('.form-group').addClass('has-error');	
-							}
+							console.log(data);
 						}
 					});
 				}
