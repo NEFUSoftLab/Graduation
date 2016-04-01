@@ -8,9 +8,23 @@
 	background: -webkit-linear-gradient(top, #3993ba 0%,#067ead 100%);
 	position: fixed;
 	z-index: 10;
+	border: 0px;
 }
-.navbar a{
-	color:#fff;
+.navbar-inverse .navbar-toggle{
+	border-color:#fff;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #007799;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #007799;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #007799;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
 }
 .navbar h2{
 	display: inline-block;
@@ -19,6 +33,10 @@
     font-family: "Microsoft YaHei";
     line-height: 48px;
     cursor: pointer;
+}
+#wrapper{
+	width:100%;
+	max-width:1024px;
 }
 
 
