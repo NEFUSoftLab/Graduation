@@ -2,8 +2,12 @@ $(function() {
 	var Login = {
 		url: 'student-login.action',
 		login: function() {
+			$(document).on('keypress', function(event) {
+				if(event.keyCode == 13) {
+					$("#login").click();
+				}
+			});
 			$("#login").on('click', function() {
-				console.log('123');
 				var number = $("input[name='number']").val();
 				var pwd = $("input[name='pwd']").val();
 				if(number == "" || pwd == "") {
@@ -16,9 +20,14 @@ $(function() {
 							"studentBean.pwd": pwd
 						},
 						dataType: 'json',
-						url: login.url,
+						url: Login.url,
 						success: function(data) {
-							console.log(data);
+							if(data == 'success') {
+								console.log('success');
+								window.href = "";
+							}else {
+								$('.form-group').addClass('has-error');
+							}
 						}
 					});
 				}
@@ -34,6 +43,11 @@ $(function() {
 				$('.form-group').removeClass('has-error');
 				$(".content-panel .wrapper").eq(index).addClass('show').siblings(".wrapper").removeClass('show');
 				$(".switch-line").animate({left: index*163+'px'});
+				if($(this).attr('name') == 'stu') {
+					Login.url = "student-login.action";
+				}else if($(this).attr('name') == 'tea') {
+					Login.url = 'teacher-login.action';
+				}
 			});
 			return this;
 		}

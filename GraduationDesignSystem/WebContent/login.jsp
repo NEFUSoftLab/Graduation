@@ -20,8 +20,8 @@
 		<div class="header">
 			<a href="admin/index.jsp"><span class="label label-success pull-right">管理员入口</span></a>
 			<div class="choose">
-				<a class="switch-btn switch-btn-focus" id="switch-stu-login" href="javascript:void(0)">学生登录</a>
-				<a class="switch-btn" id="switch-tea-login" href="javascript:void(0)">教师登录</a>
+				<a class="switch-btn switch-btn-focus" name="stu" href="javascript:void(0)">学生登录</a>
+				<a class="switch-btn" name="tea" href="javascript:void(0)">教师登录</a>
 				<div class="switch-line" ></div>
 			</div>
 		</div>

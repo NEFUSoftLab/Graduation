@@ -68,7 +68,7 @@ sub {
 	left: -4px;
 	bottom: -1px;
 }
-.header .choose #switch-stu-login {
+.header .choose a[name='stu'] {
 	margin-right: 6em;
 }
 
