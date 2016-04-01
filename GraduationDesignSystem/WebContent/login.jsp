@@ -70,6 +70,7 @@
 						</div>
 						<div>
 						  <button type="button" id="login" class="btn btn-width btn-primary center-block">登录</button>
+						  <a href="">管理员入口</a>
 						</div>
 					</form>
 				</div>

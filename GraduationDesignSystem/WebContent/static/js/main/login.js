@@ -10,10 +10,8 @@ $(function() {
 				$.ajax({
 					type: 'POST',
 					data: {
-						"userBean" : {
-							'number' : $("#number").val(),
-							'pwd' : $("#pwd").val()
-						}
+						"userBean.number": $("#number").val(),
+						"userBean.pwd": $("#pwd").val()
 					},
 					dataType: 'json',
 					url: login.url,
