@@ -16,7 +16,7 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 
 	@Override
 	public boolean login(String username, String password) {
-		Student student = studentDao.getByNumber(username);
+		Student student = studentDao.getByNumber(username); 
 		if (student!=null &&  password.equals(student.getPwd()))
 			return true;
 		else 

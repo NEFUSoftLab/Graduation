@@ -1,4 +1,4 @@
-
+/* 导航条样式 */
 .my-navbar{
     width:100%;
     color: #fff;
@@ -6,7 +6,7 @@
     margin-bottom:0;
     border-radius:0;
 	background: -webkit-linear-gradient(top, #3993ba 0%,#067ead 100%);
-	position: fixed;
+	background: -ms-linear-gradient(top, #3993ba 0%,#067ead 100%);
 	z-index: 10;
 	border: 0px;
 }
@@ -29,14 +29,108 @@
 .navbar h2{
 	display: inline-block;
     margin: 0;
-    font-size: 16px;
+    font-size: 1em;
     font-family: "Microsoft YaHei";
     line-height: 48px;
     cursor: pointer;
 }
+.myrow{
+	margin:0;
+}
+aside{
+	height:100%;
+	background-color:#eee;
+}
+aside,section{
+	display:inline-block;
+}
+
+/* 手风琴样式 */
+.accordion {
+ 	width: 100%;
+ 	margin: 30px auto 20px;
+ 	background: transparent;
+ }
+
+.accordion .title {
+	cursor: pointer;
+	display: block;
+	padding: 15px 15px 15px 42px;
+	color: #4D4D4D;
+	font-size: 0.875em;
+	font-weight: 700;
+	border-bottom: 1px solid #CCC;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.accordion li:last-child .title {
+	border-bottom: 0;
+}
+
+.accordion li span {
+	position: absolute;
+	top: 16px;
+	left: 12px;
+	font-size: 1.125em;
+	color: #595959;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.accordion li span.glyphicon-chevron-down {
+	right: 12px;
+	left: auto;
+	font-size: 1em;
+}
+
+.accordion li.open .title {
+	color: #b63b4d;
+}
+
+.accordion li.open span {
+	color: #b63b4d;
+}
+.accordion li.open span.glyphicon-chevron-down {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.submenu {
+ 	display: none;
+ 	background: #444359;
+ 	font-size: 0.875em;
+ }
+
+ .submenu li {
+ 	border-bottom: 1px solid #4b4a5e;
+ }
+
+ .submenu a {
+ 	display: block;
+ 	text-decoration: none;
+ 	color: #d9d9d9;
+ 	padding: 12px;
+ 	padding-left: 42px;
+ 	-webkit-transition: all 0.25s ease;
+ 	-o-transition: all 0.25s ease;
+ 	-ms-transition: all 0.25s ease;
+ 	transition: all 0.25s ease;
+ }
+
+ .submenu a:hover {
+ 	background: #b63b4d;
+ 	color: #FFF;
+ }
 #wrapper{
 	width:100%;
-	max-width:1024px;
+	height:100%;
+	margin: 0 auto;
 }
 
 

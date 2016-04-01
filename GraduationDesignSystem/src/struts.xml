@@ -19,6 +19,12 @@
             </result>
 		</action>
 		
+		<action name="admin-*" method="{1}" class="adminAction"> 
+			<result type="json" > 
+                <param name="root">{1}</param> 
+            </result>
+		</action>
+		
 		 <action name="fileUpload" class="fileUploadAction" >
             <result name="success">Success.jsp</result>
         </action>

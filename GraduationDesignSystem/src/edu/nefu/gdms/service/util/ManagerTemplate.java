@@ -1,5 +1,6 @@
 package edu.nefu.gdms.service.util;
 
+import edu.nefu.gdms.dao.AdminDao;
 import edu.nefu.gdms.dao.GrourDao;
 import edu.nefu.gdms.dao.LogDao;
 import edu.nefu.gdms.dao.PaperDao;
@@ -18,8 +19,17 @@ public class ManagerTemplate {
 	protected TitleDao titleDao;
 	protected TepascoreDao tepascoreDao;
 	protected LogDao logDao;
+	protected AdminDao  adminDao;
 	
 	
+	public AdminDao getAdminDao() {
+		return adminDao;
+	}
+
+	public void setAdminDao(AdminDao adminDao) {
+		this.adminDao = adminDao;
+	}
+
 	public StudentDao getStudentDao() {
 		return studentDao;
 	}

@@ -19,17 +19,6 @@ public class StudentAction extends ActionSupport{
 	
 	private StudentBean studentBean;
 	 
-	
-	
-
-	public StudentBean getStudentBean() {
-		return studentBean;
-	}
-	public void setStudentBean(StudentBean studentBean) {
-		this.studentBean = studentBean;
-	}
-
-
 	private StudentManager studentManager;
 	//登录结果
 	private String login;  
@@ -65,6 +54,12 @@ public class StudentAction extends ActionSupport{
 	}
 	public void setStudentManager(StudentManager studentManager) {
 		this.studentManager = studentManager;
+	}
+	public StudentBean getStudentBean() {
+		return studentBean;
+	}
+	public void setStudentBean(StudentBean studentBean) {
+		this.studentBean = studentBean;
 	}
 
 	//判断登录
