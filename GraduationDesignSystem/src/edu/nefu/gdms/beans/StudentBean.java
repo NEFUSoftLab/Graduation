@@ -3,15 +3,15 @@ package edu.nefu.gdms.beans;
 import edu.nefu.gdms.domain.Student;
 
 public class StudentBean {
-	 String sid;
-	 String teid;
-	 String number;
-	 String pwd;
-	 String name;
-	 String phone;
-	 String sex;
-	 String major;
-	 String email;
+	private String sid;
+	private String teid;
+	private String number;
+	private String pwd;
+	private String name;
+	private String phone;
+	private String sex;
+	private String major;
+	private String email;
 
 	public String getSid() {
 		return sid;

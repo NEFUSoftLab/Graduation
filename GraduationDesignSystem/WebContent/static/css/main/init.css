@@ -4,6 +4,7 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
 } 
 body, button, input, select, textarea { 
 	font-family: "Microsoft Yahei" ;
+	font-size: 16px;
 } 
 h1, h2, h3, h4, h5, h6 { 
 	font-size:100%; 

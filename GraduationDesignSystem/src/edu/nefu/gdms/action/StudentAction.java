@@ -17,15 +17,18 @@ public class StudentAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	Gson gson=new Gson();
 	
-	private StudentBean userBean;
-	public StudentBean getUserBean() {
-		return userBean;
-	}
-	public void setUserBean(StudentBean userBean) {
-		this.userBean = userBean;
-	}
+	private StudentBean studentBean;
+	 
 	
 	
+
+	public StudentBean getStudentBean() {
+		return studentBean;
+	}
+	public void setStudentBean(StudentBean studentBean) {
+		this.studentBean = studentBean;
+	}
+
 
 	private StudentManager studentManager;
 	//登录结果
@@ -55,9 +58,9 @@ public class StudentAction extends ActionSupport{
 	//判断登录
 	public String login() {
 		login = "";
-		System.out.println(userBean.getNumber()+".."+userBean.getPwd());
+		//System.out.println(studentBean.getNumber()+".."+studentBean.getPwd());
 		try{
-			if (studentManager.login("1","2")) {
+			if (studentManager.login(studentBean.getNumber(),studentBean.getNumber())) {
 				login = "success";
 			}
 			else{
