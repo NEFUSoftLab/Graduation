@@ -24,7 +24,7 @@
 				<div class="switch-line" ></div>
 			</div>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper" id="stu-login">
 			<div class="wrapper-login">
 				<div class="login-box">
 					<form method="post" class="form-horizontal">
@@ -50,31 +50,32 @@
 			</div>
 		</div>
 
-<!-- 		<div class="wrapper">
-	<div class="wrapper-login">
-		<div class="login-box">
-			<form method="post" class="form-horizontal">
-				<div class="row">
-					<div class="form-group">
-					    <label class="col-sm-2 col-md-2 col-xs-2 control-label col-sm-offset-1 col-xs-offset-1 col-md-offset-1">账号</label>
-					    <div class="col-sm-8 col-md-8 col-xs-8">
-					    	<input type="text" id="number" class="form-control" id="inputEmail3" placeholder="请输入账号">
-					    </div>
-				    </div>
-					<div class="form-group">
-						<label class="col-sm-2 col-md-2 col-xs-2 control-label col-sm-offset-1 col-xs-offset-1 col-md-offset-1">密码</label>
-						<div class="col-sm-8 col-md-8 col-xs-8">
-						  <input type="password" id="pwd" class="form-control" id="inputPassword3" placeholder="请输入密码">
+ 		<div class="wrapper" id="tea-login">
+			<div class="wrapper-login">
+				<div class="login-box">
+					<form method="post" class="form-horizontal">
+						<div class="row">
+							<div class="form-group">
+							    <label class="col-sm-2 col-md-2 col-xs-2 control-label col-sm-offset-1 col-xs-offset-1 col-md-offset-1">账号</label>
+							    <div class="col-sm-8 col-md-8 col-xs-8">
+							    	<input type="text" id="number" class="form-control" id="inputEmail3" placeholder="请输入账号">
+							    </div>
+						    </div>
+							<div class="form-group">
+								<label class="col-sm-2 col-md-2 col-xs-2 control-label col-sm-offset-1 col-xs-offset-1 col-md-offset-1">密码</label>
+								<div class="col-sm-8 col-md-8 col-xs-8">
+								  <input type="password" id="pwd" class="form-control" id="inputPassword3" placeholder="请输入密码">
+								</div>
+							</div>
 						</div>
-					</div>
+						<div>
+						  <button type="button" id="login" class="btn btn-width btn-primary center-block">登录</button>
+						  <a href="">管理员入口</a>
+						</div>
+					</form>
 				</div>
-				<div>
-				  <button type="button" id="login" class="btn btn-width btn-primary center-block">登录</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div> -->
+			</div>
+		</div> 
 	</div>
 </body>
 </html>

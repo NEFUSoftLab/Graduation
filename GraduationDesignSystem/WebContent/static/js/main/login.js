@@ -1,16 +1,17 @@
 $(function() {
 	var login = {
 		url: 'student-login.action',
-		number: $('#number').val(),
+		init: function() {
+			$("#tea-login").css('display', 'none');
+			return this;
+		},
 		login: function() {
 			$("#login").on('click', function() {
 				$.ajax({
 					type: 'POST',
 					data: {
-						"userBean" : {
-							'number' : $("#number").val(),
-							'pwd' : $("#pwd").val()
-						}
+						"userBean.number": $("#number").val(),
+						"userBean.pwd": $("#pwd").val()
 					},
 					dataType: 'json',
 					url: login.url,
@@ -26,8 +27,8 @@ $(function() {
 			return this;
 		},
 		cswitch: function() {
-			console.log('123');
 			$('#switch-stu-login').click(function(){
+				login.url = 'student-login.action';
 				$('#switch-stu-login').removeClass("switch-btn").addClass('switch-btn-focus');
 				$('#switch-tea-login').removeClass("switch-btn-focus").addClass('switch-btn');
 				$('.switch-line').animate({left:'0px',width:'70px'});
@@ -35,14 +36,15 @@ $(function() {
 				$('#stu-login').css('display','block');
 			});
 			$('#switch-tea-login').click(function(){
+				login.url = 'teacher-login.action';
 				$('#switch-stu-login').removeClass("switch-btn-focus").addClass('switch-btn');
 				$('#switch-tea-login').removeClass("switch-btn").addClass('switch-btn-focus');
-				$('.switch-line').animate({left:'154px',width:'70px'});
+				$('.switch-line').animate({left:'163px',width:'70px'});
 				$('#tea-login').css('display','block');
 				$('#stu-login').css('display','none');
 			});
 			return this;
 		}
 	}
-	login.login().cswitch();
+	login.init().login().cswitch();
 });
