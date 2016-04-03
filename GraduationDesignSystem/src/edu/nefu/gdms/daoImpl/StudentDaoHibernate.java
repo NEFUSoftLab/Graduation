@@ -14,7 +14,7 @@ public class StudentDaoHibernate extends GdmsHibernateDaoSupport implements Stud
 	}
 
 	@Override
-	public String save(Student student) {
+	public String save(Student student){
 		return (String) getHibernateTemplate().save(student);
 	}
 

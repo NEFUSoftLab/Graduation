@@ -74,11 +74,13 @@
 			<tx:method name="*" />
 		</tx:attributes>
 	</tx:advice>
+	
+	<!--哪些方法使用事务 -->
 	<aop:config>
 		<!-- 配置一个切入点，匹配empManager和mgrManager 两个Bean的所有方法的执行 -->
-		<aop:pointcut id="leePointcut" expression="bean(empManager)" />
+		<aop:pointcut id="allmanagerMethod" expression="execution(* edu.nefu.gdms.service.*.*(..))" />
 		<!-- 指定在leePointcut切入点应用txAdvice事务增强处理 -->
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="leePointcut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="allmanagerMethod" />
 	</aop:config>
 	
 	
@@ -131,6 +133,8 @@
 		</property>
 	</bean>
 
+
+
 	<!--业务逻辑类 -->
 	<bean id="studentManager" class="edu.nefu.gdms.serviceImpl.StudentManagerImpl" parent="managerTemplate"> 
 	</bean>
@@ -138,6 +142,8 @@
 	</bean>
 	<bean id="adminManager" class="edu.nefu.gdms.serviceImpl.AdminManagerImpl" parent="managerTemplate"> 
 	</bean>
+
+
 
 	<!-- Action类 -->
 	<bean id="studentAction" class="edu.nefu.gdms.action.StudentAction">

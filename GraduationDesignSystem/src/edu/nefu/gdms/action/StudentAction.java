@@ -2,6 +2,8 @@ package edu.nefu.gdms.action;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.google.gson.Gson;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -16,6 +18,7 @@ public class StudentAction extends ActionSupport{
 	 */
 	private static final long serialVersionUID = 1L;
 	Gson gson=new Gson();
+	HttpServletRequest request;
 	
 	private StudentBean studentBean;
 	 
@@ -86,6 +89,7 @@ public class StudentAction extends ActionSupport{
 		try{
 			if (studentManager.login(studentBean.getNumber(),studentBean.getPwd())) {
 				login = "success";
+				request.getSession().setAttribute("user", studentBean);
 			}
 			else{
 				login = "fail";

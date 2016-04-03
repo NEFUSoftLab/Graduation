@@ -4,9 +4,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.nefu.gdms.domain.Student;
+import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.service.StudentManager;
-import edu.nefu.gdms.serviceImpl.StudentManagerImpl;
 
 public class StudentManagetImpTest {
 	
@@ -16,9 +15,9 @@ public class StudentManagetImpTest {
 	
 	@Test
 	public void test() {
-		Student student = new Student(null, "11000000", "name11111", "110", "112", "男", "xs", "hah");
+		StudentBean student = new StudentBean(null, "11000000", "na1me111111", "110", "112", "男", "xs", "hah","12");
 		
-	//	manager.save(student);
+		manager.save(student);
 		System.out.println("awqwewqe");
 		
 		

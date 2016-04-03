@@ -1,5 +1,8 @@
 package edu.nefu.gdms.service.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import edu.nefu.gdms.dao.AdminDao;
 import edu.nefu.gdms.dao.GrourDao;
 import edu.nefu.gdms.dao.LogDao;
@@ -20,6 +23,9 @@ public class ManagerTemplate {
 	protected TepascoreDao tepascoreDao;
 	protected LogDao logDao;
 	protected AdminDao  adminDao;
+	
+	public Date now = new Date(); 
+	public SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	
 	
 	public AdminDao getAdminDao() {
