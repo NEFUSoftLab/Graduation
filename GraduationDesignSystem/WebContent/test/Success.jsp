@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Success!
+	 <img src="${pageContext.request.contextPath}/<s:property value="'images/'+imageFileName"/>">
 </body>
 </html>

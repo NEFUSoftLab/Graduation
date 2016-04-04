@@ -58,7 +58,6 @@ public class TeacherAction extends ActionSupport {
 			e.printStackTrace();	
 		}
 		return SUCCESS;
-		
 	}
 	
 }

@@ -18,7 +18,7 @@ public class FileUploadAction extends ActionSupport {
     private String imageContentType; //文件类型
 
     public String execute() throws Exception {
-        String realpath = ServletActionContext.getServletContext().getRealPath("/WebContent/file");
+        String realpath = ServletActionContext.getServletContext().getRealPath("/images");
         //D:\apache-tomcat-6.0.18\webapps\struts2_upload\images
         System.out.println("realpath: "+realpath);
         if (image != null) {
@@ -28,6 +28,7 @@ public class FileUploadAction extends ActionSupport {
             FileUtils.copyFile(image, savefile);
             ActionContext.getContext().put("message", "文件上传成功");
         }
+        System.out.println("success");
         return "success";
     }
 

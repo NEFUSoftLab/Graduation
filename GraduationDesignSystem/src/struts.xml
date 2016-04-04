@@ -27,7 +27,10 @@
 		
 		 <action name="fileUpload" class="fileUploadAction" >
             <result name="success">Success.jsp</result>
+            <interceptor-ref name="defaultStack" />
         </action>
+        
+        
 	</package>
 
 </struts>

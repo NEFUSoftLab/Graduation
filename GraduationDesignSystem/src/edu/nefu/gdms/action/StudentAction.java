@@ -155,4 +155,6 @@ public class StudentAction extends ActionSupport{
 		System.out.println(getAll);
 		return SUCCESS;
 	}
+	
+	
 }
