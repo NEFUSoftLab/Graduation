@@ -1,7 +1,10 @@
 $(function() {
 
 	$(".submenu li a").on('click', function() {
-       console.log($(this).attr("data-index")); 
+       var index = $(this).attr('data-index');
+       $.get("books"+index+".json").success(function() {
+    	  $("#content").html(""); 
+       });       
     });
 
 	
