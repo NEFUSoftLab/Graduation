@@ -49,7 +49,7 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#" data-index="0">个人信息</a></li>
+							<li><a class="menuItem" href="javascript:void(0);" data-url="hello.jsp" data-index="0">个人信息</a></li>
 							<li><a href="#" data-index="1">修改信息</a></li>
 							<li><a href="#" data-index="2">添加信息</a></li>
 						</ul>
@@ -80,7 +80,7 @@
 					</li>
 				</ul>
 			</aside>
-			<section class="col-md-10 col-xs-12">213213</section>
+			<section id="container-wrapper" class="col-md-10 col-xs-12"></section>
 		</div>
 		<footer>
 			<div class="container">
