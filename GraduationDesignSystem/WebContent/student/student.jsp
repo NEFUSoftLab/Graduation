@@ -43,7 +43,7 @@
 		    </div><!-- /.container-fluid -->
 		</nav>
 		<div class="row myrow">
-			<aside class="col-md-3 col-xs-12">
+			<aside class="col-md-2 col-xs-12">
 				<ul id="accordion" class="accordion">
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
@@ -79,8 +79,15 @@
 					</li>
 				</ul>
 			</aside>
-			<section class="col-md-9 col-xs-12">213213</section>
+			<section class="col-md-10 col-xs-12">213213</section>
 		</div>
+		<footer>
+			<div class="container">
+				<p>Designed and built with all the love in the world by <i class="designer">PYL</i>,<i class="designer">Zl</i>,<i class="designer">DYX</i>,<i class="designer">LYN</i></p>
+				<p>未经允许，禁止转载、抄袭、镜像</p>
+				<p>用心做站，做不一样的站</p>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>
