@@ -3,22 +3,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>毕业设计管理</title>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="static/css/main/init.css">
-	<link rel="stylesheet" type="text/css" href="static/css/main/login.css">
-	<script type="text/javascript" src="static/js/jquery.min.js"></script>
-	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="static/js/main/login.js"></script>
+	<link rel="Shortcut Icon" href="${pageContext.request.contextPath}/static/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/main/init.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/main/login.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/login.js"></script>
 
 </head>
 <body>
 	<h1>毕业设计管理系统<sub>信息学院</sub></h1>
 	<div class="content-panel">
 		<div class="header">
-			<a href="admin/index.jsp"><span class="label label-success pull-right">管理员入口</span></a>
+			<a href="admin/admin.jsp"><span class="label label-success pull-right">管理员入口</span></a>
 			<div class="choose">
 				<a class="switch-btn switch-btn-focus" name="stu" href="javascript:void(0)">学生登录</a>
 				<a class="switch-btn" name="tea" href="javascript:void(0)">教师登录</a>
