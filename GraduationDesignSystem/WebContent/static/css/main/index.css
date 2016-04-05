@@ -40,13 +40,14 @@
 }
 section{
 	background-color:#fff;
+	height:100%
 }
 aside{
 	padding:0 !important;
 	border-right: 1px solid #ccc;
+	height:100%;
 }
 aside,section{
-	height:100%;
 	display:inline-block;
 	overflow-y: auto;
 }
@@ -55,7 +56,7 @@ aside,section{
 /* 手风琴样式 */
 .accordion {
  	width: 100%;
- 	margin: 40px auto 20px;
+ 	margin: 0 auto 0px;
  	background: transparent;
  }
 
@@ -155,6 +156,21 @@ aside,section{
 	width:100%;
 	height:100%;
 	margin: 0 auto;
+}
+/* 手机端 */
+@media (max-width: 767px){
+	aside{
+	    display: none;
+	    float: none;
+	    width: 100%;
+	    height: auto;
+	    margin-top: 0;
+	    padding-top: 0;
+	    bottom: auto;
+	}
+	section{
+		height:auto;
+	}
 }
 
 

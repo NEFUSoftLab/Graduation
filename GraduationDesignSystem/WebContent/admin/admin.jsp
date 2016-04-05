@@ -22,7 +22,7 @@
 		<nav class="navbar my-navbar navbar-inverse">
 		    <div class="container-fluid">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed my-navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<button type="button" class="navbar-toggle collapsed my-navbar-toggle" data-toggle="collapse" data-target="#aside" aria-expanded="false">
 				        <span class="sr-only">Toggle navigation</span>
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
@@ -30,21 +30,19 @@
 	      			</button>
 					<h2>毕业设计管理系统</h2>
 				</div>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">郑垒<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#" data-toggle="modal" data-target="#update-password">修改密码</a></li>
-								<li><a href="#">退出</a></li>
-							</ul>
-						</li>
-					</ul>
-	            </div><!-- /.navbar-collapse -->
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">郑垒<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" data-toggle="modal" data-target="#update-password">修改密码</a></li>
+							<li><a href="#">退出</a></li>
+						</ul>
+					</li>
+				</ul>
 		    </div><!-- /.container-fluid -->
 		</nav>
 		<div class="row myrow">
-			<aside class="col-md-2 col-xs-12">
+			<aside id="aside" class="col-md-2 col-xs-12 col-sm-2">
 				<ul id="accordion" class="accordion">
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
@@ -80,7 +78,7 @@
 					</li>
 				</ul>
 			</aside>
-			<section class="col-md-10 col-xs-12">213213</section>
+			<section class="col-md-10 col-xs-12 col-sm-10">213213</section>
 		</div>
 		<footer>
 			<div class="container">
