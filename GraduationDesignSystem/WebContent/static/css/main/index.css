@@ -36,20 +36,26 @@
 }
 .myrow{
 	margin:0;
-	background-color:#eee;
+	background-color:#f8f8f8;
 }
 section{
 	background-color:#fff;
-	height:100%;
+}
+aside{
+	padding:0 !important;
+	border-right: 1px solid #ccc;
 }
 aside,section{
+	height:100%;
 	display:inline-block;
+	overflow-y: auto;
 }
+
 
 /* 手风琴样式 */
 .accordion {
  	width: 100%;
- 	margin: 30px auto 20px;
+ 	margin: 40px auto 20px;
  	background: transparent;
  }
 
@@ -66,10 +72,12 @@ aside,section{
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 }
-
-.accordion li:last-child .title {
-	border-bottom: 0;
+.accordion .title:hover{
+	background: #eee;
 }
+/* .accordion li:last-child .title {
+	border-bottom: 0;
+} */
 
 .accordion li span {
 	position: absolute;
@@ -104,18 +112,15 @@ aside,section{
 }
 .submenu {
  	display: none;
- 	background: #444359;
+ 	background: #fff;
  	font-size: 0.875em;
  }
 
- .submenu li {
- 	border-bottom: 1px solid #4b4a5e;
- }
 
  .submenu a {
  	display: block;
  	text-decoration: none;
- 	color: #d9d9d9;
+ 	color: #000;
  	padding: 12px;
  	padding-left: 42px;
  	-webkit-transition: all 0.25s ease;
@@ -125,9 +130,27 @@ aside,section{
  }
 
  .submenu a:hover {
- 	background: #b63b4d;
- 	color: #FFF;
+ 	background: #eee;
  }
+ /* 页脚  */
+ footer{
+    border-top: 1px solid #e8e8e8;
+    padding: 15px 0;
+    font-family: tahoma,Arial;
+    font-size: 12px;
+    color: #999;
+    line-height: 22px;
+    text-align: center;
+ }
+ .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.designer{
+	color:#337AB8;
+}
 #wrapper{
 	width:100%;
 	height:100%;
