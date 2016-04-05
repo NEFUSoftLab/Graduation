@@ -15,6 +15,7 @@
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/main//index.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/admin/index.js"></script>
 </head>
 <body>
 	<div id="wrapper" class="container-fulid">
@@ -48,24 +49,24 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="#" data-index="0">个人信息</a></li>
+							<li><a href="#" data-index="1">修改信息</a></li>
+							<li><a href="#" data-index="2">添加信息</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="#" data-index="3">个人信息</a></li>
+							<li><a href="#" data-index="4">修改信息</a></li>
+							<li><a href="#" data-index="5">添加信息</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
+							<li><a href="#" data-index="6">个人信息</a></li>
+							<li><a href="#" data-index="7">修改信息</a></li>
 							<li><a href="#">添加信息</a></li>
 						</ul>
 					</li>
