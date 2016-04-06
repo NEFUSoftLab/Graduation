@@ -1,4 +1,4 @@
-/* µ¼º½ÌõÑùÊ½ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ */
 .my-navbar{
     width:100%;
     color: #fff;
@@ -53,7 +53,7 @@ aside,section{
 }
 
 
-/* ÊÖ·çÇÙÑùÊ½ */
+/* ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ */
 .accordion {
  	width: 100%;
  	margin: 0 auto 0px;
@@ -75,6 +75,7 @@ aside,section{
 }
 .accordion .title:hover{
 	background: #eee;
+	color: #2C3E50;
 }
 /* .accordion li:last-child .title {
 	border-bottom: 0;
@@ -99,11 +100,11 @@ aside,section{
 }
 
 .accordion li.open .title {
-	color: #b63b4d;
+	color: #2980B9;
 }
 
 .accordion li.open span {
-	color: #b63b4d;
+	color: #2980B9;
 }
 .accordion li.open span.glyphicon-chevron-down {
 	-webkit-transform: rotate(180deg);
@@ -133,7 +134,7 @@ aside,section{
  .submenu a:hover {
  	background: #eee;
  }
- /* Ò³½Å  */
+ /* Ò³ï¿½ï¿½  */
  footer{
     border-top: 1px solid #e8e8e8;
     padding: 15px 0;
@@ -157,7 +158,7 @@ aside,section{
 	height:100%;
 	margin: 0 auto;
 }
-/* ÊÖ»ú¶Ë */
+/* ï¿½Ö»ï¿½ï¿½ï¿½ */
 @media (max-width: 767px){
 	aside{
 	    display: none;
