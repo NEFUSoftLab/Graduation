@@ -27,6 +27,12 @@
 		
 		 <action name="fileUpload" class="fileUploadAction" >
             <result name="success">Success.jsp</result>
+            <interceptor-ref name="fileUpload">
+                <!-- 文件过滤 -->
+                <param name="allowedTypes">application/msword,application/pdf,application/vnd.ms-powerpoint,application/zip,application/rar</param>
+                <!-- 文件大小, 以字节为单位 -->
+                <param name="maximumSize">1025956</param>
+            </interceptor-ref>
             <interceptor-ref name="defaultStack" />
         </action>
         

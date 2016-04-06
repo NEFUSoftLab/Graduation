@@ -1,6 +1,6 @@
 body {
 	/* 加载背景图 */
-	background-image: url("../../../static/images/background.jpg");
+	background-image: url("../../images/background.jpg");
 	
 	/* 背景图垂直、水平均居中 */
 	background-position: center center;
