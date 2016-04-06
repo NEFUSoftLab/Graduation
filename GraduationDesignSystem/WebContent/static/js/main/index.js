@@ -20,9 +20,22 @@ var Row = function(el){
 	var total = document.documentElement.clientHeight;
 	var footerHeight = $("footer").outerHeight();
 	var navHeight = $("nav").outerHeight();
-	console.log(footerHeight+"  "+navHeight);
 	this.el.height(total-footerHeight-navHeight);
 }
+//动态加载有半部分内容
+;(function($, undefined) {
+	"use strict";
+	$(document).on('click', '[data-trigger="ajax"]', function() {
+		var $this = $(this)
+			,data = $this.data()
+			,$target
+		if (typeof data['target'] != 'undefined') {
+			$target = $(data['target']);
+			$target.load($this.attr('href'));
+			return false;
+		}
+	});
+})(jQuery);
 $(function(){
 	var accordion = new Accordion($('#accordion'),false);
 	var row = new Row($(".myrow"));

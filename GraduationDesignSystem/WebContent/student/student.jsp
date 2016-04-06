@@ -54,7 +54,7 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
+							<li><a href="${pageContext.request.contextPath}/admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">个人信息</a></li>
 							<li><a href="#">修改信息</a></li>
 							<li><a href="#">添加信息</a></li>
 						</ul>
@@ -77,7 +77,7 @@
 					</li>
 				</ul>
 			</aside>
-			<section class="col-md-10 col-xs-12">213213</section>
+			<section id="section-content" class="col-md-10 col-xs-12">213213</section>
 		</div>
 		<footer>
 			<div class="container">

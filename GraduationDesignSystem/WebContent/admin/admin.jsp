@@ -15,7 +15,6 @@
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/main/index.js"></script>
-	<script src="${pageContext.request.contextPath}/static/js/admin/index.js"></script>
 </head>
 <body>
 	<div id="wrapper" class="container-fulid">
@@ -49,8 +48,8 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a class="menuItem" href="javascript:void(0);" data-url="hello.jsp" data-index="0">个人信息</a></li>
-							<li><a href="#" data-index="1">修改信息</a></li>
+							<li><a href="admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">个人信息</a></li>
+							<li><a class="menuItem" href="javascript:void(0);" data-url="hello.jsp" data-index="1">修改信息</a></li>
 							<li><a href="#" data-index="2">添加信息</a></li>
 						</ul>
 					</li>
@@ -80,7 +79,7 @@
 					</li>
 				</ul>
 			</aside>
-			<section id="container-wrapper" class="col-md-10 col-xs-12"></section>
+			<section id="section-content" class="col-md-10 col-xs-12"></section>
 		</div>
 		<footer>
 			<div class="container">
