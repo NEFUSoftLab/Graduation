@@ -3,7 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<table>
 		<tr>
-			<td>123</td>
+			<td>${getAllStudent[0]}</td>
 			<td>123</td>
 			<td>123</td>
 			<td>123</td>
@@ -61,7 +61,7 @@
                 dataType: 'json',
                 url:'admin-test.action',
                 success: function() {
-                    console.log('123');
+                    document.
                 }
             });
         })
