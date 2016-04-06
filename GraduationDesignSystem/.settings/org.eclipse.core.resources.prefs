@@ -2,7 +2,11 @@
 <<<<<<<=HEAD
 >>>>>>>=refs/remotes/origin/master
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//WebContent/static/css/main/index.css=UTF-8
+=======
+encoding//WebContent/static/css/main/login.css=UTF-8
+>>>>>>> branch 'master' of https://github.com/NEFUSoftLab/Graduation.git
 encoding//test/HibernateDaoImpTest/StudentDaoImpTest.java=UTF-8
 encoding//test/ServiceImpTest/StudentManagetImpTest.java=UTF-8
 encoding/<project>=UTF-8

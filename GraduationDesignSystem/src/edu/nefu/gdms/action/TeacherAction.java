@@ -62,6 +62,7 @@ public class TeacherAction extends ActionSupport {
 		login="";
 		try{
 			if (teacherManager.login(number, pwd)) {
+				System.out.println("teacher");
 				login = "success";
 				teacherBean = teacherManager.getByTeaNumber(number);
 				 ActionContext.getContext().getSession().put("teacher", teacherBean);

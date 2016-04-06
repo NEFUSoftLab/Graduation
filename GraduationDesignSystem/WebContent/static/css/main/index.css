@@ -73,6 +73,9 @@ aside,section{
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 }
+.accordion .title a{
+	color:#4D4D4D;
+}
 .accordion .title:hover{
 	background: #eee;
 	color: #2C3E50;
@@ -101,6 +104,9 @@ aside,section{
 
 .accordion li.open .title {
 	color: #2980B9;
+}
+.accordion li.open .title, a {
+	color: #b63b4d;
 }
 
 .accordion li.open span {
