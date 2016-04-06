@@ -45,7 +45,7 @@
 							</div>
 						</div>
 						<div class="login-btn">
-						  <button type="button" id="login" class="btn btn-width btn-primary center-block">登录</button>
+						  <button type="button" class="btn btn-width btn-primary center-block login">登录</button>
 						</div>
 					</form>
 				</div>
@@ -71,7 +71,7 @@
 							</div>
 						</div>
 						<div class="login-btn">
-						  <button type="button" id="login" class="btn btn-width btn-primary center-block">登录</button>
+						  <button type="button" class="btn btn-width btn-primary center-block login">登录</button>
 						</div>
 					</form>
 				</div>
