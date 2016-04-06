@@ -19,7 +19,25 @@ public class StudentAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	Gson gson=new Gson();
 	HttpServletRequest request;
+	private String number;
+	private String pwd;
 	
+	
+	
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+
+
 	private StudentBean studentBean;
 	 
 	private StudentManager studentManager;
@@ -87,9 +105,10 @@ public class StudentAction extends ActionSupport{
 		login = "";
 		//System.out.println(studentBean.getNumber()+".."+studentBean.getPwd());
 		try{
-			if (studentManager.login(studentBean.getNumber(),studentBean.getPwd())) {
+			if (studentManager.login(number,pwd)) {
 				login = "success";
-				 ActionContext.getContext().getSession().put("user", studentBean);
+				studentBean = studentManager.getByStuNumber(number);
+				 ActionContext.getContext().getSession().put("student", studentBean);
 			}
 			else{
 				login = "fail";

@@ -16,8 +16,25 @@ public class AdminAction extends ActionSupport{
 	private StudentManager studentManager;
 	private AdminBean adminBean;
 	
+	private String number;
+	private String pwd;
 	
 	
+	
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+
+
 	//
 	private String login;
 	
@@ -60,8 +77,9 @@ public class AdminAction extends ActionSupport{
 		login = "";
 		//System.out.println(studentBean.getNumber()+".."+studentBean.getPwd());
 		try{
-			if (adminManager.login(adminBean.getNumber(),adminBean.getPwd())) {
+			if (adminManager.login(number,pwd)) {
 				login = "success";
+				
 			}
 			else{
 				login = "fail";
@@ -86,6 +104,11 @@ public class AdminAction extends ActionSupport{
 		
 		public String login_forward(){
 			return "forward";
-			
 		}
+		
+		public String index(){
+			return "index";
+		}
+		
+		
 }

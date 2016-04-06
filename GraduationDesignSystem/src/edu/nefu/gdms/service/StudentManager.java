@@ -25,6 +25,7 @@ public interface StudentManager {
 	
 	String  setTeacher(String studentNumber,String teacherNumber);
 	
+	StudentBean getByStuNumber(String number);
 	
 	StudentBean getBySid(String sid); 
 	

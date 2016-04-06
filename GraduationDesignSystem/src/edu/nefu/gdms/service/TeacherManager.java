@@ -21,5 +21,7 @@ public interface TeacherManager {
 	
 	List<TeacherBean> getAll();
 	
+	
+	TeacherBean getByTeaNumber(String number);
 }
  

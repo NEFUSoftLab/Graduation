@@ -2,6 +2,7 @@ package edu.nefu.gdms.action;
 
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.nefu.gdms.beans.TeacherBean;
@@ -17,7 +18,21 @@ public class TeacherAction extends ActionSupport {
 	
 	private TeacherManager teacherManager;
 	
+	private String number;
+	private String pwd;
 	
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
 	private TeacherBean teacherBean;
 	
 	
@@ -46,8 +61,10 @@ public class TeacherAction extends ActionSupport {
 	public String login() {
 		login="";
 		try{
-			if (teacherManager.login(teacherBean.getNumber(), teacherBean.getPwd())) {
+			if (teacherManager.login(number, pwd)) {
 				login = "success";
+				teacherBean = teacherManager.getByTeaNumber(number);
+				 ActionContext.getContext().getSession().put("teacher", teacherBean);
 			}
 			else{
 				login = "fail";
