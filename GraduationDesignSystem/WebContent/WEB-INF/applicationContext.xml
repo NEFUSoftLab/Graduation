@@ -142,6 +142,8 @@
 	</bean>
 	<bean id="adminManager" class="edu.nefu.gdms.serviceImpl.AdminManagerImpl" parent="managerTemplate"> 
 	</bean>
+	<bean id="fileLoaderManager" class="edu.nefu.gdms.serviceImpl.FileLoaderManagerImpl" > 
+	</bean>
 
 
 
@@ -160,8 +162,15 @@
 		 <property name="adminManager">
 			<ref bean="adminManager" />
 		</property>  
+		 <property name="studentManager">
+			<ref bean="studentManager" />
+		</property>  
 	</bean>
-	<bean id="fileUploadAction" class="edu.nefu.gdms.action.FileUploadAction"> </bean>
+	<bean id="fileUploadAction" class="edu.nefu.gdms.action.FileUploadAction">
+		<property name="fileLoaderManager">
+				<ref bean="fileLoaderManager" />
+			</property>  
+	 </bean>
 
 	
 	
