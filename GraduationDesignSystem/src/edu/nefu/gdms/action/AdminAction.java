@@ -88,5 +88,4 @@ public class AdminAction extends ActionSupport{
 			return "forward";
 			
 		}
-		}
 }
