@@ -11,5 +11,4 @@ $(function() {
 		$("#container-wrapper").load("hello.jsp");
 	}
 	
-    
 });

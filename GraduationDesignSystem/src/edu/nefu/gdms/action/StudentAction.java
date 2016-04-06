@@ -5,8 +5,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.google.gson.Gson;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 
 import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.service.StudentManager;
@@ -89,7 +89,7 @@ public class StudentAction extends ActionSupport{
 		try{
 			if (studentManager.login(studentBean.getNumber(),studentBean.getPwd())) {
 				login = "success";
-				request.getSession().setAttribute("user", studentBean);
+				 ActionContext.getContext().getSession().put("user", studentBean);
 			}
 			else{
 				login = "fail";
@@ -155,4 +155,6 @@ public class StudentAction extends ActionSupport{
 		System.out.println(getAll);
 		return SUCCESS;
 	}
+	
+	
 }

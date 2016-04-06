@@ -1,16 +1,48 @@
 package edu.nefu.gdms.action;
 
+import java.util.List;
+
+import com.google.gson.Gson;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.nefu.gdms.beans.AdminBean;
+import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.service.AdminManager;
+import edu.nefu.gdms.service.StudentManager;
 
 public class AdminAction extends ActionSupport{
+	Gson gson=new Gson();
 	private AdminManager adminManager;
+	private StudentManager studentManager;
 	private AdminBean adminBean;
+	
+	
 	
 	//
 	private String login;
+	
+	//
+	private String getAllStudent;
+	
+	
+	public StudentManager getStudentManager() {
+		return studentManager;
+	}
+	public void setStudentManager(StudentManager studentManager) {
+		this.studentManager = studentManager;
+	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getGetAllStudent() {
+		return getAllStudent;
+	}
+	public void setGetAllStudent(String getAllStudent) {
+		this.getAllStudent = getAllStudent;
+	}
 	public AdminManager getAdminManager() {
 		return adminManager;
 	}
@@ -40,4 +72,14 @@ public class AdminAction extends ActionSupport{
 		}
 		return SUCCESS;
 	}
+	
+	//取得所有学生数据
+		public String getAllStudent(){
+			getAllStudent = "";
+			System.out.println("yes");
+			List<StudentBean> studentList = studentManager.getAll();
+			getAllStudent =  gson.toJson(studentList);
+			System.out.println(getAllStudent);
+			return SUCCESS;
+		}
 }
