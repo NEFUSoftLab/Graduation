@@ -8,11 +8,14 @@ $(function() {
 				}
 			});
 			$(".login").on('click', function() {
-				var number = $("input[name='number']").val();
-				var pwd = $("input[name='pwd']").val();
+				var bean = Login.url.split('-')[0];
+				var number = $('input[name="'+bean+'-number"]').val();
+				var pwd = $('input[name="'+bean+'-pwd"]').val();
+				console.log(number);
 				if(number == "" || pwd == "") {
 					$('.form-group').addClass('has-error');
 				}else {
+					console.log(Login.url);
 					$.ajax({
 						type: 'POST',
 						data: {
