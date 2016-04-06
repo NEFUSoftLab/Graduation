@@ -20,9 +20,11 @@
 		</action>
 		
 		<action name="admin-*" method="{1}" class="adminAction"> 
+		 <result name="forward">admin_login.jsp</result>
 			<result type="json" > 
                 <param name="root">{1}</param> 
             </result>
+           
 		</action>
 		
 		 <action name="fileUpload" class="fileUploadAction" >

@@ -82,4 +82,11 @@ public class AdminAction extends ActionSupport{
 			System.out.println(getAllStudent);
 			return SUCCESS;
 		}
+		
+		
+		public String login_forward(){
+			return "forward";
+			
+		}
+		}
 }

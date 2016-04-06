@@ -107,7 +107,9 @@ public class StudentBean {
 	public StudentBean(Student student) {
 		super();
 		this.sid = student.getSid();
-		this.teid = student.getTeacher().getTeid();
+		if(student.getTeacher()!=null){
+			this.teid = student.getTeacher().getTeid();
+		}
 		this.number = student.getNumber();
 		this.pwd = student.getPwd();
 		this.name = student.getName();
