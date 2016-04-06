@@ -20,9 +20,34 @@ var Row = function(el){
 	var total = document.documentElement.clientHeight;
 	var footerHeight = $("footer").outerHeight();
 	var navHeight = $("nav").outerHeight();
-	console.log(footerHeight+"  "+navHeight);
 	this.el.height(total-footerHeight-navHeight);
 }
+//动态加载有半部分内容
+;(function($, undefined) {
+	"use strict";
+
+	var pluginName = 'scojs_ajax';
+
+	$(document).on('click', '[data-trigger="ajax"]', function() {
+		var $this = $(this)
+			,data = $this.data()
+			,$target
+			,spinner;
+		console.log(typeof Spinner);
+		if (typeof data['target'] != 'undefined') {
+			$target = $(data['target']);
+			if (typeof Spinner == 'function') {
+				spinner = new Spinner({color: '#3d9bce'}).spin($target[0]);
+			}
+			$target.load($this.attr('href'), function() {
+				if (spinner) {
+					spinner.stop();
+				}
+			});
+			return false;
+		}
+	});
+})(jQuery);
 $(function(){
 	var accordion = new Accordion($('#accordion'),false);
 	var row = new Row($(".myrow"));
