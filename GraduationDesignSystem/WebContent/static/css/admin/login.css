@@ -1,0 +1,26 @@
+#wrap{
+	width:600px;
+	max-width:600px;
+	padding-top:100px;
+}
+
+#wrap #logo, #wrap h4 {
+	text-align:center;
+	margin-bottom:20px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.submit-button{
+	width:100%!important;
+	margin-bottom: 10px;
+}
+#gap{
+	padding: 0 3px;
+	color: #888;
+}
+
+#wrap a{
+	text-decoration: none;
+	font-size:16px;
+}

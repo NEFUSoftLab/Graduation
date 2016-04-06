@@ -14,7 +14,7 @@
 	<link rel="Shortcut Icon" href="${pageContext.request.contextPath}/static/images/favicon.ico">
 	<link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/static/css/animate.min.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/static/css/login.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/static/css/admin/login.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -23,26 +23,22 @@
 	<![endif]-->
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
-	<script src="${pageContext.request.contextPath}/static/js/admin-login.js"></script>
 </head>
 <body>
 	<div id="wrap" class="container animated fadeInDown">
 		<div id="logo">
-			<img src="${pageContext.request.contextPath}/common/images/logo.png">
+			<img src="${pageContext.request.contextPath}/static/images/logo.png">
 		</div>
 		<h4>毕业生论文管理系统</h4>
 		<h4>管理员登录</h4>
-		<form id="admin-login">
+		<form id="ad-dl">
 			<div class="form-group">
-				<input id="admin-account-input"  name="account" type="text" class="form-control input-lg" placeholder="请输入账号">
+				<input id="ad-no"  name="account" type="text" class="form-control input-lg" placeholder="请输入账号">
 			</div>
 			<div class="form-group">
-				<input id="admin-password-input" name="password"  type="password" class="form-control input-lg" placeholder="请输入密码">
+				<input id="ad-pd" name="password"  type="password" class="form-control input-lg" placeholder="请输入密码">
 			</div>
-			<button id="admin-submit-button" type="button" class="btn btn-success btn-lg submit-button">登录</button>
-			<a class="pull-right" href="${pageContext.request.contextPath}/comm/student">学生登录</a>
-			<span id="gap" class="pull-right">|</span>
-			<a class="pull-right" href="${pageContext.request.contextPath}/comm/teacher">教师登录</a>
+			<button id="ad-btn" type="button" class="btn btn-success btn-lg submit-button">登录</button>
 		</form>
 	</div>
 </body>
