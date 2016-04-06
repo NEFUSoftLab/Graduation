@@ -75,8 +75,14 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 
 	@Override
 	public StudentBean getBySid(String sid) {
-		// TODO Auto-generated method stub
 		Student student = studentDao.get(sid);
+		StudentBean studentBean = new StudentBean(student);
+		return studentBean;
+	}
+
+	@Override
+	public StudentBean getByStuNumber(String number) {
+		Student student = studentDao.getByNumber(number);
 		StudentBean studentBean = new StudentBean(student);
 		return studentBean;
 	}

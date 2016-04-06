@@ -34,6 +34,12 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 		return null;
 	}
 
+	@Override
+	public TeacherBean getByTeaNumber(String number) {
+		Teacher teacher = teacherDao.getByNumber(number);
+		return new TeacherBean(teacher);
+	}
+
 
 
 }
