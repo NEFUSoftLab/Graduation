@@ -19,7 +19,7 @@
 	<h1>毕业设计管理系统<sub>信息学院</sub></h1>
 	<div class="content-panel">
 		<div class="header">
-			<a href="admin_forward.action"><span class="label label-success pull-right">管理员入口</span></a>
+			<a href="admin-login_forward.action"><span class="label label-success pull-right">管理员入口</span></a>
 			<div class="choose">
 				<a class="switch-btn switch-btn-focus" name="stu" href="javascript:void(0)">学生登录</a>
 				<a class="switch-btn" name="tea" href="javascript:void(0)">教师登录</a>
