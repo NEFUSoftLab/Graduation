@@ -41,7 +41,7 @@
 		    </div><!-- /.container-fluid -->
 		</nav>
 		<div class="row myrow">
-			<aside id="aside" class="col-md-2 col-xs-12">
+			<aside id="aside" class="col-md-2 col-xs-4">
 				<ul id="accordion" class="accordion">
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><a href="${pageContext.request.contextPath}/admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">首页</a></div>
@@ -72,7 +72,7 @@
 					</li>
 				</ul>
 			</aside>
-			<section id="section-content" class="col-md-10 col-xs-12">213213</section>
+			<section id="section-content" class="col-md-10 col-xs-8">213213</section>
 		</div>
 		<footer>
 			<div class="container">
