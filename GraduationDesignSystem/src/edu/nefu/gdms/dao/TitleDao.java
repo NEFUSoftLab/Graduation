@@ -15,5 +15,10 @@ public interface TitleDao {
 	
 	List<Title> getAll();
 	
+	List<Title> getByTeid(String teid);
+	
+	Title getBySid(String sid);
+	
+	List<Title> getAllBySid(String sid);
 
 }
