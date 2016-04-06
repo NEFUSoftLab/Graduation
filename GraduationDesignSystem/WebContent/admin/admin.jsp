@@ -14,7 +14,8 @@
 	<!-- js  -->
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
-	<script src="${pageContext.request.contextPath}/static/js/main//index.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/main/index.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/admin/index.js"></script>
 </head>
 <body>
 	<div id="wrapper" class="container-fulid">
@@ -43,29 +44,29 @@
 		    </div><!-- /.container-fluid -->
 		</nav>
 		<div class="row myrow">
-			<aside class="col-md-3 col-xs-12">
+			<aside class="col-md-2 col-xs-12">
 				<ul id="accordion" class="accordion">
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a class="menuItem" href="javascript:void(0);" data-url="hello.jsp" data-index="0">个人信息</a></li>
+							<li><a href="#" data-index="1">修改信息</a></li>
+							<li><a href="#" data-index="2">添加信息</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="#" data-index="3">个人信息</a></li>
+							<li><a href="#" data-index="4">修改信息</a></li>
+							<li><a href="#" data-index="5">添加信息</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
+							<li><a href="#" data-index="6">个人信息</a></li>
+							<li><a href="#" data-index="7">修改信息</a></li>
 							<li><a href="#">添加信息</a></li>
 						</ul>
 					</li>
@@ -79,8 +80,15 @@
 					</li>
 				</ul>
 			</aside>
-			<section class="col-md-9 col-xs-12">213213</section>
+			<section id="container-wrapper" class="col-md-10 col-xs-12"></section>
 		</div>
+		<footer>
+			<div class="container">
+				<p>Designed and built with all the love in the world by <i class="designer">PYL</i>,<i class="designer">Zl</i>,<i class="designer">DYX</i>,<i class="designer">LYN</i></p>
+				<p>未经允许，禁止转载、抄袭、镜像</p>
+				<p>用心做站，做不一样的站</p>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>

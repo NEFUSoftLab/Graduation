@@ -18,7 +18,10 @@ Accordion.prototype.dropdown = function(e,state) {
 var Row = function(el){
 	this.el = el || {};
 	var total = document.documentElement.clientHeight;
-	this.el.height(total-50);
+	var footerHeight = $("footer").outerHeight();
+	var navHeight = $("nav").outerHeight();
+	console.log(footerHeight+"  "+navHeight);
+	this.el.height(total-footerHeight-navHeight);
 }
 $(function(){
 	var accordion = new Accordion($('#accordion'),false);
