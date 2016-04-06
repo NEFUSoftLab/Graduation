@@ -49,7 +49,7 @@
 						<div class="title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>教师管理<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
 							<li><a href="admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">教师信息</a></li>
-							<li><a class="menuItem" href="javascript:void(0);" data-url="hello.jsp" data-index="1">添加教师</a></li>
+							<li><a href="#" data-trigger="ajax" data-target="#section-content">添加教师</a></li>
 						</ul>
 					</li>
 					<li>
@@ -70,7 +70,6 @@
 						<div class="title"><span class="glyphicon glyphicon-random" aria-hidden="true"></span>学生分配<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
 							<li><a href="#">分配情况</a></li>
-							<li><a href="#"></a></li>
 							<li><a href="#">添加信息</a></li>
 						</ul>
 					</li>
@@ -78,7 +77,6 @@
 						<div class="title"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>分组考核<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
 							<li><a href="#">分配情况</a></li>
-							<li><a href="#"></a></li>
 							<li><a href="#">添加信息</a></li>
 						</ul>
 					</li>

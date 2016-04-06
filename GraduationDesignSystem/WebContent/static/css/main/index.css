@@ -123,7 +123,7 @@ aside,section{
  	display: block;
  	text-decoration: none;
  	color: #000;
- 	padding: 12px;
+ 	padding: 20px;
  	padding-left: 42px;
  	-webkit-transition: all 0.25s ease;
  	-o-transition: all 0.25s ease;
@@ -131,9 +131,14 @@ aside,section{
  	transition: all 0.25s ease;
  }
 
- .submenu a:hover {
+.submenu a:hover {
  	background: #eee;
- }
+}
+
+.submenu a.focus {
+	background-color: #3498DB;
+	color: #fff;
+}
  /* ҳ��  */
  footer{
     border-top: 1px solid #e8e8e8;
