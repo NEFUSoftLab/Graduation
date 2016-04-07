@@ -43,7 +43,7 @@
 		    </div><!-- /.container-fluid -->
 		</nav>
 		<div class="row myrow">
-			<aside class="col-md-2 col-xs-2">
+			<aside class="col-md-2 col-sm-2 col-xs-12">
 				<ul id="accordion" class="accordion">
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>教师管理<span class="glyphicon glyphicon-chevron-down"></span></div>
@@ -88,7 +88,7 @@
 					</li>
 				</ul>
 			</aside>
-			<section id="section-content" class="col-md-10 col-xs-10">12321321321</section>
+			<section id="section-content" class="col-md-10 col-sm-10 col-xs-12">12321321321</section>
 		</div>
 		<footer>
 			<div class="container">

@@ -1,4 +1,4 @@
-/* ��������ʽ */
+/* 导航栏 */
 .my-navbar{
     width:100%;
     color: #fff;
@@ -53,7 +53,7 @@ aside,section{
 }
 
 
-/* �ַ�����ʽ */
+/* 手风琴 */
 .accordion {
  	width: 100%;
  	margin: 0 auto 0px;
@@ -145,7 +145,7 @@ aside,section{
 	background-color: #3498DB;
 	color: #fff;
 }
- /* ҳ��  */
+ /* 页脚  */
  footer{
     border-top: 1px solid #e8e8e8;
     padding: 15px 0;
@@ -169,7 +169,7 @@ aside,section{
 	height:100%;
 	margin: 0 auto;
 }
-/* �ֻ��� */
+/* 手机端 */
 @media (max-width: 767px){
 	aside{
 	    display: none;
