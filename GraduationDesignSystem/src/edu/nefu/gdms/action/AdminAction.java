@@ -7,15 +7,39 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import edu.nefu.gdms.beans.AdminBean;
 import edu.nefu.gdms.beans.StudentBean;
+import edu.nefu.gdms.beans.TeacherBean;
 import edu.nefu.gdms.service.AdminManager;
 import edu.nefu.gdms.service.StudentManager;
+import edu.nefu.gdms.service.TeacherManager;
 
 public class AdminAction extends ActionSupport{
 	Gson gson=new Gson();
 	private AdminManager adminManager;
 	private StudentManager studentManager;
+	private TeacherManager teacherManager;
+	
+	
+	public TeacherManager getTeacherManager() {
+		return teacherManager;
+	}
+	public void setTeacherManager(TeacherManager teacherManager) {
+		this.teacherManager = teacherManager;
+	}
+
+
 	private AdminBean adminBean;
 	
+	
+	private List<TeacherBean> teacherBean;
+	
+	public List<TeacherBean> getTeacherBean() {
+		return teacherBean;
+	}
+	public void setTeacherBean(List<TeacherBean> teacherBean) {
+		this.teacherBean = teacherBean;
+	}
+
+
 	private String number;
 	private String pwd;
 	
@@ -110,5 +134,11 @@ public class AdminAction extends ActionSupport{
 			return "index";
 		}
 		
+		
+		public String getAllTeacher(){
+			teacherBean = teacherManager.getAll();
+			return "getAllTeacher";
+			
+		}
 		
 }
