@@ -41,43 +41,38 @@
 		    </div><!-- /.container-fluid -->
 		</nav>
 		<div class="row myrow">
-			<aside id="aside" class="col-md-2 col-xs-12">
+			<aside id="aside" class="col-md-2 col-sm-2 col-xs-12">
 				<ul id="accordion" class="accordion">
 					<li>
-						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<div class="title"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><a href="${pageContext.request.contextPath}/admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">首页</a></div>
+					</li>
+					<li>
+						<div class="title"><span class="glyphicon glyphicon-duplicate"" aria-hidden="true"></span>我的论题<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="${pageContext.request.contextPath}/admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">选择论题</a></li>
+							<li><a href="#">已选论题</a></li>
 						</ul>
 					</li>
 					<li>
-						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<div class="title"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>我的导师<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="${pageContext.request.contextPath}/admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="#">导师信息</a></li>
+							<li><a href="#">导师意见</a></li>
 						</ul>
 					</li>
 					<li>
-						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<div class="title"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>我的分数<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="#">阶段分数</a></li>
+							<li><a href="#">总分数</a></li>
 						</ul>
 					</li>
 					<li>
-						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
-						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
-						</ul>
+						<div class="title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><a href="${pageContext.request.contextPath}/admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">个人信息</a></div>
 					</li>
 				</ul>
 			</aside>
-			<section id="section-content" class="col-md-10 col-xs-12">213213</section>
+			<section id="section-content" class="col-md-10 col-sm-10 col-xs-12">213213</section>
 		</div>
 		<footer>
 			<div class="container">

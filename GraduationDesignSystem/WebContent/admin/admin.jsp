@@ -32,7 +32,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
-						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">郑垒<span class="caret"></span></a>
+						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">xxx<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="#" data-toggle="modal" data-target="#update-password">修改密码</a></li>
 								<li><a href="#">退出</a></li>
@@ -43,29 +43,40 @@
 		    </div><!-- /.container-fluid -->
 		</nav>
 		<div class="row myrow">
-			<aside class="col-md-2 col-xs-12">
+			<aside class="col-md-2 col-sm-2 col-xs-12">
 				<ul id="accordion" class="accordion">
 					<li>
-						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<div class="title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>教师管理<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">个人信息</a></li>
-							<li><a class="menuItem" href="javascript:void(0);" data-url="hello.jsp" data-index="1">修改信息</a></li>
-							<li><a href="#" data-index="2">添加信息</a></li>
+							<li><a href="admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">教师信息</a></li>
+							<li><a href="#" data-trigger="ajax" data-target="#section-content">添加教师</a></li>
 						</ul>
 					</li>
 					<li>
-						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<div class="title"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>学生管理<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#" data-index="3">个人信息</a></li>
-							<li><a href="#" data-index="4">修改信息</a></li>
-							<li><a href="#" data-index="5">添加信息</a></li>
+							<li><a href="#" data-index="3">学生信息</a></li>
+							<li><a href="#" data-index="4">添加学生</a></li>
 						</ul>
 					</li>
 					<li>
-						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<div class="title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>流程控制<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#" data-index="6">个人信息</a></li>
-							<li><a href="#" data-index="7">修改信息</a></li>
+							<li><a href="#" data-index="6">时间安排</a></li>
+							<li><a href="#" data-index="7">新增时间</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="title"><span class="glyphicon glyphicon-random" aria-hidden="true"></span>学生分配<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<ul class="submenu">
+							<li><a href="#">分配情况</a></li>
+							<li><a href="#">添加信息</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="title"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>分组考核<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<ul class="submenu">
+							<li><a href="#">分配情况</a></li>
 							<li><a href="#">添加信息</a></li>
 						</ul>
 					</li>
@@ -73,13 +84,11 @@
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
 							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
 						</ul>
 					</li>
 				</ul>
 			</aside>
-			<section id="section-content" class="col-md-10 col-xs-12"></section>
+			<section id="section-content" class="col-md-10 col-sm-10 col-xs-12">12321321321</section>
 		</div>
 		<footer>
 			<div class="container">

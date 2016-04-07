@@ -41,7 +41,7 @@
 		    </div><!-- /.container-fluid -->
 		</nav>
 		<div class="row myrow">
-			<aside id="aside" class="col-md-2 col-xs-12">
+			<aside id="aside" class="col-md-2 col-sm-2 col-xs-12">
 				<ul id="accordion" class="accordion">
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
@@ -77,7 +77,7 @@
 					</li>
 				</ul>
 			</aside>
-			<section class="col-md-10 col-xs-12">213213</section>
+			<section id="section-content" class="col-md-10 col-sm-10 col-xs-12">213213</section>
 		</div>
 		<footer>
 			<div class="container">

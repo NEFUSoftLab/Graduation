@@ -115,7 +115,10 @@ public class TeacherBean {
 		this.email = teacher.getMajor();
 		this.major = teacher.getMajor();
 		this.level = teacher.getLevel();
-		this.gid = teacher.getGroup().getGid();
+		if(teacher.getGroup()!=null){
+			this.gid = teacher.getGroup().getGid();
+		}
+	
 	}
 
 }
