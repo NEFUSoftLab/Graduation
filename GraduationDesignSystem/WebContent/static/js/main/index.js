@@ -18,9 +18,8 @@ Accordion.prototype.dropdown = function(e,state) {
 var Row = function(el){
 	this.el = el || {};
 	var total = document.documentElement.clientHeight;
-	var footerHeight = $("footer").outerHeight();
 	var navHeight = $("nav").outerHeight();
-	this.el.height(total-footerHeight-navHeight);
+	this.el.height(total-navHeight);
 }
 //动态加载有半部分内容
 ;(function($, undefined) {

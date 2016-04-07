@@ -58,11 +58,11 @@ public class TeacherAction extends ActionSupport {
 	public void setTeacherManager(TeacherManager teacherManager) {
 		this.teacherManager = teacherManager;
 	}
+	//登陆
 	public String login() {
 		login="";
 		try{
 			if (teacherManager.login(number, pwd)) {
-				System.out.println("teacher");
 				login = "success";
 				teacherBean = teacherManager.getByTeaNumber(number);
 				 ActionContext.getContext().getSession().put("teacher", teacherBean);
@@ -77,5 +77,13 @@ public class TeacherAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
-	
+	//跳转到主页面
+	public String index(){
+		return "index";
+	}
+	//退出
+	public String out(){
+		ActionContext.getContext().getSession().put("student", null);
+		return "out";
+	}
 }

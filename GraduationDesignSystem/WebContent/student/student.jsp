@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -31,10 +33,10 @@
 				</div>
 		    	<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">郑垒<span class="caret"></span></a>
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${student.name }<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="#" data-toggle="modal" data-target="#update-password">修改密码</a></li>
-							<li><a href="#">退出</a></li>
+							<li><a href="student-out.action">退出</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -49,7 +51,7 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-duplicate"" aria-hidden="true"></span>我的论题<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="${pageContext.request.contextPath}/admin-getAllStudent.action" data-trigger="ajax" data-target="#section-content">选择论题</a></li>
+							<li><a href="${pageContext.request.contextPath}/admin-getAllStudent.action" data-trigger="ajax" data-target="#section-container">选择论题</a></li>
 							<li><a href="#">已选论题</a></li>
 						</ul>
 					</li>
@@ -72,15 +74,17 @@
 					</li>
 				</ul>
 			</aside>
-			<section id="section-content" class="col-md-10 col-sm-10 col-xs-12">213213</section>
+			<section  class="col-md-10 col-sm-10 col-xs-12">
+				<div id="section-container"></div>
+				<footer>
+					<div class="container">
+						<p>Designed and built with all the love in the world by <i class="designer">PYL</i>,<i class="designer">Zl</i>,<i class="designer">DYX</i>,<i class="designer">LYN</i></p>
+						<p>未经允许，禁止转载、抄袭、镜像</p>
+						<p>用心做站，做不一样的站</p>
+					</div>
+				</footer>
+		</section>
 		</div>
-		<footer>
-			<div class="container">
-				<p>Designed and built with all the love in the world by <i class="designer">PYL</i>,<i class="designer">Zl</i>,<i class="designer">DYX</i>,<i class="designer">LYN</i></p>
-				<p>未经允许，禁止转载、抄袭、镜像</p>
-				<p>用心做站，做不一样的站</p>
-			</div>
-		</footer>
 	</div>
 </body>
 </html>

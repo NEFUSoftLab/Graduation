@@ -147,6 +147,7 @@ aside,section{
 }
  /* 页脚  */
  footer{
+ 	height:10%;
     border-top: 1px solid #e8e8e8;
     padding: 15px 0;
     font-family: tahoma,Arial;
@@ -156,6 +157,7 @@ aside,section{
     text-align: center;
  }
  .container {
+ 	width:100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -169,6 +171,11 @@ aside,section{
 	height:100%;
 	margin: 0 auto;
 }
+#section-container{
+	width:100%;
+	min-height:90%;
+	overflow:hidden;
+}
 /* 手机端 */
 @media (max-width: 767px){
 	aside{
@@ -181,7 +188,7 @@ aside,section{
 	    bottom: auto;
 	}
 	section{
-		height:auto;
+		min-height:100%;
 	}
 }
 

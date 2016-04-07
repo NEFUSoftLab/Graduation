@@ -120,6 +120,11 @@ public class StudentAction extends ActionSupport{
 		return SUCCESS;
 		
 	}
+	//退出
+	public String out(){
+		ActionContext.getContext().getSession().put("student", null);
+		return "out";
+	}
 	
 	
 	public String save() {
@@ -173,6 +178,11 @@ public class StudentAction extends ActionSupport{
 		getAll =  gson.toJson(studentList);
 		System.out.println(getAll);
 		return SUCCESS;
+	}
+	
+	//跳转到主页面
+	public String index(){
+		return "index";
 	}
 	
 	

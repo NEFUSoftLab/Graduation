@@ -11,12 +11,16 @@
             <result type="json" > 
                 <param name="root">{1}</param> 
             </result>
+            <result name="index">student/student.jsp</result>
+            <result name="out">login.jsp</result>
 		</action>
 		
 		<action name="teacher-*" method="{1}" class="teacherAction"> 
 			<result type="json" > 
                 <param name="root">{1}</param> 
             </result>
+            <result name="index">teacher/teacher.jsp</result>
+            <result name="out">login.jsp</result>
 		</action>
 		
 		<action name="admin-*" method="{1}" class="adminAction"> 
