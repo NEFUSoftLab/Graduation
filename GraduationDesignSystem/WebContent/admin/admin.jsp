@@ -48,7 +48,7 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>教师管理<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="admin-getAllTeacher.action" data-trigger="ajax" data-target="#section-content">教师信息</a></li>
+							<li><a href="admin-getAllTeacher.action" data-trigger="ajax" data-target="#section-container">教师信息</a></li>
 							<li><a href="#" data-trigger="ajax" data-target="#section-content">添加教师</a></li>
 						</ul>
 					</li>
@@ -88,15 +88,20 @@
 					</li>
 				</ul>
 			</aside>
-			<section id="section-content" class="col-md-10 col-sm-10 col-xs-12">12321321321</section>
+			<section class="col-md-10 col-sm-10 col-xs-12 section">
+				<h3 class="page-header border">Glyphicons 字体图标</h3>
+				<div id="section-container">
+				</div>
+				<footer class="footer">
+					<div>
+						<p>Designed and built with all the love in the world by <i class="designer">PYL</i>,<i class="designer">Zl</i>,<i class="designer">DYX</i>,<i class="designer">LYN</i></p>
+						<p>未经允许，禁止转载、抄袭、镜像</p>
+						<p>用心做站，做不一样的站</p>
+					</div>
+				</footer>
+			</section>
 		</div>
-		<footer>
-			<div class="container">
-				<p>Designed and built with all the love in the world by <i class="designer">PYL</i>,<i class="designer">Zl</i>,<i class="designer">DYX</i>,<i class="designer">LYN</i></p>
-				<p>未经允许，禁止转载、抄袭、镜像</p>
-				<p>用心做站，做不一样的站</p>
-			</div>
-		</footer>
+		
 	</div>
 </body>
 </html>
