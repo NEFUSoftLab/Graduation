@@ -1,9 +1,9 @@
 package edu.nefu.gdms.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.nefu.gdms.beans.TeacherBean;
-import edu.nefu.gdms.domain.Student;
 import edu.nefu.gdms.domain.Teacher;
 import edu.nefu.gdms.service.TeacherManager;
 import edu.nefu.gdms.service.util.ManagerTemplate;
@@ -30,8 +30,12 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 
 	@Override
 	public List<TeacherBean> getAll() {
-
-		return null;
+		List<Teacher> list = teacherDao.getAll();
+		List<TeacherBean> listRs = new ArrayList<TeacherBean>();
+		for(Teacher teacher : list) {
+			listRs.add(new TeacherBean(teacher));
+		}
+		return listRs;
 	}
 
 	@Override

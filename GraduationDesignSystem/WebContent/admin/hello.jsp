@@ -1,15 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>  
 	<table>
-		${teacherBean }
-		<c:forEach var="item" items="${teacherBean}" >
+		<c:forEach var="item" items="${teacherBean }">
 			<tr>
-				<td>${item.number }</td>
-				<td>${item.pwd }</td>
 				<td>${item.name }</td>
 			</tr>
-				
 		</c:forEach>
 	</table>
 	<form method="POST">
