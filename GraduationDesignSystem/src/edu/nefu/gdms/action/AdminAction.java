@@ -137,7 +137,6 @@ public class AdminAction extends ActionSupport{
 		
 		public String getAllTeacher(){
 			teacherBean = teacherManager.getAll();
-			System.out.println(teacherBean);
 			return "getAllTeacher";
 			
 		}
