@@ -23,5 +23,7 @@ public interface TeacherManager {
 	
 	
 	TeacherBean getByTeaNumber(String number);
+	
+	
 }
  

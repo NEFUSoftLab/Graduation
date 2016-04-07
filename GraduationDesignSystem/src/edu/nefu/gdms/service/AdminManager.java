@@ -16,6 +16,6 @@ public interface AdminManager {
 	
 	boolean login(String username,String password);
 	
-	
+	void quickGroup();
 	
 }

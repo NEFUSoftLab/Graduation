@@ -1,14 +1,20 @@
 package edu.nefu.gdms.serviceImpl;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 import edu.nefu.gdms.beans.TeacherBean;
+import edu.nefu.gdms.domain.Student;
 import edu.nefu.gdms.domain.Teacher;
 import edu.nefu.gdms.service.TeacherManager;
 import edu.nefu.gdms.service.util.ManagerTemplate;
 
 public class TeacherManagerImpl extends ManagerTemplate implements TeacherManager {
+	
+	
 	
 	
 
@@ -43,6 +49,8 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 		Teacher teacher = teacherDao.getByNumber(number);
 		return new TeacherBean(teacher);
 	}
+
+	
 
 
 
