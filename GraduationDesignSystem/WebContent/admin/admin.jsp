@@ -11,6 +11,7 @@
 	<link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/static/css/main/init.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/static/css/main/index.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/static/css/admin/index.css" rel="stylesheet">
 	<!-- js  -->
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
@@ -89,7 +90,7 @@
 				</ul>
 			</aside>
 			<section class="col-md-10 col-sm-10 col-xs-12 section">
-				<h3 class="page-header border">Glyphicons 字体图标</h3>
+				<h3 class="page-header border">教师信息</h3>
 				<div id="section-container">
 				</div>
 				<footer class="footer">

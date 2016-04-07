@@ -152,9 +152,6 @@ aside,section{
 	min-height: -moz-calc(100% - 100px);
 }
 
-.section h3.border {
-	border: 0;
-}
 
  /* 页脚  */
 .footer{
