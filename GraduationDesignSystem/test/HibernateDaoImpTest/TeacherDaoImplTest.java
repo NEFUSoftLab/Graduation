@@ -20,10 +20,18 @@ public class TeacherDaoImplTest {
 
 	@Test
 	public void test() {
-		Teacher teacher = new Teacher(null, "1111111111", "111111", "111111", "111111", "111111", "111111", "111111", null);
-		teacher.setNumber("110");
-		teacher.setPwd("110");
-		dao.save(teacher);
+		int number = 0;
+		while(number<20){
+			number++;
+			Teacher teacher =new Teacher(null, "1", "李丹","13132641198", "110", "1234567890@qq.com", "计算机科学与技术", "教授", null, null, null, null);
+			teacher.setNumber(number+"");
+			teacher.setPwd("110");
+			dao.save(teacher);
+		}
+		
+		
+		
+		
 		
 		
 		

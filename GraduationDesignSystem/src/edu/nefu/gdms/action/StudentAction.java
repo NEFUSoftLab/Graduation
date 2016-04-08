@@ -21,6 +21,18 @@ public class StudentAction extends ActionSupport{
 	HttpServletRequest request;
 	private String number;
 	private String pwd;
+	private StudentBean studentBean;
+	private StudentManager studentManager;
+	//登录结果
+	private String login;  
+	//查询所有学生
+	private String getAll;
+	//移除
+	private String remove;
+	//修改
+	private String modify;
+	//保存
+	private String save;
 	
 	
 	
@@ -38,19 +50,7 @@ public class StudentAction extends ActionSupport{
 	}
 
 
-	private StudentBean studentBean;
-	 
-	private StudentManager studentManager;
-	//登录结果
-	private String login;  
-	//查询所有学生
-	private String getAll;
-	//移除
-	private String remove;
-	//修改
-	private String modify;
-	//保存
-	private String save;
+
 	
 	 
 	 
@@ -126,22 +126,6 @@ public class StudentAction extends ActionSupport{
 		return "out";
 	}
 	
-	
-	public String save() {
-		save = "";
-		try{
-			studentManager.save(studentBean);
-			save="success";
-			
-		}catch (Exception e) {
-			save = "fail";
-			e.printStackTrace();
-		}
-		return SUCCESS;
-	}
-	
-	
-	
 	public String modify() {
 		try {
 			modify = "success";
@@ -152,33 +136,12 @@ public class StudentAction extends ActionSupport{
 			e.printStackTrace();
 			
 		}
-		
 		return SUCCESS;
 	}
 	
 	
-	public String remove() {
-		remove = "";
-		try {
-			studentManager.remove(studentBean.getSid());
-			save="success";
-		}catch (Exception e){
-			save="fail";
-			e.printStackTrace();
-		}
-		return SUCCESS;
-	}
 	
 	
-	//取得所有学生数据
-	public String getAll(){
-		getAll = "";
-		System.out.println("yes");
-		List<StudentBean> studentList = studentManager.getAll();
-		getAll =  gson.toJson(studentList);
-		System.out.println(getAll);
-		return SUCCESS;
-	}
 	
 	//跳转到主页面
 	public String index(){

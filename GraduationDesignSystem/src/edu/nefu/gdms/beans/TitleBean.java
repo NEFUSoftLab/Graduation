@@ -5,7 +5,9 @@ import edu.nefu.gdms.domain.Title;
 public class TitleBean {
 	
 	private String tid;
+	private String sname;
 	private String sid;
+	private String tename;
 	private String teid;
 	private String tname;
 	private String filepath;

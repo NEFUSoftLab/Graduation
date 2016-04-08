@@ -1,4 +1,4 @@
-package edu.nefu.gdms.serviceImpl;
+package edu.nefu.gdms.service.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,9 +6,8 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
-import edu.nefu.gdms.service.FileLoaderManager;
 
-public class FileLoaderManagerImpl implements FileLoaderManager{
+public class FileLoaderManagerImpl {
 	
 	public String saveFile(File file,String filename) throws IOException{
 		String realpath = ServletActionContext.getServletContext().getRealPath("/file");
