@@ -145,9 +145,18 @@ aside,section{
 	background-color: #3498DB;
 	color: #fff;
 }
+
+#section-container {
+	min-height: calc(100% - 100px);	
+	min-height: -webkit-calc(100% - 100px);
+	min-height: -moz-calc(100% - 100px);
+}
+
+
  /* 页脚  */
- footer{
- 	height:10%;
+.footer{
+	
+	min-width: 100%;
     border-top: 1px solid #e8e8e8;
     padding: 15px 0;
     font-family: tahoma,Arial;
@@ -173,7 +182,6 @@ aside,section{
 }
 #section-container{
 	width:100%;
-	min-height:90%;
 	overflow:hidden;
 }
 /* 手机端 */

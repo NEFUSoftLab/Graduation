@@ -24,8 +24,8 @@
 		</action>
 		
 		<action name="admin-*" method="{1}" class="adminAction"> 
-		 <result name="forward">admin/admin_login.jsp</result>
-		 <result name="getAllTeacher">admin/hello.jsp</result>
+		 <result name="forward">admin/ad_lg.jsp</result>
+		 <result name="getAllTeacher">admin/ad_tea.jsp</result>
 		  <result name="index">admin/admin.jsp</result>
 			<result type="json" > 
                 <param name="root">{1}</param> 
