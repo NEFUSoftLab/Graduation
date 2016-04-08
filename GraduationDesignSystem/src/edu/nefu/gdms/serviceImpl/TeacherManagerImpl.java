@@ -1,18 +1,32 @@
 package edu.nefu.gdms.serviceImpl;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.nefu.gdms.beans.TeacherBean;
+import edu.nefu.gdms.beans.TitleBean;
 import edu.nefu.gdms.domain.Teacher;
+import edu.nefu.gdms.domain.Title;
 import edu.nefu.gdms.service.TeacherManager;
+import edu.nefu.gdms.service.util.FileLoaderManagerImpl;
 import edu.nefu.gdms.service.util.ManagerTemplate;
 
 public class TeacherManagerImpl extends ManagerTemplate implements TeacherManager {
 	
 	
+	private FileLoaderManagerImpl fileUpload;
+	
 
 	 
+
+	public FileLoaderManagerImpl getFileUpload() {
+		return fileUpload;
+	}
+
+	public void setFileUpload(FileLoaderManagerImpl fileUpload) {
+		this.fileUpload = fileUpload;
+	}
 
 	@Override
 	public boolean login(String username, String password) {
@@ -44,6 +58,19 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 		return new TeacherBean(teacher);
 	}
 
-
-
+	@SuppressWarnings("finally")
+	@Override
+	public String addTitle(TitleBean titleBean,File file,String filename) {
+		String rs = "success";
+		//1.保存论文题目到数据库
+		//2.保存文件
+		try{
+			titleDao.save(new Title(titleBean));
+			fileUpload.saveFile(file, filename);
+		}catch(Exception e){
+			rs = "fail";
+		}finally{
+			return rs;
+		}
+	}
 }

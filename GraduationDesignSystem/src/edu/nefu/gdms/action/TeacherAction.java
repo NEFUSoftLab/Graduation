@@ -1,12 +1,12 @@
 package edu.nefu.gdms.action;
 
-import java.util.List;
+import java.io.File;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.nefu.gdms.beans.TeacherBean;
-import edu.nefu.gdms.domain.Teacher;
+import edu.nefu.gdms.beans.TitleBean;
 import edu.nefu.gdms.service.TeacherManager;
 
 public class TeacherAction extends ActionSupport {
@@ -18,9 +18,36 @@ public class TeacherAction extends ActionSupport {
 	
 	private TeacherManager teacherManager;
 	
+	//从前台获取的文件
 	private String number;
 	private String pwd;
+	private TeacherBean teacherBean;
+	private String login; 
+	private TitleBean titleBean;
 	
+	
+	//上传的文件，文件的名字
+	private File file;
+	private String filename;
+	
+	//需要传回前台的文件
+	private String addTitle;
+	
+	
+	
+	
+	public String getAddTitle() {
+		return addTitle;
+	}
+	public void setAddTitle(String addTitle) {
+		this.addTitle = addTitle;
+	}
+	public TitleBean getTitleBean() {
+		return titleBean;
+	}
+	public void setTitleBean(TitleBean titleBean) {
+		this.titleBean = titleBean;
+	}
 	public String getNumber() {
 		return number;
 	}
@@ -33,12 +60,21 @@ public class TeacherAction extends ActionSupport {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	private TeacherBean teacherBean;
 	
-	
-	private String login; 
 	
 
+	public File getFile() {
+		return file;
+	}
+	public void setFile(File file) {
+		this.file = file;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
 	public TeacherBean getTeacherBean() {
 		return teacherBean;
 	}
@@ -81,9 +117,16 @@ public class TeacherAction extends ActionSupport {
 	public String index(){
 		return "index";
 	}
+	
 	//退出
 	public String out(){
 		ActionContext.getContext().getSession().put("student", null);
 		return "out";
+	}
+	
+	
+	public String addTitle(TitleBean titleBean){
+		addTitle = teacherManager.addTitle(titleBean, file, filename);
+		return SUCCESS;
 	}
 }

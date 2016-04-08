@@ -1,5 +1,7 @@
 package edu.nefu.gdms.domain;
 
+import edu.nefu.gdms.beans.TitleBean;
+
 /**
  * Title entity. @author MyEclipse Persistence Tools
  */
@@ -79,6 +81,12 @@ public class Title implements java.io.Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public Title(TitleBean titleBean){
+		this.tname = titleBean.getTname();
+		this.filepath = titleBean.getFilepath();
+		this.status = "0";
 	}
 
 }

@@ -24,7 +24,6 @@ public class GrourBean {
 
 	public GrourBean() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public GrourBean(String gid, String name) {
