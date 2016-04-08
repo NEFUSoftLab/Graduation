@@ -21,4 +21,9 @@ public interface AdminManager {
 	
 	public void setTeacher(StudentBean student,TeacherBean teacher);
 	
+	public void delTeacher(TeacherBean teacher);
+	
+	public void addTeacher(TeacherBean teacherBean);
+	
+	
 }

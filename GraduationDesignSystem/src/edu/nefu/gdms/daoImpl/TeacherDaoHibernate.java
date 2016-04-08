@@ -2,8 +2,9 @@ package edu.nefu.gdms.daoImpl;
 
 import java.util.List;
 
+import org.hibernate.Query;
+
 import edu.nefu.gdms.dao.TeacherDao;
-import edu.nefu.gdms.domain.Student;
 import edu.nefu.gdms.domain.Teacher;
 import edu.nefu.gdms.support.GdmsHibernateDaoSupport;
 
@@ -58,6 +59,27 @@ public class TeacherDaoHibernate extends GdmsHibernateDaoSupport implements Teac
 			return list.get(0);
 		else
 			return null;
+	}
+
+	@Override
+	public void deleteMany(String[] idArray) {
+		
+		
+		String hql = "delete from Teacher where id = ";
+		
+		for(int i = 0;i<idArray.length;i++){
+			if(i==0){
+				hql += idArray[0];
+			}
+			else{
+				hql += " or "+idArray[i];
+			}
+		}
+		
+		Query query = getSession().createQuery(hql);
+		
+		query.executeUpdate();
+		
 	}
 
 }

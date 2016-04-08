@@ -57,13 +57,21 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 	}
 	@Override
 	public void setTeacher(StudentBean student, TeacherBean teacher) {
-		// TODO Auto-generated method stub
+		Student stu = studentDao.getByNumber(student.getNumber());
+		Teacher tea = teacherDao.getByNumber(teacher.getNumber());
+		stu.setTeacher(tea);
+		studentDao.update(stu);
+	}
+	@Override
+	public void delTeacher(TeacherBean teacher) {
+		teacherDao.delete(teacher.getTeid());
 		
 	}
+	@Override
+	public void addTeacher(TeacherBean teacherBean) {
+		teacherDao.save(new Teacher(teacherBean));
+	}
 	
- 
-
-
 
 
 }
