@@ -82,4 +82,10 @@ public class TeacherDaoHibernate extends GdmsHibernateDaoSupport implements Teac
 		
 	}
 
+	@Override
+	public List getAllTeacherByPage(int offset, int pageSize) {
+		String hql = "from Teacher";
+		return findByPage(hql, offset, pageSize);
+	}
+
 }

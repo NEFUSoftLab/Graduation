@@ -6,46 +6,49 @@
 <struts>
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	<package name="gdms" extends="struts-default,json-default">
-		<action name="student-*" method="{1}" class="studentAction">  
-            <!-- 返回json类型数据 --> 
-            <result type="json" > 
-                <param name="root">{1}</param> 
-            </result>
-            <result name="index">student/student.jsp</result>
-            <result name="out">login.jsp</result>
+		<action name="student-*" method="{1}" class="studentAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">{1}</param>
+			</result>
+			<result name="index">student/student.jsp</result>
+			<result name="out">login.jsp</result>
 		</action>
-		
-		<action name="teacher-*" method="{1}" class="teacherAction"> 
-			<result type="json" > 
-                <param name="root">{1}</param> 
-            </result>
-            <result name="index">teacher/teacher.jsp</result>
-            <result name="out">login.jsp</result>
+
+		<action name="teacher-*" method="{1}" class="teacherAction">
+			<result type="json">
+				<param name="root">{1}</param>
+			</result>
+			<result name="index">teacher/teacher.jsp</result>
+			<result name="out">login.jsp</result>
 		</action>
-		
-		<action name="admin-*" method="{1}" class="adminAction"> 
-		 <result name="forward">admin/ad_lg.jsp</result>
-		 <result name="getAllTeacher">admin/ad_tea.jsp</result>
-		 <result name="addTeacher">admin/ad_adte.jsp</result>
-		  <result name="index">admin/admin.jsp</result>
-			<result type="json" > 
-                <param name="root">{1}</param> 
-            </result>
-           
+
+		<action name="admin-*" method="{1}" class="adminAction">
+			<result name="forward">admin/ad_lg.jsp</result>
+			<result name="getAllTeacher">admin/ad_tea.jsp</result>
+			<result name="addTeacher">admin/ad_adte.jsp</result>
+			<result name="index">admin/admin.jsp</result>
+			<result name="addTeacher">admin/admin.jsp</result>
+			<result name="delTeacher">admin/admin.jsp</result>
+			<result name="modifyTeacher">admin/admin.jsp</result>
+			<result type="json">
+				<param name="root">{1}</param>
+			</result>
+
 		</action>
-		
-		 <action name="fileUpload" class="fileUploadAction" >
-            <result name="success">Success.jsp</result>
-            <interceptor-ref name="fileUpload">
-                <!-- 文件过滤 -->
-                <param name="allowedTypes">application/msword,application/pdf,application/vnd.ms-powerpoint,application/zip,application/rar</param>
-                <!-- 文件大小, 以字节为单位 -->
-                <param name="maximumSize">1025956</param>
-            </interceptor-ref>
-            <interceptor-ref name="defaultStack" />
-        </action>
-        
-        
+
+		<action name="fileUpload" class="fileUploadAction">
+			<result name="success">Success.jsp</result>
+			<interceptor-ref name="fileUpload">
+				<!-- 文件过滤 -->
+				<param name="allowedTypes">application/msword,application/pdf,application/vnd.ms-powerpoint,application/zip,application/rar</param>
+				<!-- 文件大小, 以字节为单位 -->
+				<param name="maximumSize">1025956</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+		</action>
+
+
 	</package>
 
 </struts>
