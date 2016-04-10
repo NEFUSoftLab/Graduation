@@ -9,8 +9,9 @@ import org.apache.struts2.ServletActionContext;
 
 public class FileLoaderManagerImpl {
 	
-	public String saveFile(File file,String filename) throws IOException{
+	public String saveFile(File file,String filename,String path) throws IOException{
 		String realpath = ServletActionContext.getServletContext().getRealPath("/file");
+		realpath += "/"+path;
         //D:\apache-tomcat-6.0.18\webapps\struts2_upload\images
         System.out.println("realpath: "+realpath);
         if (file != null) {

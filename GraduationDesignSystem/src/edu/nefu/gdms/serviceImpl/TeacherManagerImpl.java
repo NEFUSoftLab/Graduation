@@ -60,13 +60,13 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 
 	@SuppressWarnings("finally")
 	@Override
-	public String addTitle(TitleBean titleBean,File file,String filename) {
+	public String addTitle(TitleBean titleBean,File file,String filename,String path) {
 		String rs = "success";
 		//1.保存论文题目到数据库
 		//2.保存文件
 		try{
 			titleDao.save(new Title(titleBean));
-			fileUpload.saveFile(file, filename);
+			fileUpload.saveFile(file, filename,path);
 		}catch(Exception e){
 			rs = "fail";
 		}finally{

@@ -63,7 +63,7 @@ public class TeacherAction extends ActionSupport {
 	}
 
 	public String addTitle(TitleBean titleBean) {
-		addTitle = teacherManager.addTitle(titleBean, file, filename);
+		addTitle = teacherManager.addTitle(titleBean, file, filename,teacherBean.getNumber());
 		return SUCCESS;
 	}
 
