@@ -21,5 +21,6 @@ public interface GrourDao {
 	
 	List<Grour> getAll();
 	
+	Grour getByNumber(String number);
 	
 }
