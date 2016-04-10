@@ -13,6 +13,15 @@ public class Grour implements java.io.Serializable {
 
 	private String gid;
 	private String name;
+	private String number;
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
 	private Set teachers = new HashSet(0);
 
 	// Constructors
@@ -22,14 +31,14 @@ public class Grour implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Grour(String name) {
-		this.name = name;
-	}
+	
 
-	/** full constructor */
-	public Grour(String name, Set teachers) {
+
+	public Grour(String gid, String name, String number) {
+		super();
+		this.gid = gid;
 		this.name = name;
-		this.teachers = teachers;
+		this.number = number;
 	}
 
 	// Property accessors

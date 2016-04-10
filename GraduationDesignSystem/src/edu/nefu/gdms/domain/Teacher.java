@@ -3,6 +3,8 @@ package edu.nefu.gdms.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import edu.nefu.gdms.beans.TeacherBean;
+
 /**
  * Teacher entity. @author MyEclipse Persistence Tools
  */
@@ -73,6 +75,17 @@ public class Teacher implements java.io.Serializable {
 		this.titles = titles;
 	}
 
+	public Teacher(TeacherBean teacherBean){
+		this.number = teacherBean.getNumber();
+		this.name = teacherBean.getName();
+		this.phone = teacherBean.getPhone();
+		this.pwd = teacherBean.getPwd();
+		this.email = teacherBean.getEmail();
+		this.level = teacherBean.getLevel();
+		
+	}
+	
+		
 	public void setTeid(String teid) {
 		this.teid = teid;
 	}

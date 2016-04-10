@@ -42,6 +42,15 @@ public class GrourDaoHibernate extends GdmsHibernateDaoSupport implements GrourD
 	public List<Grour> getAll() { 
 		return getHibernateTemplate().find("from Grour");
 	}
+
+	@Override
+	public Grour getByNumber(String number) {
+		List<Grour> list = getHibernateTemplate().find("from Grour where number = ?",number);
+		if(list.size()!=0) 
+			return list.get(0);
+		else
+			return null;
+	}
 	
 	 
 	
