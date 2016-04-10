@@ -142,4 +142,8 @@ public class AdminAction extends ActionSupport{
 			
 		}
 		
+		
+		public String addTeacher() {
+			return "addTeacher";
+		}
 }
