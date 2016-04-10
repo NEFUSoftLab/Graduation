@@ -38,7 +38,7 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 
 	@Override
 	public void save(TeacherBean teacher) {
- 
+		teacherDao.save(new Teacher(teacher));
 		
 	}
 
@@ -73,4 +73,11 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 			return rs;
 		}
 	}
+
+	@Override
+	public void modify(TeacherBean teacherBean) {
+		teacherDao.update(new Teacher(teacherBean));
+	}
+
+	
 }

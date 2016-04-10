@@ -1,10 +1,8 @@
 package edu.nefu.gdms.service;
 
-import java.util.List;
-
+import edu.nefu.gdms.beans.PageBean;
 import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.beans.TeacherBean;
-import edu.nefu.gdms.domain.Student;
 
 public interface AdminManager {
 	
@@ -36,5 +34,7 @@ public interface AdminManager {
 	//为老师单独分配组
 	public void setGroupForTea(String number,String name);
 	
+	//得到所有的老师
+	public PageBean getAllTeacher(int pageSize,int page);
 	
 }

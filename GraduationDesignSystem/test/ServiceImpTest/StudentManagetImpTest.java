@@ -1,28 +1,29 @@
 package ServiceImpTest;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.nefu.gdms.beans.StudentBean;
-import edu.nefu.gdms.service.StudentManager;
+import edu.nefu.gdms.beans.PageBean;
+import edu.nefu.gdms.beans.TeacherBean;
+import edu.nefu.gdms.domain.Teacher;
+import edu.nefu.gdms.service.AdminManager;
 
 public class StudentManagetImpTest {
 	
 	
 	ApplicationContext ac = new FileSystemXmlApplicationContext("/WebContent/WEB-INF/applicationContext.xml"); 
-	StudentManager manager = (StudentManager)ac.getBean("studentManager");
+	AdminManager manager = (AdminManager)ac.getBean("adminManager");
 	
 	@Test
 	public void test() {
-		StudentBean student = new StudentBean(null, "11000000", "na1me111111", "110", "112", "男", "xs", "hah","12");
-		
-		manager.save(student);
-		System.out.println("awqwewqe");
-		
-		
-		
-		
+//		PageBean list = manager.getAllTeacher(11, 10);
+//		
+//		for(TeacherBean e:list){
+//			System.out.println(e.getNumber());
+//		}
 		
 	}
 	

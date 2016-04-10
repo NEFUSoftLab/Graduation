@@ -21,5 +21,9 @@ public interface TeacherDao {
 	Teacher getByNumber(String number);
 	
 	void deleteMany(String[] idArray);
+	
+	List getAllTeacherByPage(int offset,int pageSize);
+	
+	
 
 }

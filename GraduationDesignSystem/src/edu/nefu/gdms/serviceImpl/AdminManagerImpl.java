@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import edu.nefu.gdms.beans.PageBean;
 import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.beans.TeacherBean;
 import edu.nefu.gdms.domain.Admin;
@@ -17,6 +18,8 @@ import edu.nefu.gdms.service.util.ManagerTemplate;
 public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 	
 	private  int MAX_GROUP_NUM = 0;
+	
+	
 	
 	private int TEA_EVERY_GROUP = 3;
 	Random random = new Random();
@@ -69,7 +72,6 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 	@Override
 	public void delTeacher(TeacherBean teacher) {
 		teacherDao.delete(teacher.getTeid());
-		
 	}
 	
 	
@@ -109,6 +111,25 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 		teacher.setGroup(grour);
 		teacherDao.update(teacher);
 	}
+	@Override
+	public PageBean getAllTeacher(int pageSize, int page) {
+		
+		PageBean pageBean = new PageBean();
+		int allRows = teacherDao.getAll().size();
+		int totalPage = pageBean.getTotalPages(pageSize, allRows);
+        int currentPage = pageBean.getCurPage(page);
+        int offset = pageBean.getCurrentPageOffset(pageSize, currentPage);
+        
+        List teacherList = teacherDao.getAllTeacherByPage(offset, pageSize);
+        pageBean.setList(teacherList);
+        pageBean.setAllRows(allRows);
+        pageBean.setCurrentPage(currentPage);
+        pageBean.setTotalPage(totalPage);
+        
+        return pageBean;
+	}
+	
+	
 	
 
 

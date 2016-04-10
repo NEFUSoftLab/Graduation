@@ -23,9 +23,13 @@ public interface TeacherManager {
 	
 	List<TeacherBean> getAll();
 	
-	
 	TeacherBean getByTeaNumber(String number);
 	
 	String addTitle(TitleBean titleBean,File file,String filename);
+	
+	
+	void modify(TeacherBean teacherBean);
+	
+	
 }
  
