@@ -3,7 +3,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="panel panel-primary">
   <div class="panel-heading">
-      <h3 class="panel-title">添加老师</h3>
+      <span class="panel-title">添加老师</span>
+      <a href="#"><span class="label label-success pull-right">下载模板</span></a>
   </div>
   <div class="panel-body">
       <form class="form-horizontal">
@@ -28,13 +29,20 @@
 		      </div>
 		  </div>
 		  <div class="form-group">
-		      <div class="col-sm-offset-2 col-sm-10">
-		      	  <button type="submit" class="btn btn-default">Sign in</button>
+		  	  <label class="col-sm-1 col-md-1 control-label">邮箱</label>
+		      <div class="col-sm-5 col-md-5">
+		       	 <input type="email" class="form-control" placeholder="请输入邮箱">
+		      </div>
+		  </div>
+		  <div class="form-group">
+		      <div id="adtea_submit"  class="col-sm-offset-9 col-sm-2">
+		      	  <button type="submit" class="btn btn-default">提交</button>
 		      </div>
 	      </div>
       </form>
   </div>
 </div>
+<script src=""></script>
 
 
 
