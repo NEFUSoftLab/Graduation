@@ -50,13 +50,16 @@
         <i class="glyphicon glyphicon-plus"></i> 添加
     </button>
 </div>
-<table data-toggle="table"
+<table id="table" 
+	   data-toggle="table"
 	   data-toolbar="#toolbar"
        data-pagination="true"
        data-search="true"
        data-page-list="[10, 20, 50, 100]"
        data-show-refresh="true"
        data-show-toggle="true"
+       data-page-size="10"
+       data-page-number="1"
        data-pagination-first-text="首页"
        data-pagination-pre-text="上一页"
        data-pagination-next-text="下一页"
