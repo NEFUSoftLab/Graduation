@@ -18,87 +18,14 @@ public class AdminAction extends ActionSupport {
 	private AdminManager adminManager;
 	private StudentManager studentManager;
 	private TeacherManager teacherManager;
-
+	
 	private int page = 0;
 	private TeacherBean teacherBean;
 
 	private PageBean pagebean;
-
-	private String number;
-	private String pwd;
-
-	private AdminBean adminBean;
-
-	private List<TeacherBean> teacherList;
-
-	//
-	private String login;
-
-	//
-	private String getAllStudent;
-
-	// 跳转模块
-	public String login_forward() {
-		return "forward";
-	}
-
-	public String index() {
-		return "index";
-	}
-
-	// 业务功能模块
-	public String login() {
-		login = "";
-		// System.out.println(studentBean.getNumber()+".."+studentBean.getPwd());
-		try {
-			if (adminManager.login(number, pwd)) {
-				login = "success";
-
-			} else {
-				login = "fail";
-			}
-		} catch (Exception e) {
-			login = "fail";
-			e.printStackTrace();
-		}
-		return SUCCESS;
-	}
-
-	// 取得所有学生数据
-	public String getAllStudent() {
-		getAllStudent = "";
-		System.out.println("yes");
-		List<StudentBean> studentList = studentManager.getAll();
-		getAllStudent = gson.toJson(studentList);
-		System.out.println(getAllStudent);
-		return SUCCESS;
-	}
-
-	// 分页获取老师数据
-	public String getAllTeacherBySize() {
-		pagebean = adminManager.getAllTeacher(10, page);
-		return "getAllTeacher";
-
-	}
-
-	// 添加老师
-	public String addTeacher() {
-		teacherManager.save(teacherBean);
-		return "addTeacher";
-	}
-
-	// 删除老师
-	public String delTeacher() {
-		adminManager.delTeacher(teacherBean);
-		return "delTeacher";
-	}
-
-	// 修改老师
-	public String modifyTeacher() {
-		teacherManager.modify(teacherBean);
-		return "modifyTeacher";
-	}
-
+	
+	
+	
 	public TeacherBean getTeacherBean() {
 		return teacherBean;
 	}
@@ -106,6 +33,9 @@ public class AdminAction extends ActionSupport {
 	public void setTeacherBean(TeacherBean teacherBean) {
 		this.teacherBean = teacherBean;
 	}
+
+	
+	
 
 	public PageBean getPagebean() {
 		return pagebean;
@@ -131,6 +61,12 @@ public class AdminAction extends ActionSupport {
 		this.teacherManager = teacherManager;
 	}
 
+	private AdminBean adminBean;
+
+	private List<TeacherBean> teacherList;
+
+	
+
 	public List<TeacherBean> getTeacherList() {
 		return teacherList;
 	}
@@ -138,6 +74,9 @@ public class AdminAction extends ActionSupport {
 	public void setTeacherList(List<TeacherBean> teacherList) {
 		this.teacherList = teacherList;
 	}
+
+	private String number;
+	private String pwd;
 
 	public String getNumber() {
 		return number;
@@ -154,6 +93,12 @@ public class AdminAction extends ActionSupport {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
+
+	//
+	private String login;
+
+	//
+	private String getAllStudent;
 
 	public StudentManager getStudentManager() {
 		return studentManager;
@@ -193,5 +138,70 @@ public class AdminAction extends ActionSupport {
 
 	public void setAdminBean(AdminBean adminBean) {
 		this.adminBean = adminBean;
+	}
+	
+	//跳转模块
+	public String login_forward() {
+		return "forward";
+	}
+
+	public String index() {
+		return "index";
+	}
+
+	
+	
+	//业务功能模块
+	public String login() {
+		login = "";
+		// System.out.println(studentBean.getNumber()+".."+studentBean.getPwd());
+		try {
+			if (adminManager.login(number, pwd)) {
+				login = "success";
+
+			} else {
+				login = "fail";
+			}
+		} catch (Exception e) {
+			login = "fail";
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
+
+	// 取得所有学生数据
+	public String getAllStudent() {
+		getAllStudent = "";
+		System.out.println("yes");
+		List<StudentBean> studentList = studentManager.getAll();
+		getAllStudent = gson.toJson(studentList);
+		System.out.println(getAllStudent);
+		return SUCCESS;
+	}
+
+	
+	//分页获取老师数据
+	public String getAllTeacherBySize() {
+		pagebean = adminManager.getAllTeacher(10, page);
+		return "getAllTeacher";
+		
+	}
+	
+	//添加老师
+	public String addTeacher() {
+		teacherManager.save(teacherBean);
+		return "addTeacher";
+	}
+	
+	//删除老师
+	public String delTeacher(){
+		adminManager.delTeacher(teacherBean);
+		return "delTeacher";
+	}
+	
+	//修改老师
+	public String modifyTeacher(){
+		teacherManager.modify(teacherBean);
+		return "modifyTeacher";
 	}
 }
