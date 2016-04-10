@@ -4,44 +4,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %> 
 <link href="${pageContext.request.contextPath}/static/css/bootstrap-table.min.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/static/js/bootstrap-table.min.js"></script>
-<%-- <div class="panel panel-primary">
-	<div class="panel-heading">
-	    <span class="panel-title">所有老师</span>
-	    <span><button class="btn btn-success btn-xs pull-right">添加老师</button></span>
-	</div>
-	<div class="panel-body">
-		<table class="table table-hover">
-			<thead>
-				<th>工号</th>
-				<th>名字</th>
-				<th>密码</th>
-				<th>电话号码</th>
-				<th>操作</th>
-			</thead>
-			<tbody>
-				<c:forEach var="item" items="${teacherBean }">
-					<tr>
-						<td>${item.number }</td>
-						<td>${item.name }</td>
-						<td>${item.pwd }</td>
-						<td>${item.phone }</td>
-						<td>
-							<button id="${item.teid }" class="btn btn-default btn-xs modify">
-								<span class="glyphicon glyphicon-edit"></span>
-								修改
-							</button>
-							<button id="${item.teid }" class="btn btn-default btn-xs delete">
-								<span class="glyphicon glyphicon-trash"></span>
-								删除
-							</button>
-						</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-</div> --%>
-
 <div id="toolbar">
     <button id="remove" class="btn btn-danger" disabled>
         <i class="glyphicon glyphicon-remove"></i> 删除
@@ -55,6 +17,8 @@
 	   data-toolbar="#toolbar"
        data-pagination="true"
        data-search="true"
+       data-url="admin-getAllTeacherBySize.action"
+       data-side-pagination="server"
        data-page-list="[10, 20, 50, 100]"
        data-show-refresh="true"
        data-show-toggle="true"
@@ -75,8 +39,8 @@
         <th>操作</th>
     </tr>
     </thead>
-    <tbody>
-	    <c:forEach var="item" items="${teacherBean }">
+<%--     <tbody>
+	    <c:forEach var="item" items="${pagebean.list }">
 			<tr>
 				<td><input type="checkbox" name="teachers"/></td>
 				<td>${item.number }</td>
@@ -95,7 +59,7 @@
 				</td>
 			</tr>
 		</c:forEach>
-    </tbody>
+    </tbody> --%>
 </table>
 <script src="${pageContext.request.contextPath}/static/js/admin/ad_tea.js"></script>
 
