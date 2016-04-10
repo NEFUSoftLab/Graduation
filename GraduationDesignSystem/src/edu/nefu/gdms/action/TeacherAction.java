@@ -31,6 +31,10 @@ public class TeacherAction extends ActionSupport {
 
 	// 需要传回前台的文件
 	private String addTitle;
+	
+	
+	//json
+	private String getAllTeacher;
 
 	// 登陆
 	public String login() {
@@ -50,6 +54,8 @@ public class TeacherAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
+	
+	 
 
 	// 跳转到主页面
 	public String index() {
@@ -138,4 +144,15 @@ public class TeacherAction extends ActionSupport {
 	public void setTeacherManager(TeacherManager teacherManager) {
 		this.teacherManager = teacherManager;
 	}
+
+	public String getGetAllTeacher() {
+		return getAllTeacher;
+	}
+
+	public void setGetAllTeacher(String getAllTeacher) {
+		this.getAllTeacher = getAllTeacher;
+	}
+	
+	
+	
 }

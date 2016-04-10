@@ -36,6 +36,9 @@ public class AdminAction extends ActionSupport {
 
 	//
 	private String getAllStudent;
+	
+	//
+	private String getAllTeacher;
 
 	// 跳转模块
 	public String login_forward() {
@@ -79,6 +82,11 @@ public class AdminAction extends ActionSupport {
 		pagebean = adminManager.getAllTeacher(10, page);
 		return "getAllTeacher";
 
+	}
+	public String getAllTeacher(){
+		pagebean = adminManager.getAllTeacher(10, page);
+		getAllTeacher = gson.toJson(pagebean);
+		return SUCCESS;
 	}
 
 	// 添加老师
@@ -194,4 +202,14 @@ public class AdminAction extends ActionSupport {
 	public void setAdminBean(AdminBean adminBean) {
 		this.adminBean = adminBean;
 	}
+
+	public String getGetAllTeacher() {
+		return getAllTeacher;
+	}
+
+	public void setGetAllTeacher(String getAllTeacher) {
+		this.getAllTeacher = getAllTeacher;
+	}
+	
+	
 }
