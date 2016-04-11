@@ -5,6 +5,7 @@ var Table = {
 			url: "admin-getAllTeacher.action",
 			type: 'POST',
 			success: function(data) {
+				console.log(data);
 				var data = $.parseJSON(JSON.stringify(data.list));
 				$table.bootstrapTable({
 					data: data,

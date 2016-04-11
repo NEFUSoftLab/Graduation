@@ -15,7 +15,7 @@ public class Systime implements java.io.Serializable {
 	private String name;
 	private String starttime;
 	private String endtime;
-	private Set papers = new HashSet(0);
+	 
 
 	// Constructors
 
@@ -29,14 +29,7 @@ public class Systime implements java.io.Serializable {
 		this.starttime = starttime;
 		this.endtime = endtime;
 	}
-
-	/** full constructor */
-	public Systime(String name, String starttime, String endtime, Set papers) {
-		this.name = name;
-		this.starttime = starttime;
-		this.endtime = endtime;
-		this.papers = papers;
-	}
+ 
 
 	// Property accessors
 
@@ -71,13 +64,6 @@ public class Systime implements java.io.Serializable {
 	public void setEndtime(String endtime) {
 		this.endtime = endtime;
 	}
-
-	public Set getPapers() {
-		return this.papers;
-	}
-
-	public void setPapers(Set papers) {
-		this.papers = papers;
-	}
+ 
 
 }

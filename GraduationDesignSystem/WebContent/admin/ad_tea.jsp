@@ -16,11 +16,10 @@
     <thead>
     <tr>
         <th data-field="state" data-checkbox="true"></th>
-        <th data-field="list.number" data-align="right" data-sortable="true">工号</th>
-        <th data-field="list.name" data-align="center" data-sortable="true">姓名</th>
-        <th data-field="list.pwd" data-sortable="true">密码</th>
-        <th data-field="list.phone" data-sortable="true">电话号码</th>
-        <th>操作</th>
+        <th data-field="number" data-align="right" data-sortable="true">工号</th>
+        <th data-field="name" data-align="center" data-sortable="true">姓名</th>
+        <th data-field="pwd" data-sortable="true">密码</th>
+        <th data-field="phone" data-sortable="true">电话号码</th>
     </tr>
     </thead>
 <%-- 	<tbody>
