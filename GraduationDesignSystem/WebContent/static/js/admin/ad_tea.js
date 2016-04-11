@@ -1,6 +1,30 @@
 var Table = {
 	$table: $("#table"),
 	init: function() {
+		$.ajax({
+			url: "admin-getAllTeacher.action",
+			type: 'POST',
+			success: function(data) {
+				var data = $.parseJSON(JSON.stringify(data.list));
+				$table.bootstrapTable({
+					data: data,
+					pagination: true,
+				    toolbar: "#toolbar",
+			        search: "true",
+			        sidePagination: "server",
+			        pageList: "[10, 20, 50, 100]",
+			        showRefresh: "true",
+			        showToggle: "true",
+			        pageSize: "10",
+			        pageNumber: "1",
+			        paginationFirstText: "首页",
+			        paginationPreText:"上一页",
+			        paginationNextText: "下一页",
+			        paginationLastText: "末页",
+			        showColumns: "true"
+				});
+			}
+		});
 		$(".pagination .page-pre").addClass("disabled");
 		return this;
 	},

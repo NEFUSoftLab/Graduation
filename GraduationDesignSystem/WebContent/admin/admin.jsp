@@ -49,7 +49,7 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>教师管理<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="admin-getAllTeacherBySize.action" data-trigger="ajax" data-target="#section-container">教师信息</a></li>
+							<li><a href="admin-teaForward.action" data-trigger="ajax" data-target="#section-container">教师信息</a></li>
 							<li><a href="admin-addTeacher.action" data-trigger="ajax" data-target="#section-container">添加教师</a></li>
 						</ul>
 					</li>

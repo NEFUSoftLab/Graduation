@@ -44,7 +44,11 @@ public class AdminAction extends ActionSupport {
 	public String login_forward() {
 		return "forward";
 	}
-
+	
+	public String teaForward() {
+		return "tea";
+	}
+	
 	public String index() {
 		return "index";
 	}
@@ -88,7 +92,7 @@ public class AdminAction extends ActionSupport {
 		getAllTeacher = gson.toJson(pagebean);
 		return SUCCESS;
 	}
-
+	
 	// 添加老师
 	public String addTeacher() {
 		teacherManager.save(teacherBean);

@@ -12,35 +12,19 @@
         <i class="glyphicon glyphicon-plus"></i> 添加
     </button>
 </div>
-<table id="table" 
-	   data-toggle="table"
-	   data-toolbar="#toolbar"
-       data-pagination="true"
-       data-search="true"
-       data-url="admin-getAllTeacherBySize.action"
-       data-side-pagination="server"
-       data-page-list="[10, 20, 50, 100]"
-       data-show-refresh="true"
-       data-show-toggle="true"
-       data-page-size="10"
-       data-page-number="1"
-       data-pagination-first-text="首页"
-       data-pagination-pre-text="上一页"
-       data-pagination-next-text="下一页"
-       data-pagination-last-text="末页"
-       data-show-columns="true">
+<table id="table">
     <thead>
     <tr>
-        <th data-checkbox="true"></th>
-        <th data-align="right" data-sortable="true">工号</th>
-        <th data-align="center" data-sortable="true">姓名</th>
-        <th data-sortable="true">密码</th>
-        <th data-sortable="true">电话号码</th>
+        <th data-field="state" data-checkbox="true"></th>
+        <th data-field="list.number" data-align="right" data-sortable="true">工号</th>
+        <th data-field="list.name" data-align="center" data-sortable="true">姓名</th>
+        <th data-field="list.pwd" data-sortable="true">密码</th>
+        <th data-field="list.phone" data-sortable="true">电话号码</th>
         <th>操作</th>
     </tr>
     </thead>
-<%--     <tbody>
-	    <c:forEach var="item" items="${pagebean.list }">
+<%-- 	<tbody>
+	    <c:forEach var="item" items="${getAllTeacher }">
 			<tr>
 				<td><input type="checkbox" name="teachers"/></td>
 				<td>${item.number }</td>
