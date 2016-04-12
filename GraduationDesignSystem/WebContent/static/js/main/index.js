@@ -37,6 +37,17 @@ var row = function(){
 		}
 	});
 })(jQuery);
+(function($, undefined) {
+	"use strict";
+	$("#up-pa-ok").on('click', function() {
+		var $new_pa = $('#new-password'),
+			$con_pa = $('configure-password'),
+			$ini_pa = $('initial-password');
+		if($new_pa.val() !== $con_pa.val()){
+			$().alert();
+		}
+	});
+})(jQuery);
 var accordion =  new Accordion($('#accordion'));
 row();
 $(window).resize(row);

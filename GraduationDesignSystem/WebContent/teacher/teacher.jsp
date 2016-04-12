@@ -11,11 +11,13 @@
 	<link rel="Shortcut Icon" href="${pageContext.request.contextPath}/static/images/favicon.ico">
 	<!-- css -->
 	<link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/static/css/bootstrap-table.min.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/static/css/main/init.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/static/css/main/index.css" rel="stylesheet">
 	<!-- js  -->
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/bootstrap-table.min.js"></script>
 </head>
 <body>
 	<div id="wrapper" class="container-fulid">
