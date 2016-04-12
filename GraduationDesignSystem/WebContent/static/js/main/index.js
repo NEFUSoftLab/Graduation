@@ -15,15 +15,6 @@ Accordion.prototype.dropdown = function(e,state) {
 	$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
 }
 //初始化row的高度
-//var Row = function(el){
-////	this.el = el || {};
-////	var total = document.documentElement.clientHeight;
-////	var navHeight = $("nav").outerHeight();
-////	this.el.height(total-navHeight);
-//	return {
-//		alert(123);
-//	}
-//}
 var row = function(){
 	var $row = $('.myrow'),
 		total = document.documentElement.clientHeight,
@@ -37,8 +28,10 @@ var row = function(){
 		var $this = $(this)
 			,data = $this.data()
 			,$target
+			,$head = $('.page-header');
 		if (typeof data['target'] != 'undefined') {
 			$target = $(data['target']);
+			$head.text($this.text());
 			$target.load($this.attr('href'));
 			return false;
 		}

@@ -45,11 +45,10 @@
 			<aside id="aside" class="col-md-2 col-sm-2 col-xs-12">
 				<ul id="accordion" class="accordion">
 					<li>
-						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
+						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>论文题目<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">修改信息</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="#">我的论题</a></li>
+							<li><a href="#">论题讨论</a></li>
 						</ul>
 					</li>
 					<li>
