@@ -2,11 +2,14 @@ var Table = {
 	$table: $("#table"),
 	init: function() {
 		$.ajax({
-			url: "admin-getAllTeacher.action",
 			type: 'POST',
+			url: "admin-getAllTeacher.action",
+			dataType: 'json',
 			success: function(data) {
-				var data = $.parseJSON(JSON.stringify(data.list));
-				$table.bootstrapTable({
+				var dataJSON = $.parseJSON(data);
+				var data = $.parseJSON(JSON.stringify(dataJSON.list));
+				var currentPage = dataJSON.currentPage;
+				Table.$table.bootstrapTable({
 					data: data,
 					pagination: true,
 				    toolbar: "#toolbar",
@@ -16,17 +19,19 @@ var Table = {
 			        showRefresh: "true",
 			        showToggle: "true",
 			        pageSize: "10",
-			        pageNumber: "1",
+			        pageNumber: currentPage,
+			        totalRows: dataJSON.allRows,
+			        queryParamsType: 'limit',
 			        paginationFirstText: "首页",
 			        paginationPreText:"上一页",
 			        paginationNextText: "下一页",
 			        paginationLastText: "末页",
 			        showColumns: "true"
 				});
+				$(".pagination .page-pre").addClass("disabled");
+				$(".pagination .page-number").eq(Table.currentPage-1).addClass("active");
 			}
 		});
-		$(".pagination .page-pre").addClass("disabled");
-		return this;
 	},
 	disabled: function() {
 		$(document).on('click', '.pagination .page-pre, .pagination .page-next, .pagination .page-number', function(event) {
@@ -40,8 +45,15 @@ var Table = {
 				$(".pagination .page-next").addClass("disabled");
 			}
 		});
-		return this;
+	},
+	nextPage: function() {
+		console.log(Table.$table.bootstrapTable());
+	},
+	entry: function() {
+		this.init();
+		this.disabled();
+		this.nextPage();
 	}
 }
 
-Table.init().disabled();
+Table.entry();
