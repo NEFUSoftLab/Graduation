@@ -33,7 +33,6 @@ public class SystimeBean {
 	}
 	public SystimeBean() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public SystimeBean(String syid, String name, String starttime, String endtime) {
 		super();
