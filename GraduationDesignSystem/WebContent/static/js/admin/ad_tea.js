@@ -1,14 +1,17 @@
+var currentPage;
 var Table = {
 	$table: $("#table"),
-	init: function() {
+	init: function(pageSize, page) {
+		var data = {page: page, pageSize: pageSize};
 		$.ajax({
 			type: 'POST',
 			url: "admin-getAllTeacher.action",
 			dataType: 'json',
+			data: data,
 			success: function(data) {
 				var dataJSON = $.parseJSON(data);
 				var data = $.parseJSON(JSON.stringify(dataJSON.list));
-				var currentPage = dataJSON.currentPage;
+				currentPage = dataJSON.currentPage;
 				Table.$table.bootstrapTable({
 					data: data,
 					pagination: true,
@@ -21,7 +24,6 @@ var Table = {
 			        pageSize: "10",
 			        pageNumber: currentPage,
 			        totalRows: dataJSON.allRows,
-			        queryParamsType: 'limit',
 			        paginationFirstText: "首页",
 			        paginationPreText:"上一页",
 			        paginationNextText: "下一页",
@@ -47,10 +49,14 @@ var Table = {
 		});
 	},
 	nextPage: function() {
-		console.log(Table.$table.bootstrapTable());
+		$(document).on('click', '.pagination .page-next', function(event) {
+			event.stopPropagation();
+			currentPage = currentPage + 1;
+			console.log(currentPage);
+		});
 	},
 	entry: function() {
-		this.init();
+		this.init(10,1);
 		this.disabled();
 		this.nextPage();
 	}
