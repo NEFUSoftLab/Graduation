@@ -19,7 +19,7 @@ public class AdminAction extends ActionSupport {
 	private StudentManager studentManager;
 	private TeacherManager teacherManager;
 
-	private int page = 0;
+	private int page = 1;
 	private int pageSize = 10;
 	private TeacherBean teacherBean;
 
