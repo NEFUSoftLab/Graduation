@@ -20,6 +20,7 @@ public class AdminAction extends ActionSupport {
 	private TeacherManager teacherManager;
 
 	private int page = 0;
+	private int pageSize = 10;
 	private TeacherBean teacherBean;
 
 	private PageBean pagebean;
@@ -83,12 +84,12 @@ public class AdminAction extends ActionSupport {
 
 	// 分页获取老师数据
 	public String getAllTeacherBySize() {
-		pagebean = adminManager.getAllTeacher(10, page);
+		pagebean = adminManager.getAllTeacher(pageSize, page);
 		return "getAllTeacher";
 
 	}
 	public String getAllTeacher(){
-		pagebean = adminManager.getAllTeacher(10, page);
+		pagebean = adminManager.getAllTeacher(pageSize, page);
 		getAllTeacher = gson.toJson(pagebean);
 		return SUCCESS;
 	}
@@ -213,6 +214,14 @@ public class AdminAction extends ActionSupport {
 
 	public void setGetAllTeacher(String getAllTeacher) {
 		this.getAllTeacher = getAllTeacher;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
 	}
 	
 	
