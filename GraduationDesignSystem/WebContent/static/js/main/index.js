@@ -15,12 +15,21 @@ Accordion.prototype.dropdown = function(e,state) {
 	$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
 }
 //初始化row的高度
-var Row = function(el){
-	this.el = el || {};
-	var total = document.documentElement.clientHeight;
-	var navHeight = $("nav").outerHeight();
-	this.el.height(total-navHeight);
-}
+//var Row = function(el){
+////	this.el = el || {};
+////	var total = document.documentElement.clientHeight;
+////	var navHeight = $("nav").outerHeight();
+////	this.el.height(total-navHeight);
+//	return {
+//		alert(123);
+//	}
+//}
+var row = function(){
+	var $row = $('.myrow'),
+		total = document.documentElement.clientHeight,
+		navHeight = $('nav').outerHeight();
+	$row.height(total-navHeight);
+};
 //动态加载有半部分内容
 ;(function($, undefined) {
 	"use strict";
@@ -35,7 +44,6 @@ var Row = function(el){
 		}
 	});
 })(jQuery);
-$(function(){
-	var accordion = new Accordion($('#accordion'),false);
-	var row = new Row($(".myrow"));
-})
+var accordion =  new Accordion($('#accordion'));
+row();
+$(window).resize(row);
