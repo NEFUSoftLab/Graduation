@@ -14,7 +14,6 @@ $(function() {
 				if(number == "" || pwd == "") {
 					$('.form-group').addClass('has-error');
 				}else {
-					console.log(Login.url);
 					$.ajax({
 						type: 'POST',
 						data: {

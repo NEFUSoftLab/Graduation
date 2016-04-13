@@ -95,7 +95,7 @@
 				  <h4 class="modal-title">修改密码</h4>
 				</div>
 				<div class="modal-body">
-					<form id="up-pa-form" class="form-horizontal">
+					<form id="up-pa-form" identifier="student" class="form-horizontal">
 						<div class="form-group">
 							<label for="initial-password" class="col-md-2 col-sm-2 control-label password-label">原密码</label>
 							<div class="col-md-9 col-xs-12 col-sm-9">
