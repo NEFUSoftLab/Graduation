@@ -50,4 +50,10 @@ public class StudentDaoHibernate extends GdmsHibernateDaoSupport implements Stud
 		else
 			return null;
 	}
+
+	@Override
+	public List getAllStudentByPage(int offset, int pageSize) {
+		String hql = "from Student";
+		return findByPage(hql, offset, pageSize);
+	}
 }

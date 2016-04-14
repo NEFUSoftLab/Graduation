@@ -111,6 +111,8 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 		teacher.setGroup(grour);
 		teacherDao.update(teacher);
 	}
+	
+	
 	@Override
 	public PageBean getAllTeacher(int pageSize, int page) {
 		
@@ -122,6 +124,22 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
         
         List teacherList = teacherDao.getAllTeacherByPage(offset, pageSize);
         pageBean.setList(teacherList);
+        pageBean.setAllRows(allRows);
+        pageBean.setCurrentPage(currentPage);
+        pageBean.setTotalPage(totalPage);
+        
+        return pageBean;
+	}
+	@Override
+	public PageBean getAllStudent(int pageSize, int page) {
+		PageBean pageBean = new PageBean();
+		int allRows = studentDao.getAll().size();
+		int totalPage = pageBean.getTotalPages(pageSize, allRows);
+        int currentPage = pageBean.getCurPage(page);
+        int offset = pageBean.getCurrentPageOffset(pageSize, currentPage);
+        
+        List studentList = studentDao.getAllStudentByPage(offset, pageSize);
+        pageBean.setList(studentList);
         pageBean.setAllRows(allRows);
         pageBean.setCurrentPage(currentPage);
         pageBean.setTotalPage(totalPage);

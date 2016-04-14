@@ -37,4 +37,7 @@ public interface AdminManager {
 	//得到所有的老师
 	public PageBean getAllTeacher(int pageSize,int page);
 	
+	//得到所有的学生
+	public PageBean getAllStudent(int pageSize,int page);
+	
 }

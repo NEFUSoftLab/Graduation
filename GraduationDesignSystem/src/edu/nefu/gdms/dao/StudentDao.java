@@ -20,4 +20,6 @@ public interface StudentDao {
 	
 	List<Student> getAll();
 	
+	List getAllStudentByPage(int offset,int pageSize);
+	
 }	

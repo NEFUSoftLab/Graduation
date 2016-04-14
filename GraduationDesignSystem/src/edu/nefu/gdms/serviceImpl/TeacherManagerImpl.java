@@ -16,9 +16,6 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 	
 	
 	private FileLoaderManagerImpl fileUpload;
-	
-
-	 
 
 	public FileLoaderManagerImpl getFileUpload() {
 		return fileUpload;
