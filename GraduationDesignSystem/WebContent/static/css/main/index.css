@@ -147,9 +147,9 @@ aside,section{
 }
 
 #section-container {
-	min-height: calc(100% - 100px);	
-	min-height: -webkit-calc(100% - 100px);
-	min-height: -moz-calc(100% - 100px);
+	min-height: calc(100% - 200px);	
+	min-height: -webkit-calc(100% - 200px);
+	min-height: -moz-calc(100% - 200px);
 }
 
 
@@ -197,6 +197,9 @@ aside,section{
 	}
 	section{
 		min-height:100%;
+	}
+	.password-label{
+		display:none;
 	}
 }
 

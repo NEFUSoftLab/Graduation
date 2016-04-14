@@ -8,8 +8,8 @@
 	<package name="gdms" extends="struts-default,json-default">
 		<action name="student-*" method="{1}" class="studentAction">
 			<!-- 返回json类型数据 -->
-			<result type="json">
-				<param name="root">{1}</param>
+			<result type="json" name="success">
+				<param name="root">result</param>
 			</result>
 			<result name="index">student/student.jsp</result>
 			<result name="out">login.jsp</result>
