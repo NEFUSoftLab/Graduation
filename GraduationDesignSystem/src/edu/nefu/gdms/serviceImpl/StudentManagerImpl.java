@@ -86,5 +86,13 @@ public class StudentManagerImpl extends ManagerTemplate implements StudentManage
 		StudentBean studentBean = new StudentBean(student);
 		return studentBean;
 	}
+	
+	//更改密码
+	@Override
+	public void updatePassword(String pwd, String sid) {
+		studentDao.updatePassword(pwd,sid);
+	}
+	
+	
 
 }

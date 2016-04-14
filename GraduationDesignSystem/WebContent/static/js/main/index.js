@@ -43,9 +43,10 @@ var row = function(){
 	var $new_pa = $('#new-password'),
 		$con_pa = $('#configure-password'),
 		$ini_pa = $('#initial-password'),
-		$form_pa = $('#up-pa-form');
+		$form_pa = $('#up-pa-form'),
+		state = false;
 	//监测旧密码是否正确
-	$ini_pa.on('change', function() {
+	$ini_pa.on('input propertychange', function() {
 		var $this = $(this),
 			index = $form_pa.attr('identifier'),
 		    data = $ini_pa.val();
@@ -59,17 +60,22 @@ var row = function(){
 			success:function(result){
 				if(result == 'success'){
 					$this.parents('.form-group').removeClass("has-error").addClass("has-success");
+					$this.prop('disabled',true);
+					$new_pa.prop('disabled',false);
 				}else{
 					$this.parents('.form-group').removeClass("has-success").addClass("has-error");
+					$new_pa.prop('disabled',true);
 				}
 			}
 		});
 	});
-	$new_pa.on('change',function(){
+	$new_pa.on('input propertychange',function(){
 		if($(this).val().length >= 6){
 			$(this).parents('.form-group').removeClass("has-error").addClass("has-success");
+			$con_pa.prop('disabled',false);
 		}else{
 			$(this).parents('.form-group').removeClass("has-success").addClass("has-error");
+			$con_pa.prop('disabled',true);
 		}
 	});
 	$con_pa.on('input propertychange',function(){
@@ -77,9 +83,31 @@ var row = function(){
 			p2 = $(this).val();
 		if(p1 == p2){
 			$(this).parents('.form-group').removeClass("has-error").addClass("has-success");
+			$('#up-pa-ok').prop('disabled',false);
 		}else{
 			$(this).parents('.form-group').removeClass("has-success").addClass("has-error");
+			$('#up-pa-ok').prop('disabled',true);
 		}
+	});
+	$('#up-pa-ok').on('click',function(){
+		var index = $form_pa.attr('identifier'),
+			data = $con_pa.val();
+		$.ajax({
+			type:'post',
+			data:{
+				"pwd" : data
+			},
+			dataType: 'json',
+			url: index + '-updatePassword.action',
+			success:function(result){
+				if(result == 'success'){
+					alert("修改成功，请重新登陆！");
+					location.href = index + '-out.action';
+				}else{
+					alert(result);
+				}
+			}
+		});
 	});
 })(jQuery);
 var accordion =  new Accordion($('#accordion'));

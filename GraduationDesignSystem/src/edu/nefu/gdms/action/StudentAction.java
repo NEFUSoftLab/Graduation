@@ -79,6 +79,22 @@ public class StudentAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
+	//修改密码
+	public String updatePassword(){
+		Object s = ActionContext.getContext().getSession().get("student");
+		if(s instanceof StudentBean){
+			studentBean = (StudentBean)s;
+			try {
+				studentManager.updatePassword(pwd,studentBean.getSid());
+			}catch(Exception e){
+				result = "系统出错！";
+				e.printStackTrace();
+			}
+		}else{
+			result = "fail";
+		}
+		return SUCCESS;
+	}
 
 
 	public String getNumber() {

@@ -105,20 +105,20 @@
 						<div class="form-group">
 							<label for="new-password" class="col-md-2 col-sm-2 password-label control-label">密码</label>
 							<div class="col-md-9 col-xs-12 col-sm-9">
-								<input type="password" class="form-control" id="new-password" placeholder="请输入新的密码">
+								<input type="password" class="form-control" id="new-password" placeholder="请输入新的密码" disabled>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="configure-password" class="col-md-2 col-sm-2 password-label control-label">确认密码</label>
 							<div class="col-md-9 col-xs-12 col-sm-9">
-								<input type="password" class="form-control" id="configure-password" placeholder="请再次输入新密码">
+								<input type="password" class="form-control" id="configure-password" placeholder="请再次输入新密码" disabled>
 							</div>
 						</div>
 					</form>
 				</div>
 				<div class="modal-footer">
 				  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-				  <button type="button" id="up-pa-ok" class="btn btn-primary">确认</button>
+				  <button type="button" id="up-pa-ok" class="btn btn-primary" disabled="disabled">确认</button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->

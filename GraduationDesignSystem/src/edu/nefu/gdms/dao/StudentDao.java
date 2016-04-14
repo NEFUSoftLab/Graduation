@@ -19,5 +19,7 @@ public interface StudentDao {
 	void delete(String id);
 	
 	List<Student> getAll();
+
+	void updatePassword(String pwd, String sid);
 	
 }	
