@@ -3,6 +3,8 @@ package edu.nefu.gdms.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import edu.nefu.gdms.beans.GrourBean;
+
 /**
  * Group entity. @author MyEclipse Persistence Tools
  */
@@ -32,7 +34,11 @@ public class Grour implements java.io.Serializable {
 
 	/** minimal constructor */
 	
-
+	public Grour(GrourBean grourBean){
+		this.name = grourBean.getGid();
+		this.number = grourBean.getNumber();
+	}
+	
 
 	public Grour(String gid, String name, String number) {
 		super();

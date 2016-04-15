@@ -1,7 +1,6 @@
 package edu.nefu.gdms.domain;
 
-import java.util.HashSet;
-import java.util.Set;
+import edu.nefu.gdms.beans.SystimeBean;
 
 /**
  * Systime entity. @author MyEclipse Persistence Tools
@@ -16,7 +15,15 @@ public class Systime implements java.io.Serializable {
 	private String starttime;
 	private String endtime;
 	 
-
+	
+	public Systime(SystimeBean systime){
+		this.name = systime.getName();
+		this.starttime = systime.getStarttime();
+		this.endtime = systime.getEndtime();
+		
+	}
+	
+	
 	// Constructors
 
 	/** default constructor */

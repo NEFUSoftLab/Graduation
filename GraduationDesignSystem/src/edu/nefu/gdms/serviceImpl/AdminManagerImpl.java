@@ -6,12 +6,15 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import edu.nefu.gdms.beans.GrourBean;
 import edu.nefu.gdms.beans.PageBean;
 import edu.nefu.gdms.beans.StudentBean;
+import edu.nefu.gdms.beans.SystimeBean;
 import edu.nefu.gdms.beans.TeacherBean;
 import edu.nefu.gdms.domain.Admin;
 import edu.nefu.gdms.domain.Grour;
 import edu.nefu.gdms.domain.Student;
+import edu.nefu.gdms.domain.Systime;
 import edu.nefu.gdms.domain.Teacher;
 import edu.nefu.gdms.service.AdminManager;
 import edu.nefu.gdms.service.util.ManagerTemplate;
@@ -19,9 +22,7 @@ import edu.nefu.gdms.service.util.ManagerTemplate;
 public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 
 	private int MAX_GROUP_NUM = 0;
-
-	private int TEA_EVERY_GROUP = 3;
-	Random random = new Random();
+ 
 
 	@Override
 	public boolean login(String username, String password) {
@@ -37,6 +38,7 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 			return false;
 	}
 
+	//学生随机分配老师
 	@Override
 	public void quickGroup() {
 		List<Student> stuList = studentDao.getAll();
@@ -76,25 +78,18 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 		teacherDao.save(new Teacher(teacherBean));
 	}
 
+	//老师随机分组
 	@Override
-	public void addGroup() {
+	public void addGroup(int groupNum) {
 		List<Teacher> teaList = teacherDao.getAll();
-		int size = (teaList.size() + TEA_EVERY_GROUP - 1) / TEA_EVERY_GROUP;
-		Grour[] array = new Grour[size];
+		int size = (teaList.size() + groupNum - 1) / groupNum;
+		List<Grour> grourList = grourDao.getAll();
 		Set<Integer> set = new HashSet<Integer>();
 		int index = 0;
-		int max_group = 0;
-		for (int i = 0; i < size; i++) {
-			array[i].setNumber(i + "");
-			grourDao.save(array[i]);
-			while (max_group < TEA_EVERY_GROUP)
-				while (set.contains(i)) {
-					index = random.nextInt(size);
-				}
-			set.add(index);
-			teaList.get(index).setGroup(array[i]);
-			max_group++;
-			teacherDao.update(teaList.get(index));
+		for(Teacher teacher:teaList){
+			if(index >= size) index = 0;
+			teacher.setGroup(grourList.get(index));
+			index ++;
 		}
 	}
 
@@ -137,8 +132,62 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 		pageBean.setAllRows(allRows);
 		pageBean.setCurrentPage(currentPage);
 		pageBean.setTotalPage(totalPage);
-
 		return pageBean;
 	}
+	
+	
+	//增加系统时间
+	@Override
+	public void addSystime(SystimeBean systime) {
+		systimeDao.save(new Systime(systime));
+	}
+	
+	
+	//修改系统时间
+	@Override
+	public void updateSystime(SystimeBean systimeBean) {
+		Systime systime = new Systime(systimeBean);
+		systime.setSyid(systimeBean.getSyid());
+		systimeDao.update(systime);
+	}
 
+	@Override
+	public void delSystime(SystimeBean systimeBean) {
+		Systime systime = new Systime(systimeBean);
+		systime.setSyid(systimeBean.getSyid());
+		systimeDao.delete(systime);
+		
+	}
+
+	//增加组别
+	@Override
+	public void addGrour(int num) {
+		Grour[] array = new Grour[num];
+		for(int i =0;i<num;i++){
+			grourDao.save(array[i]);
+		}
+	}
+
+	//增加组别
+	@Override
+	public void updateGrour(GrourBean grourBean) {
+		Grour grour = new Grour(grourBean);
+		grour.setGid(grourBean.getGid());
+		grourDao.update(grour);
+	}
+
+	//删除组别
+	@Override
+	public void delGrour(GrourBean grourBean) {
+		Grour grour = new Grour(grourBean);
+		grour.setGid(grourBean.getGid());
+		grourDao.delete(grour);
+	}
+	
+	
+	
+	
+	
+	
+	
 }

@@ -87,8 +87,7 @@ public class TeacherBean {
 	}
 
 	public TeacherBean() {
-		super();
-		// TODO Auto-generated constructor stub
+		super(); 
 	}
 
 	public TeacherBean(String teid, String number, String name, String phone, String pwd, String email, String major,

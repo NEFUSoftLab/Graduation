@@ -38,8 +38,7 @@ public class TepascoreBean {
 	
 	
 	public TepascoreBean() {
-		super();
-		// TODO Auto-generated constructor stub
+		super(); 
 	}
 	
 	
