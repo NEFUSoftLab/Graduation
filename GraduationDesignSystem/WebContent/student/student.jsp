@@ -105,13 +105,13 @@
 						<div class="form-group">
 							<label for="new-password" class="col-md-2 col-sm-2 password-label control-label">密码</label>
 							<div class="col-md-9 col-xs-12 col-sm-9">
-								<input type="password" class="form-control" id="new-password" placeholder="请输入新的密码" disabled>
+								<input type="password" class="form-control" id="new-password" placeholder="请输入新的密码">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="configure-password" class="col-md-2 col-sm-2 password-label control-label">确认密码</label>
 							<div class="col-md-9 col-xs-12 col-sm-9">
-								<input type="password" class="form-control" id="configure-password" placeholder="请再次输入新密码" disabled>
+								<input type="password" class="form-control" id="configure-password" placeholder="请再次输入新密码">
 							</div>
 						</div>
 					</form>

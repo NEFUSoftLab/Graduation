@@ -94,14 +94,14 @@
 	</div>
 	<!-- 	修改密码模态框         -->
 	<div id="update-password" class="modal fade">
-		<form class="form-horizontal">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					  <h4 class="modal-title">修改密码</h4>
-					</div>
-					<div class="modal-body">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title">修改密码</h4>
+				</div>
+				<div class="modal-body">
+					<form id="up-pa-form" identifier="teacher" class="form-horizontal">
 						<div class="form-group">
 							<label for="initial-password" class="col-md-2 col-sm-2 control-label password-label">原密码</label>
 							<div class="col-md-9 col-xs-12 col-sm-9">
@@ -120,14 +120,14 @@
 								<input type="password" class="form-control" id="configure-password" placeholder="请再次输入新密码">
 							</div>
 						</div>
-					</div>
-					<div class="modal-footer">
-					  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					  <button type="button" class="btn btn-primary">确认</button>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</form>
+					</form>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				  <button type="button" class="btn btn-primary" id="up-pa-ok">确认</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
 	</div>
 		<script src="${pageContext.request.contextPath}/static/js/main/index.js"></script>
 </body>

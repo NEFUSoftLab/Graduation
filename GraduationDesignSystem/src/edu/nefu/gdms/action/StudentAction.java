@@ -1,12 +1,8 @@
 package edu.nefu.gdms.action;
 
-import java.io.IOException;
-import java.util.List;
+
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.struts2.ServletActionContext;
 
 import com.google.gson.Gson;
 import com.opensymphony.xwork2.ActionContext;
@@ -86,12 +82,13 @@ public class StudentAction extends ActionSupport {
 			studentBean = (StudentBean)s;
 			try {
 				studentManager.updatePassword(pwd,studentBean.getSid());
+				result = "success";
 			}catch(Exception e){
 				result = "系统出错！";
 				e.printStackTrace();
 			}
 		}else{
-			result = "fail";
+			result = "修改失败！";
 		}
 		return SUCCESS;
 	}

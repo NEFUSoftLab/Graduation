@@ -16,8 +16,8 @@
 		</action>
 
 		<action name="teacher-*" method="{1}" class="teacherAction">
-			<result type="json">
-				<param name="root">{1}</param>
+			<result type="json" name="success">
+				<param name="root">result</param>
 			</result>
 			<result name="index">teacher/teacher.jsp</result>
 			<result name="out">login.jsp</result>

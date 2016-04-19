@@ -23,6 +23,7 @@ $(function() {
 						dataType: 'json',
 						url: Login.url,
 						success: function(data) {
+							console.log(data);
 							if(data == 'success') {
 								console.log('success');
 								location.href = bean + "-index.action";

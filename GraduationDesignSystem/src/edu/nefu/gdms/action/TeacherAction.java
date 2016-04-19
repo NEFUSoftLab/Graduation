@@ -5,6 +5,7 @@ import java.io.File;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.beans.TeacherBean;
 import edu.nefu.gdms.beans.TitleBean;
 import edu.nefu.gdms.service.TeacherManager;
@@ -22,7 +23,7 @@ public class TeacherAction extends ActionSupport {
 	private String number;
 	private String pwd;
 	private TeacherBean teacherBean;
-	private String login;
+	private String result;
 	private TitleBean titleBean;
 
 	// 上传的文件，文件的名字
@@ -38,25 +39,55 @@ public class TeacherAction extends ActionSupport {
 
 	// 登陆
 	public String login() {
-		login = "";
+		result = "";
 		try {
 			if (teacherManager.login(number, pwd)) {
-				login = "success";
+				result = "success";
 				teacherBean = teacherManager.getByTeaNumber(number);
 				ActionContext.getContext().getSession().put("teacher", teacherBean);
 			} else {
-				login = "fail";
+				result = "fail";
 			}
 
 		} catch (Exception e) {
-			login = "fail";
+			result = "fail";
 			e.printStackTrace();
 		}
 		return SUCCESS;
 	}
 	
-	 
-
+	//判断密码是否正确
+	public String judgePassword(){
+		Object s = ActionContext.getContext().getSession().get("teacher");
+		if(s instanceof TeacherBean){
+			teacherBean = (TeacherBean)s;
+			if(teacherBean.getPwd().equals(pwd)){
+				result = "success";
+			}else{
+				result = "fail";
+			}
+		}else{
+			result = "fail";
+		}
+		return SUCCESS;
+	}
+	//修改密码
+	public String updatePassword(){
+		Object s = ActionContext.getContext().getSession().get("teacher");
+		if(s instanceof TeacherBean){
+			teacherBean = (TeacherBean)s;
+			try {
+				teacherManager.updatePassword(pwd,teacherBean.getTeid());
+				result = "success";
+			}catch(Exception e){
+				result = "系统出错！";
+				e.printStackTrace();
+			}
+		}else{
+			result = "修改失败！";
+		}
+		return SUCCESS;
+	}
 	// 跳转到主页面
 	public String index() {
 		return "index";
@@ -64,7 +95,7 @@ public class TeacherAction extends ActionSupport {
 
 	// 退出
 	public String out() {
-		ActionContext.getContext().getSession().put("student", null);
+		ActionContext.getContext().getSession().put("teacher", null);
 		return "out";
 	}
 
@@ -129,12 +160,12 @@ public class TeacherAction extends ActionSupport {
 		this.teacherBean = teacherBean;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getResult() {
+		return result;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	public TeacherManager getTeacherManager() {

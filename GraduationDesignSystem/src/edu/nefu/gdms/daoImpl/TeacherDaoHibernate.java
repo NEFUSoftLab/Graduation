@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Query;
 
 import edu.nefu.gdms.dao.TeacherDao;
+import edu.nefu.gdms.domain.Student;
 import edu.nefu.gdms.domain.Teacher;
 import edu.nefu.gdms.support.GdmsHibernateDaoSupport;
 
@@ -86,6 +87,14 @@ public class TeacherDaoHibernate extends GdmsHibernateDaoSupport implements Teac
 	public List getAllTeacherByPage(int offset, int pageSize) {
 		String hql = "from Teacher";
 		return findByPage(hql, offset, pageSize);
+	}
+
+	@Override
+	public void updatePassword(String pwd, String teid) {
+		Teacher teacher = getHibernateTemplate().get(Teacher.class, teid);
+		teacher.setPwd(pwd);
+		getHibernateTemplate().update(teacher); 
+		
 	}
 
 }

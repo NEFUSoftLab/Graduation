@@ -76,5 +76,11 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 		teacherDao.update(new Teacher(teacherBean));
 	}
 
+	@Override
+	public void updatePassword(String pwd, String teid) {
+		teacherDao.updatePassword(pwd,teid);
+		
+	}
+
 	
 }
