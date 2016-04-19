@@ -12,7 +12,22 @@
         <i class="glyphicon glyphicon-plus"></i> 添加
     </button>
 </div>
-<table id="table">
+<table  id="table"
+	   	data-pagination="true"
+		data-toolbar="#toolbar"
+		data-search="true"
+		data-side-pagination="server"
+		data-page-list="[10, 20, 50, 100]"
+		data-show-refresh="true"
+		data-show-toggle="true"
+		data-page-size="10"
+		data-page-number="1"
+		data-pagination-first-text="首页"
+		data-pagination-pre-text="上一页"
+		data-pagination-next-text="下一页"
+		data-pagination-last-text="末页"
+		data-show-columns="true" 
+>
     <thead>
     <tr>
         <th data-field="state" data-checkbox="true"></th>

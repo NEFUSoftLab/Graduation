@@ -1,8 +1,12 @@
-var currentPage;
+var currentPage = 1;
+var pageSize = 10
 var Table = {
 	$table: $("#table"),
 	init: function(pageSize, page) {
-		var data = {page: page, pageSize: pageSize};
+		var data = null;
+		if(pageSize != null && page != null) {
+			data = {page: page, pageSize: pageSize};
+		}
 		$.ajax({
 			type: 'POST',
 			url: "admin-getAllTeacher.action",
@@ -14,6 +18,11 @@ var Table = {
 				currentPage = dataJSON.currentPage;
 				Table.$table.bootstrapTable({
 					data: data,
+					totalRows: dataJSON.allRows,
+					pageNumber: currentPage
+				});
+				
+					/*data: data,
 					pagination: true,
 				    toolbar: "#toolbar",
 			        search: "true",
@@ -28,10 +37,10 @@ var Table = {
 			        paginationPreText:"上一页",
 			        paginationNextText: "下一页",
 			        paginationLastText: "末页",
-			        showColumns: "true"
-				});
-				$(".pagination .page-pre").addClass("disabled");
-				$(".pagination .page-number").eq(Table.currentPage-1).addClass("active");
+			        showColumns: "true"*/
+				if(currentPage == 1) {
+					$(".pagination .page-pre").addClass("disabled");
+				}
 			}
 		});
 	},
@@ -39,11 +48,12 @@ var Table = {
 		$(document).on('click', '.pagination .page-pre, .pagination .page-next, .pagination .page-number', function(event) {
 			event.stopPropagation();
 			var $length = $(".pagination .page-number").size();
-			var $index = $(".pagination .page-number.active").index();
-			if($index == 1) {
+			console.log($length);
+			if(currentPage == 1) {
 				$(".pagination .page-pre").addClass("disabled");
 			}
-			if($index == $length) {
+			if(currentPage == $length-1) {
+				console.log('123');
 				$(".pagination .page-next").addClass("disabled");
 			}
 		});
@@ -52,11 +62,19 @@ var Table = {
 		$(document).on('click', '.pagination .page-next', function(event) {
 			event.stopPropagation();
 			currentPage = currentPage + 1;
-			console.log(currentPage);
+			$.post("admin-getAllTeacher.action", {page: currentPage, pageSize: pageSize}, function(data) {
+				var dataJSON = $.parseJSON(data);
+				var data = $.parseJSON(JSON.stringify(dataJSON.list));
+				Table.$table.bootstrapTable('destroy').bootstrapTable({
+					data: data,
+					totalRows: dataJSON.allRows,
+					pageNumber: currentPage
+				});
+			})
 		});
 	},
 	entry: function() {
-		this.init(10,1);
+		this.init();
 		this.disabled();
 		this.nextPage();
 	}
