@@ -8,7 +8,7 @@
     <button id="remove" class="btn btn-danger" disabled>
         <i class="glyphicon glyphicon-remove"></i> 删除
     </button>
-    <button id="add" class="btn btn-success">
+    <button href="admin-addTeaForward.action" data-trigger="ajax" data-target="#section-container" class="btn btn-success">
         <i class="glyphicon glyphicon-plus"></i> 添加
     </button>
 </div>
@@ -37,26 +37,5 @@
         <th data-field="phone" data-sortable="true">电话号码</th>
     </tr>
     </thead>
-<%-- 	<tbody>
-	    <c:forEach var="item" items="${getAllTeacher }">
-			<tr>
-				<td><input type="checkbox" name="teachers"/></td>
-				<td>${item.number }</td>
-				<td>${item.name }</td>
-				<td>${item.pwd }</td>
-				<td>${item.phone }</td>
-				<td>
-					<button id="${item.teid }" class="btn btn-default btn-xs modify">
-						<span class="glyphicon glyphicon-edit"></span>
-						修改
-					</button>
-					<button id="${item.teid }" class="btn btn-default btn-xs delete">
-						<span class="glyphicon glyphicon-trash"></span>
-						删除
-					</button>
-				</td>
-			</tr>
-		</c:forEach>
-    </tbody> --%>
 </table>
 <script src="${pageContext.request.contextPath}/static/js/admin/ad_tea.js"></script>
