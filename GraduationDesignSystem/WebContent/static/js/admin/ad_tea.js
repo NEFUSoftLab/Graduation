@@ -2,6 +2,8 @@ var currentPage = 1;
 var pageSize = 10;
 var Table = {
 	$table: $("#table"),
+	$remove: $("#remove"),
+	selections: [],
 	init: function() {
 		$.ajax({
 			type: 'POST',
@@ -98,6 +100,15 @@ var Table = {
 			
 		});
 	},
+	removeData: function() {
+		$table.on('check.bs.table uncheck.bs.table ' +
+                'check-all.bs.table uncheck-all.bs.table', function () {
+            $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
+            selections = $.map($table.bootstrapTable('getSelections'), function (row) {
+	            return row.id
+	        });;
+        });
+	}
 	disabled: function(currentPage) {
 		var $length = $(".pagination .page-number").size();
 		if(currentPage == 1) {

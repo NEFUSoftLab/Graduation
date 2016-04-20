@@ -1,10 +1,12 @@
 .modify {
-	color: #3bb4f2;
+	color: #3bb4f2!important;
 }
 .delete {
-	color: #dd514c;
+	color: #dd514c!important;
 }
-
+.add {
+	color: #5cb85c!important;
+}
 #adtea_submit {
 	text-align: right;
 }
