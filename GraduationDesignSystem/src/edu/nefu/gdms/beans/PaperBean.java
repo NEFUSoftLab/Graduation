@@ -40,8 +40,7 @@ public class PaperBean {
 		this.score = score;
 	}
 	public PaperBean() {
-		super();
-		// TODO Auto-generated constructor stub
+		super(); 
 	}
 	public PaperBean(String pid, String sid, String syid, String filepath, String score) {
 		super();

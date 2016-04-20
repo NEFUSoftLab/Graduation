@@ -50,4 +50,16 @@ public class StudentDaoHibernate extends GdmsHibernateDaoSupport implements Stud
 		else
 			return null;
 	}
+
+	@Override 
+	public List getAllStudentByPage(int offset, int pageSize) {
+		String hql = "from Student";
+		return findByPage(hql, offset, pageSize); 
+		
+	}
+	public void updatePassword(String pwd, String sid) {
+		Student student = getHibernateTemplate().get(Student.class, sid);
+		student.setPwd(pwd);
+		getHibernateTemplate().update(student); 
+	}
 }

@@ -19,15 +19,8 @@ public class StudentManagetImpTest {
 	
 	@Test
 	public void test() {
-//		PageBean list = manager.getAllTeacher(11, 10);
-//		
-//		for(TeacherBean e:list){
-//			System.out.println(e.getNumber());
-//		}
+		manager.quickGroup();
 		
 	}
-	
-	
-	
 
 }

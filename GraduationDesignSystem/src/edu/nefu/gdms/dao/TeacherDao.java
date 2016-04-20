@@ -23,6 +23,7 @@ public interface TeacherDao {
 	void deleteMany(String[] idArray);
 	
 	List getAllTeacherByPage(int offset,int pageSize);
+	void updatePassword(String pwd, String teid);
 	
 	
 

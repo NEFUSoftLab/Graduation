@@ -1,6 +1,6 @@
 package edu.nefu.gdms.action;
 
-import java.util.List;
+
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -24,16 +24,11 @@ public class StudentAction extends ActionSupport {
 	private StudentBean studentBean;
 	private StudentManager studentManager;
 	// 登录结果
-	private String login;
+	private String result;
 	// 查询所有学生
 	private String getAll;
-	// 移除
-	private String remove;
-	// 修改
-	private String modify;
-	// 保存
-	private String save;
-
+	
+	
 	// 跳转部分
 	// 跳转到主页面
 	public String index() {
@@ -42,18 +37,18 @@ public class StudentAction extends ActionSupport {
 
 	// 判断登录
 	public String login() {
-		login = "";
+		result = "";
 		// System.out.println(studentBean.getNumber()+".."+studentBean.getPwd());
 		try {
 			if (studentManager.login(number, pwd)) {
-				login = "success";
+				result = "success";
 				studentBean = studentManager.getByStuNumber(number);
 				ActionContext.getContext().getSession().put("student", studentBean);
 			} else {
-				login = "fail";
+				result = "fail";
 			}
 		} catch (Exception e) {
-			login = "fail";
+			result = "fail";
 			e.printStackTrace();
 		}
 		return SUCCESS;
@@ -65,19 +60,39 @@ public class StudentAction extends ActionSupport {
 		ActionContext.getContext().getSession().put("student", null);
 		return "out";
 	}
-
-	public String modify() {
-		try {
-			modify = "success";
-			studentManager.modify(studentBean);
-
-		} catch (Exception e) {
-			modify = "fail";
-			e.printStackTrace();
-
+	//判断密码是否正确
+	public String judgePassword(){
+		Object s = ActionContext.getContext().getSession().get("student");
+		if(s instanceof StudentBean){
+			studentBean = (StudentBean)s;
+			if(studentBean.getPwd().equals(pwd)){
+				result = "success";
+			}else{
+				result = "fail";
+			}
+		}else{
+			result = "fail";
 		}
 		return SUCCESS;
 	}
+	//修改密码
+	public String updatePassword(){
+		Object s = ActionContext.getContext().getSession().get("student");
+		if(s instanceof StudentBean){
+			studentBean = (StudentBean)s;
+			try {
+				studentManager.updatePassword(pwd,studentBean.getSid());
+				result = "success";
+			}catch(Exception e){
+				result = "系统出错！";
+				e.printStackTrace();
+			}
+		}else{
+			result = "修改失败！";
+		}
+		return SUCCESS;
+	}
+
 
 	public String getNumber() {
 		return number;
@@ -95,12 +110,12 @@ public class StudentAction extends ActionSupport {
 		this.pwd = pwd;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getResult() {
+		return result;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	public String getGetAll() {
@@ -109,30 +124,6 @@ public class StudentAction extends ActionSupport {
 
 	public void setGetAll(String getAll) {
 		this.getAll = getAll;
-	}
-
-	public String getRemove() {
-		return remove;
-	}
-
-	public void setRemove(String remove) {
-		this.remove = remove;
-	}
-
-	public String getModify() {
-		return modify;
-	}
-
-	public void setModify(String modify) {
-		this.modify = modify;
-	}
-
-	public String getSave() {
-		return save;
-	}
-
-	public void setSave(String save) {
-		this.save = save;
 	}
 
 	public StudentManager getStudentManager() {

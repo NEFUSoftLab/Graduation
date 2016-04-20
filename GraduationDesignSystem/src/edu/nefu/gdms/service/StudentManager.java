@@ -30,5 +30,7 @@ public interface StudentManager {
 	StudentBean getBySid(String sid); 
 	
 	List<StudentBean> getAll();
+
+	void updatePassword(String pwd, String sid);
 	
 }

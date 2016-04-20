@@ -19,16 +19,19 @@ public class AdminAction extends ActionSupport {
 	private StudentManager studentManager;
 	private TeacherManager teacherManager;
 
-	private int page = 0;
+	private int page = 1;
 	private int pageSize = 10;
-	private TeacherBean teacherBean;
+	
 
 	private PageBean pagebean;
+	private AdminBean adminBean;
+	private TeacherBean teacherBean;
+	private StudentBean studentBean;
 
 	private String number;
 	private String pwd;
 
-	private AdminBean adminBean;
+	
 
 	private List<TeacherBean> teacherList;
 
@@ -74,13 +77,19 @@ public class AdminAction extends ActionSupport {
 
 	// 取得所有学生数据
 	public String getAllStudent() {
-		getAllStudent = "";
-		System.out.println("yes");
-		List<StudentBean> studentList = studentManager.getAll();
-		getAllStudent = gson.toJson(studentList);
-		System.out.println(getAllStudent);
+		pagebean = adminManager.getAllStudent(pageSize, page);
+		getAllStudent = gson.toJson(pagebean);
 		return SUCCESS;
 	}
+	
+	//添加学生
+	public String addStudent(){
+		studentManager.save(studentBean);
+		
+		return "addStudent";
+		
+	}
+	
 
 	// 分页获取老师数据
 	public String getAllTeacherBySize() {

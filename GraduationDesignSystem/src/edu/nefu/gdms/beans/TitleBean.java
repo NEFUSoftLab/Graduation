@@ -52,8 +52,7 @@ public class TitleBean {
 	
 	
 	public TitleBean() {
-		super();
-		// TODO Auto-generated constructor stub
+		super(); 
 	}
 	
 	

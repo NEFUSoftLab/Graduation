@@ -15,7 +15,6 @@
 	<!-- js  -->
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
-	<script src="${pageContext.request.contextPath}/static/js/main/index.js"></script>
 </head>
 <body>
 	<div id="wrapper" class="container-fulid">
@@ -102,7 +101,44 @@
 				</footer>
 			</section>
 		</div>
-		
 	</div>
+		<!-- 	修改密码模态框         -->
+	<div id="update-password" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title">修改密码</h4>
+				</div>
+				<div class="modal-body">
+					<form id="up-pa-form" identifier="admin" class="form-horizontal">
+						<div class="form-group">
+							<label for="initial-password" class="col-md-2 col-sm-2 control-label password-label">原密码</label>
+							<div class="col-md-9 col-xs-12 col-sm-9">
+								<input type="password" class="form-control" id="initial-password" placeholder="请输入初始密码">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="new-password" class="col-md-2 col-sm-2 password-label control-label">密码</label>
+							<div class="col-md-9 col-xs-12 col-sm-9">
+								<input type="password" class="form-control" id="new-password" placeholder="请输入新的密码">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="configure-password" class="col-md-2 col-sm-2 password-label control-label">确认密码</label>
+							<div class="col-md-9 col-xs-12 col-sm-9">
+								<input type="password" class="form-control" id="configure-password" placeholder="请再次输入新密码">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				  <button type="button" id="up-pa-ok" class="btn btn-primary" disabled="disabled">确认</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div>
+	<script src="${pageContext.request.contextPath}/static/js/main/index.js"></script>
 </body>
 </html>

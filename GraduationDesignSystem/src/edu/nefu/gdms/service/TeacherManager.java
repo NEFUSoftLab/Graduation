@@ -29,6 +29,8 @@ public interface TeacherManager {
 	
 	
 	void modify(TeacherBean teacherBean);
+
+	void updatePassword(String pwd, String teid);
 	
 	
 }

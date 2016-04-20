@@ -79,5 +79,4 @@ var Table = {
 		this.nextPage();
 	}
 }
-
 Table.entry();

@@ -16,9 +16,6 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 	
 	
 	private FileLoaderManagerImpl fileUpload;
-	
-
-	 
 
 	public FileLoaderManagerImpl getFileUpload() {
 		return fileUpload;
@@ -77,6 +74,12 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 	@Override
 	public void modify(TeacherBean teacherBean) {
 		teacherDao.update(new Teacher(teacherBean));
+	}
+
+	@Override
+	public void updatePassword(String pwd, String teid) {
+		teacherDao.updatePassword(pwd,teid);
+		
 	}
 
 	

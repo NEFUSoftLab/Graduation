@@ -46,7 +46,6 @@ public class LogBean {
 
 	public LogBean() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public LogBean(String did, String id, String cdesc, String cdate) {

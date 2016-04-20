@@ -14,7 +14,6 @@ $(function() {
 				if(number == "" || pwd == "") {
 					$('.form-group').addClass('has-error');
 				}else {
-					console.log(Login.url);
 					$.ajax({
 						type: 'POST',
 						data: {
@@ -24,6 +23,7 @@ $(function() {
 						dataType: 'json',
 						url: Login.url,
 						success: function(data) {
+							console.log(data);
 							if(data == 'success') {
 								console.log('success');
 								location.href = bean + "-index.action";

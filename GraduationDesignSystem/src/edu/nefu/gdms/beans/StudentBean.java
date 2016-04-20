@@ -86,8 +86,7 @@ public class StudentBean {
 	}
 
 	public StudentBean() {
-		super();
-		// TODO Auto-generated constructor stub
+		super(); 
 	}
 
 	public StudentBean(String sid, String teid, String number, String pwd, String name, String phone, String sex,

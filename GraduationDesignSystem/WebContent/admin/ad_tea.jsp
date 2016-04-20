@@ -60,6 +60,3 @@
     </tbody> --%>
 </table>
 <script src="${pageContext.request.contextPath}/static/js/admin/ad_tea.js"></script>
-
-
-
