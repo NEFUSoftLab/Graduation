@@ -52,7 +52,9 @@ public class AdminAction extends ActionSupport {
 	public String teaForward() {
 		return "tea";
 	}
-	
+	public String addTeaForward() {
+		return "adte";
+	}
 	public String index() {
 		return "index";
 	}
