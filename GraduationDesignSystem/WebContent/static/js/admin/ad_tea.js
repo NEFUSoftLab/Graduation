@@ -1,9 +1,9 @@
 var currentPage = 1;
 var pageSize = 10;
+var selections = [];
 var Table = {
 	$table: $("#table"),
 	$remove: $("#remove"),
-	selections: [],
 	init: function() {
 		$.ajax({
 			type: 'POST',
@@ -12,6 +12,9 @@ var Table = {
 			data: {
 				page: 1,
 				pageSize: 10
+			},
+			beforeSend: function() {
+				$("#load").fadeIn();
 			},
 			success: function(data) {
 				var dataJSON = $.parseJSON(data);
@@ -23,92 +26,94 @@ var Table = {
 					pageSize: pageSize
 				});
 				$(".pagination .page-pre").addClass("disabled");
+				$("#load").fadeOut();
 			}
 		});
 		this.selectedPageSize();
 		this.nextPage();
 		this.prePage();
 		this.selectedPage();
+		this.changeState();
+		this.removeSelections();
+		this.modifySelections();
 	}, 
 	nextPage: function() {
 		$(document).on('click', '.pagination .page-next', function(event) {
 			event.stopPropagation();
 			currentPage = currentPage + 1;
-			console.log(pageSize);
-			$.post("admin-getAllTeacher.action", {page: currentPage, pageSize: pageSize}, function(data) {
-				var dataJSON = $.parseJSON(data);
-				var data = $.parseJSON(JSON.stringify(dataJSON.list));
-				Table.$table.bootstrapTable('destroy').bootstrapTable({
-					data: data,
-					totalRows: dataJSON.allRows,
-					pageNumber: currentPage,
-					pageSize: pageSize
-				});
-				Table.disabled(currentPage);
-			});
+			pagination(pageSize, currentPage);
 		});
 	},
 	prePage: function() {
 		$(document).on('click', '.pagination .page-pre', function(event) {
 			event.stopPropagation();
 			currentPage = currentPage - 1;
-			$.post("admin-getAllTeacher.action", {page: currentPage, pageSize: pageSize}, function(data) {
-				var dataJSON = $.parseJSON(data);
-				var data = $.parseJSON(JSON.stringify(dataJSON.list));
-				Table.$table.bootstrapTable('destroy').bootstrapTable({
-					data: data,
-					totalRows: dataJSON.allRows,
-					pageNumber: currentPage,
-					pageSize: pageSize
-				});
-				Table.disabled(currentPage);
-			});
+			pagination(pageSize, currentPage);
 		});
 	},
 	selectedPage: function() {
 		$(document).on('click', '.pagination .page-number', function(event) {
 			event.stopPropagation();
 			currentPage = $(".pagination .page-number.active").index();
-			$.post("admin-getAllTeacher.action", {page: currentPage, pageSize: pageSize}, function(data) {
-				var dataJSON = $.parseJSON(data);
-				var data = $.parseJSON(JSON.stringify(dataJSON.list));
-				Table.$table.bootstrapTable('destroy').bootstrapTable({
-					data: data,
-					totalRows: dataJSON.allRows,
-					pageNumber: currentPage,
-					pageSize: pageSize
-				});
-				Table.disabled(currentPage);
-			});
+			pagination(pageSize, currentPage);
 		})
 	},
 	selectedPageSize: function() {
 		$(document).on('click', '.dropdown-menu li', function(event) {
 			event.stopPropagation();
 			pageSize = $('.dropdown-menu li.active a').text();
-			$.post("admin-getAllTeacher.action", {page: currentPage, pageSize: pageSize}, function(data) {
-				var dataJSON = $.parseJSON(data);
-				var data = $.parseJSON(JSON.stringify(dataJSON.list));
-				Table.$table.bootstrapTable('destroy').bootstrapTable({
-					data: data,
-					totalRows: dataJSON.allRows,
-					pageNumber: currentPage,
-					pageSize: pageSize
-				});
-				Table.disabled(currentPage);
-			});
-			
+			currentPage = 1;
+			pagination(pageSize, currentPage);
 		});
 	},
-	removeData: function() {
-		$table.on('check.bs.table uncheck.bs.table ' +
+	//改变删除按钮的状态
+	changeState: function() {
+		Table.$table.on('check.bs.table uncheck.bs.table ' +
                 'check-all.bs.table uncheck-all.bs.table', function () {
-            $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
-            selections = $.map($table.bootstrapTable('getSelections'), function (row) {
-	            return row.id
-	        });;
+            Table.$remove.prop('disabled', !Table.$table.bootstrapTable('getSelections').length);
+            selections = Table.getSelections();
         });
-	}
+	},
+	getSelections: function() {
+		return $.map(Table.$table.bootstrapTable('getSelections'), function (row) {
+            return row.number
+        });
+	},
+	//删除选中数据
+	removeSelections: function() {
+		$(document).on('click', '#remove', function(event) {
+			event.stopPropagation();
+			var ids = Table.getSelections();
+			console.log(ids);
+			Table.$table.bootstrapTable('remove', {
+				field: 'number',
+				values: ids
+			});
+			// $.ajax({
+			// 	type: 'POST',
+			// 	data: {ids: ids},
+			// 	url: '',
+			// 	success: function() {
+			// 		Table.$table.bootstrapTable('remove', {
+			// 			field: 'number',
+			// 			values: ids
+			// 		});
+			// 	}
+			// });
+			Table.$remove.prop('disabled', true);
+		})
+	},
+	//修改选中数据
+	modifySelections: function() {
+		$(document).on('click', '#modify', function(event) {
+			event.stopPropagation();
+			var ids = Table.getSelections();
+			if(ids.length > 1) {
+				alert("只能选中一个");
+			}
+			$.post('admin-modifyForward.action',{ids: ids});
+		})
+	},
 	disabled: function(currentPage) {
 		var $length = $(".pagination .page-number").size();
 		if(currentPage == 1) {
@@ -119,5 +124,20 @@ var Table = {
 		}
 	},
 }
-
 Table.init();
+
+function pagination(pageSize, page) {
+	var url = 'admin-getAllTeacher.action';
+	$.post(url, {page: page, pageSize: pageSize}, function(data) {
+		var dataJSON = $.parseJSON(data);
+		var data = $.parseJSON(JSON.stringify(dataJSON.list));
+		Table.$table.bootstrapTable('destroy').bootstrapTable({
+			data: data,
+			totalRows: dataJSON.allRows,
+			pageNumber: currentPage,
+			pageSize: pageSize
+		});
+		Table.disabled(page);
+	});
+}
+

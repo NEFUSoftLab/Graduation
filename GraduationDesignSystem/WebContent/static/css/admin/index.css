@@ -10,3 +10,21 @@
 #adtea_submit {
 	text-align: right;
 }
+
+#load {
+	min-width:100%; 
+	min-height:100%; 
+	background: url(../../images/loading.gif) no-repeat center center;
+	background-size: 64px 64px;
+	background-color:#000;
+	filter:alpha(opacity=50); 
+	-moz-opacity:0.5; 
+	opacity:0.5; 
+	overflow-x: hidden;
+	overflow-y: auto;
+	position:fixed; 
+	left:0px; 
+	top:0px; 
+	display:none; 
+	z-index:1000;  
+}

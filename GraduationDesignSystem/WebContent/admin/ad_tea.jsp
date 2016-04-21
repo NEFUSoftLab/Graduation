@@ -12,7 +12,7 @@
     <button href="admin-addTeaForward.action" data-trigger="ajax" data-target="#section-container" class="add btn btn-default">
         <i class="glyphicon glyphicon-plus"></i> 添加
     </button>
-    <button href="admin-addTeaForward.action" data-trigger="ajax" data-target="#section-container" class="modify btn btn-default">
+    <button id="modify" class="modify btn btn-default">
         <i class="glyphicon glyphicon-edit"></i> 修改
     </button>
 </div>
@@ -40,4 +40,5 @@
         <th data-field="phone" data-sortable="true">电话号码</th>
     </thead>
 </table>
+<div id="load"></div>
 <script src="${pageContext.request.contextPath}/static/js/admin/ad_tea.js"></script>
