@@ -55,6 +55,9 @@ public class AdminAction extends ActionSupport {
 	public String addTeaForward() {
 		return "adte";
 	}
+	public String timeForward() {
+		return "adtm";
+	}
 	public String index() {
 		return "index";
 	}
