@@ -62,8 +62,8 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>流程控制<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#" data-index="6">时间安排</a></li>
-							<li><a href="#" data-index="7">管理时间</a></li>
+							<li><a href="admin-timeForward.action" data-trigger="ajax" data-target="#section-container">时间安排</a></li>
+							<li><a href="admin-manageTimeForward.action" data-trigger="ajax" data-target="#section-container">管理时间</a></li>
 						</ul>
 					</li>
 					<li>

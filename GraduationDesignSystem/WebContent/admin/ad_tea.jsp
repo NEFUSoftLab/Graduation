@@ -34,6 +34,7 @@
 >
     <thead>
         <th data-field="state" data-checkbox="true"></th>
+        <th data-field="teid" data-visible="false"></th>
         <th data-field="number" data-align="right" data-sortable="true">工号</th>
         <th data-field="name" data-align="center" data-sortable="true">姓名</th>
         <th data-field="pwd" data-sortable="true">密码</th>

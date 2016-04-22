@@ -28,6 +28,7 @@
 			<result name="getAllTeacher">admin/ad_tea.jsp</result>
 			<result name="tea">admin/ad_tea.jsp</result>
 			<result name="adte">admin/ad_adte.jsp</result>
+			<result name="adtm">admin/ad_time.jsp</result>
 			<result name="addTeacher">admin/ad_adte.jsp</result>
 			<result name="index">admin/admin.jsp</result>
 			<result name="addTeacher">admin/admin.jsp</result>
