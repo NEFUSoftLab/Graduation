@@ -76,7 +76,7 @@ var Table = {
 	},
 	getSelections: function() {
 		return $.map(Table.$table.bootstrapTable('getSelections'), function (row) {
-            return row.number
+            return row.teid
         });
 	},
 	//删除选中数据
@@ -84,7 +84,6 @@ var Table = {
 		$(document).on('click', '#remove', function(event) {
 			event.stopPropagation();
 			var ids = Table.getSelections();
-			console.log(ids);
 			Table.$table.bootstrapTable('remove', {
 				field: 'number',
 				values: ids
