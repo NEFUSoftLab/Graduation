@@ -7,7 +7,7 @@
       <a href="#"><span class="label label-success pull-right">下载模板</span></a>
   </div>
 	  <div class="panel-body">
-	      <form id="tea_info" class="form-horizontal" >
+	      <form id="tea_info" class="form-horizontal">
 		  	  <div class="form-group">
 			      <label class="col-sm-1 col-md-1 control-label">工号</label>
 			      <div class="col-sm-4 col-md-4">
@@ -45,7 +45,7 @@
 			          	<input type="text" name="teacherBean.level" class="form-control" placeholder="请输入职称">
 			          </c:if>
 			          <c:if test="${not empty teacherBean }">
-			          	<input type="text" name="level" class="form-control" value="${teacherBean.level }">
+			          	<input type="text" name="teacherBean.level" class="form-control" value="${teacherBean.level }">
 			          </c:if>
 			      </div>
 			  </div>
@@ -61,7 +61,7 @@
 			      </div>
 			  </div>
 			  <div class="form-group">
-			      <div id="adtea_submit"  class="col-sm-offset-9 col-sm-2">
+			      <div class="col-sm-offset-9 col-sm-2">
 			      	 <c:if test="${empty teacherBean }">
 			          	<button id="addTeacher" class="btn btn-default">提交</button>
 			         </c:if>
