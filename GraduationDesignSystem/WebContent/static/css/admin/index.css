@@ -28,3 +28,10 @@
 	display:none; 
 	z-index:1000;  
 }
+
+.input {
+	padding-left: 0;
+}
+.input-group.date {
+	padding-right: 15px;
+}
