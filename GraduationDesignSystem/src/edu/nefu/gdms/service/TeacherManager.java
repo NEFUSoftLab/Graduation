@@ -25,7 +25,7 @@ public interface TeacherManager {
 	
 	TeacherBean getByTeaNumber(String number);
 	
-	String addTitle(TitleBean titleBean,File file,String filename,String path);
+	String addTitle(TitleBean titleBean,File file,String filename,TeacherBean teacherBean);
 	
 	
 	void modify(TeacherBean teacherBean);

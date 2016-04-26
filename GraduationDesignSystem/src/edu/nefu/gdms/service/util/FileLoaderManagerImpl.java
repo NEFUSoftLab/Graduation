@@ -13,15 +13,12 @@ public class FileLoaderManagerImpl {
 		String realpath = ServletActionContext.getServletContext().getRealPath("/file");
 		realpath += "/"+path;
         //D:\apache-tomcat-6.0.18\webapps\struts2_upload\images
-        System.out.println("realpath: "+realpath);
-        String filename1 = file.getName();
-        System.out.println("filename"+filename1);
         if (file != null) {
             File savefile = new File(new File(realpath), filename);
             if (!savefile.getParentFile().exists())
                 savefile.getParentFile().mkdirs();
             FileUtils.copyFile(file, savefile);
-           return "success";
+           return realpath+"\\"+filename;
         }
 		
 		return "fail";

@@ -65,9 +65,14 @@
 <script>
 $('#title-file').fileinput({
 	showPreview : false,
-    showUpload:false
+    showUpload:false,
+    allowedFileExtensions : ['doc'],
+   	'elErrorContainer': '#errorBlock'
     });
 $('#table').bootstrapTable();
+$('#addTitle').on('hidden.bs.modal', function () {
+	$('#add-title')[0].reset();
+});
 $('#add-ti-ok').click(function(){
 	var formData = new FormData($("#add-title")[0]);
 	$.ajax({
@@ -87,10 +92,17 @@ $('#add-ti-ok').click(function(){
          processData : false,
 
          success : function(data) {
-        	 alert('成功！');
+        	 if(data == 'success'){
+        		 $('#addTitle').modal('hide');
+            	 alert('上传成功！');
+        	 }else{
+        		 $('#addTitle').modal('hide');
+            	 alert('上传失败！');
+        	 }
          },
 
          error : function() {
+        	 $('#addTitle').modal('hide');
         	 alert('出错了！');
          }
      });

@@ -28,7 +28,8 @@ public class TeacherAction extends ActionSupport {
 
 	// 上传的文件，文件的名字
 	private File file;
-	private String filename;
+	private String fileFileName;
+	private String fileContentType;
 
 	// 需要传回前台的文件
 	private String addTitle;
@@ -106,11 +107,7 @@ public class TeacherAction extends ActionSupport {
 	}
 
 	public String addTitle() {
-		System.out.println(213);
-		System.out.println(titleBean.getTname());
-		System.out.println(file);
-		addTitle = teacherManager.addTitle(titleBean, file, filename,teacherBean.getNumber());
-		result = "success";
+		result = teacherManager.addTitle(titleBean, file, fileFileName,teacherBean);
 		return SUCCESS;
 	}
 
@@ -154,13 +151,6 @@ public class TeacherAction extends ActionSupport {
 		this.file = file;
 	}
 
-	public String getFilename() {
-		return filename;
-	}
-
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
 
 	public TeacherBean getTeacherBean() {
 		return teacherBean;
@@ -192,6 +182,22 @@ public class TeacherAction extends ActionSupport {
 
 	public void setGetAllTeacher(String getAllTeacher) {
 		this.getAllTeacher = getAllTeacher;
+	}
+
+	public String getFileFileName() {
+		return fileFileName;
+	}
+
+	public void setFileFileName(String fileFileName) {
+		this.fileFileName = fileFileName;
+	}
+
+	public String getFileContentType() {
+		return fileContentType;
+	}
+
+	public void setFileContentType(String fileContentType) {
+		this.fileContentType = fileContentType;
 	}
 	
 	
