@@ -36,7 +36,7 @@
 			       	 	<input type="text" class="form-control" placeholder="请输入密码">
 			       	 </c:if>
 			       	 <c:if test="${not empty teacherBean }">
-			       	 	<input type="text" class="form-control" value="${teacherBean.password }">
+			       	 	<input type="text" class="form-control" value="${teacherBean.pwd }">
 			       	 </c:if>
 			      </div>
 			      <label class="col-sm-1 col-md-1 col-md-offset-1 control-label">职称</label>

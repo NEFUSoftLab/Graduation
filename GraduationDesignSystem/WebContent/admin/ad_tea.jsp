@@ -12,7 +12,7 @@
     <button href="admin-addTeaForward.action" data-trigger="ajax" data-target="#section-container" class="add btn btn-default">
         <i class="glyphicon glyphicon-plus"></i> 添加
     </button>
-    <button id="modify" class="modify btn btn-default">
+    <button id="modify" class="modify btn btn-default" disabled>
         <i class="glyphicon glyphicon-edit"></i> 修改
     </button>
 </div>

@@ -56,6 +56,7 @@ public class AdminAction extends ActionSupport {
 		return "tea";
 	}
 	public String addTeaForward() {
+		teacherBean = null;
 		return "adte";
 	}
 	public String timeForward() {
