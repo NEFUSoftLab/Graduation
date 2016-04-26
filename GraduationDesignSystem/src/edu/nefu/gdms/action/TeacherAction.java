@@ -58,6 +58,7 @@ public class TeacherAction extends ActionSupport {
 	
 	//判断密码是否正确
 	public String judgePassword(){
+		result = "";
 		Object s = ActionContext.getContext().getSession().get("teacher");
 		if(s instanceof TeacherBean){
 			teacherBean = (TeacherBean)s;
@@ -73,6 +74,7 @@ public class TeacherAction extends ActionSupport {
 	}
 	//修改密码
 	public String updatePassword(){
+		result = "";
 		Object s = ActionContext.getContext().getSession().get("teacher");
 		if(s instanceof TeacherBean){
 			teacherBean = (TeacherBean)s;
@@ -97,6 +99,10 @@ public class TeacherAction extends ActionSupport {
 	public String out() {
 		ActionContext.getContext().getSession().put("teacher", null);
 		return "out";
+	}
+	//跳转到我的论题模块
+	public String getMyTitle(){
+		return "te_title";
 	}
 
 	public String addTitle(TitleBean titleBean) {

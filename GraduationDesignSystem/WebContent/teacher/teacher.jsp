@@ -49,7 +49,7 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>论文题目<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">我的论题</a></li>
+							<li><a href="${pageContext.request.contextPath}/teacher-getMyTitle.action" data-trigger="ajax" data-target="#section-container">我的论题</a></li>
 							<li><a href="#">论题讨论</a></li>
 						</ul>
 					</li>
