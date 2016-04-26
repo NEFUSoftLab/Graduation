@@ -105,8 +105,12 @@ public class TeacherAction extends ActionSupport {
 		return "te_title";
 	}
 
-	public String addTitle(TitleBean titleBean) {
+	public String addTitle() {
+		System.out.println(213);
+		System.out.println(titleBean.getTname());
+		System.out.println(file);
 		addTitle = teacherManager.addTitle(titleBean, file, filename,teacherBean.getNumber());
+		result = "success";
 		return SUCCESS;
 	}
 

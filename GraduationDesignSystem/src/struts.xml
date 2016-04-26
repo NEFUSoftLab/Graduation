@@ -4,6 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	<package name="gdms" extends="struts-default,json-default">
 		<action name="student-*" method="{1}" class="studentAction">
