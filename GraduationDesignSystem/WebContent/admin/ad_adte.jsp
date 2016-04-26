@@ -1,13 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<div class="panel panel-primary">
+<div class="panel panel-default">
   <div class="panel-heading">
-      <span class="panel-title">添加老师</span>
+      <span class="panel-title">管理老师</span>
       <a href="#"><span class="label label-success pull-right">下载模板</span></a>
   </div>
 	  <div class="panel-body">
-	      <form class="form-horizontal">
+	      <form id="tea_info" class="form-horizontal">
 		  	  <div class="form-group">
 			      <label class="col-sm-1 col-md-1 control-label">工号</label>
 			      <div class="col-sm-4 col-md-4">
@@ -22,10 +22,10 @@
 			      <label class="col-sm-1 col-md-1 col-md-offset-1 control-label">姓名</label>
 			      <div class="col-sm-4 col-md-4">
 			      	  <c:if test="${empty teacherBean }">
-			      	  	  <input type="password" class="form-control" placeholder="请输入姓名">
+			      	  	  <input type="text" class="form-control" placeholder="请输入姓名">
 			      	  </c:if>
 			          <c:if test="${not empty teacherBean }">
-			      	  	  <input type="password" class="form-control" value="${teacherBean.name }">
+			      	  	  <input type="text" class="form-control" value="${teacherBean.name }">
 			      	  </c:if>
 			      </div>
 			  </div>
@@ -73,7 +73,7 @@
 	      </form>
 	  </div>
 </div>
-
+<script src="${pageContext.request.contextPath}/static/js/admin/ad_adte.js"></script>
 
 
 

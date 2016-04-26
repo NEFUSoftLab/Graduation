@@ -86,21 +86,26 @@ var Table = {
 		$(document).on('click', '#remove', function(event) {
 			event.stopPropagation();
 			var teNumber = Table.getSelections();
-			Table.$table.bootstrapTable('remove', {
-				field: 'number',
-				values: ids
-			});
-			// $.ajax({
-			// 	type: 'POST',
-			// 	data: {ids: ids},
-			// 	url: '',
-			// 	success: function() {
-			// 		Table.$table.bootstrapTable('remove', {
-			// 			field: 'number',
-			// 			values: ids
-			// 		});
-			// 	}
+			// Table.$table.bootstrapTable('remove', {
+			// 	field: 'number',
+			// 	values: ids
 			// });
+			$.ajax({
+				type: 'POST',
+				data: {teNumber: teNumber},
+				url: 'admin-delTeacher.action',
+				success: function() {
+					if(teNumber < pageSize) {
+						Table.$table.bootstrapTable('remove', {
+							field: 'number',
+							values: teNumber
+						});
+					}else {
+						pagination(pageSize, currentPage);
+					}
+					
+				}
+			});
 			Table.$remove.prop('disabled', true);
 		})
 	},

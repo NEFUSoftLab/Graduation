@@ -140,6 +140,7 @@ public class AdminAction extends ActionSupport {
 	//跳转至修改老师
 	public String modifyFowardTea(){
 		teacherBean = teacherManager.getByTeaNumber(teNumber);
+		System.out.println(teacherBean.getEmail());
 		return "modifyFowardTea";
 	}
 
