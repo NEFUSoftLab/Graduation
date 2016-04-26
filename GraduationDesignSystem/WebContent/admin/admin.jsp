@@ -49,21 +49,21 @@
 						<div class="title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>教师管理<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
 							<li><a href="admin-teaForward.action" data-trigger="ajax" data-target="#section-container">教师信息</a></li>
-							<li><a href="admin-addTeaForward.action" data-trigger="ajax" data-target="#section-container">添加教师</a></li>
+							<li><a href="admin-addTeaForward.action" data-trigger="ajax" data-target="#section-container">管理教师</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>学生管理<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
 							<li><a href="#" data-index="3">学生信息</a></li>
-							<li><a href="#" data-index="4">添加学生</a></li>
+							<li><a href="#" data-index="4">管理学生</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>流程控制<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#" data-index="6">时间安排</a></li>
-							<li><a href="#" data-index="7">新增时间</a></li>
+							<li><a href="admin-timeForward.action" data-trigger="ajax" data-target="#section-container">时间安排</a></li>
+							<li><a href="admin-manageTimeForward.action" data-trigger="ajax" data-target="#section-container">管理时间</a></li>
 						</ul>
 					</li>
 					<li>
