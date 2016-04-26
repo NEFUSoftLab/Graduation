@@ -17,10 +17,10 @@
 	<link href="${pageContext.request.contextPath}/static/css/main/index.css" rel="stylesheet">
 	<!-- js  -->
 	<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
-	<script src="${pageContext.request.contextPath}/static/js/bootstrap-table.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/fileinput.min.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/fileinput_locale_zh.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/bootstrap-table.min.js"></script>
 </head>
 <body>
 	<div id="wrapper" class="container-fulid">

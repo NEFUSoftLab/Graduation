@@ -27,8 +27,8 @@
     	<th data-field="state" data-checkbox="true"></th>
         <th data-field="title">设计题目</th>
         <th data-field="file">文件</th>
-        <th data-field="forks_count">Forks</th>
-        <th data-field="description">Description</th>
+        <th data-field="forks_count">评价</th>
+        <th data-field="description"></th>
     </tr>
     </thead>
 </table>
@@ -64,10 +64,9 @@
 </div>
 <script>
 $('#title-file').fileinput({
-	showPreview : false,
+	
     showUpload:false,
-    allowedFileExtensions : ['doc'],
-   	'elErrorContainer': '#errorBlock'
+    allowedFileExtensions : ['doc','docx','dotx']
     });
 $('#table').bootstrapTable();
 $('#addTitle').on('hidden.bs.modal', function () {

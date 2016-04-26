@@ -31,8 +31,6 @@ public class TeacherAction extends ActionSupport {
 	private String fileFileName;
 	private String fileContentType;
 
-	// 需要传回前台的文件
-	private String addTitle;
 	
 	
 	//json
@@ -111,13 +109,6 @@ public class TeacherAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	public String getAddTitle() {
-		return addTitle;
-	}
-
-	public void setAddTitle(String addTitle) {
-		this.addTitle = addTitle;
-	}
 
 	public TitleBean getTitleBean() {
 		return titleBean;
