@@ -63,7 +63,7 @@
 			  <div class="form-group">
 			      <div class="col-sm-offset-9 col-sm-2">
 			      	 <c:if test="${empty teacherBean }">
-			          	<button id="addTeacher" class="btn btn-default">提交</button>
+			          	<button id="addTeacher" class="btn btn-primary">提交</button>
 			         </c:if>
 			      	 <c:if test="${not empty teacherBean }">
 			          	<button id="modifyTeacher" class="btn btn-default">提交</button>
