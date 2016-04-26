@@ -13,10 +13,14 @@ var Manage = {
 				var value = params[i].split("=")[1];
 				data[name] = value;
 			}
-			data = JSON.stringify(data);
-			$.post("admin-modifyTeacher.action", {data: data}, function() {
-				$("#section-container").load('admin-teaForward.action')
-			})
+			$.ajax({
+				type: 'POST',
+				data: data,
+				url: 'admin-modifyTeacher.action',
+				success: function() {
+					$("#section-container").load('admin-teaForward.action')
+				}
+			});
 			return false;
 		});
 	},
