@@ -76,6 +76,7 @@ public class Teacher implements java.io.Serializable {
 	}
 
 	public Teacher(TeacherBean teacherBean){
+		this.teid = teacherBean.getTeid();
 		this.number = teacherBean.getNumber();
 		this.name = teacherBean.getName();
 		this.phone = teacherBean.getPhone();

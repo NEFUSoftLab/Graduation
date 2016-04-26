@@ -132,7 +132,7 @@ public class AdminAction extends ActionSupport {
 
 	// 修改老师
 	public String modifyTeacher() {
-		
+		System.out.println(teacherBean.getPwd());
 		teacherManager.modify(teacherBean);
 		return "modifyTeacher";
 	}

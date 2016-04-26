@@ -72,6 +72,12 @@ public class TitleDaoHibernate extends GdmsHibernateDaoSupport implements TitleD
 	public List<Title> getAllBySid(String sid) {
 		return (List<Title>) getHibernateTemplate().find("from Title where sid = ?",sid);
 	}
+
+	@Override
+	public List<Title> getAllByTeid(String teid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }
