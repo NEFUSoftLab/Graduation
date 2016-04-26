@@ -86,10 +86,6 @@ var Table = {
 		$(document).on('click', '#remove', function(event) {
 			event.stopPropagation();
 			var teNumber = Table.getSelections();
-			// Table.$table.bootstrapTable('remove', {
-			// 	field: 'number',
-			// 	values: ids
-			// });
 			$.ajax({
 				type: 'POST',
 				data: {teNumber: teNumber},

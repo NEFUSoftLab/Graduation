@@ -5,13 +5,15 @@ var Manage = {
 		this.add();
 	},
 	modify: function() {
-		$("#modifyTeacher").on('click', function() {
-			console.log(Manage.$teaInfo.serialize());
+		$("#modifyTeacher").on('click', function(event) {
+			var params = decodeURIComponent(Manage.$teaInfo.serialize(), true).split("&");
+			return false;
 		});
 	},
 	add: function() {
 		$("#addTeacher").on('click', function() {
-			console.log(Manage.$teaInfo.serialize());
+			console.log(decodeURIComponent(Manage.$teaInfo.serialize(), true));
 		});
 	}
 }
+Manage.init();
