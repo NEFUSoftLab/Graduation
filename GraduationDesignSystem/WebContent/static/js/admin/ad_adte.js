@@ -22,7 +22,6 @@ var Manage = {
 	},
 	add: function() {
 		$("#addTeacher").on('click', function() {
-			console.log('123');
 			var data = {};
 			var params = decodeURIComponent(Manage.$teaInfo.serialize(), true).split("&");
 			for(var i in params) {
@@ -30,10 +29,15 @@ var Manage = {
 				var value = params[i].split("=")[1];
 				data[name] = value;
 			}
-			data = JSON.stringify(data);
-			$.post("admin-addTeacher.action", {data: data}, function() {
-				$("#section-container").load('admin-teaForward.action')
-			})
+			$.ajax({
+				type: 'POST',
+				data: data,
+				url: 'admin-addTeacher.action',
+				success: function() {
+					$("#section-container").load('admin-teaForward.action')
+				}
+			});
+			return false;
 		});
 	}
 }
