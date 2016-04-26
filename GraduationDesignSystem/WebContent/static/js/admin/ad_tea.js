@@ -4,6 +4,7 @@ var selections = [];
 var Table = {
 	$table: $("#table"),
 	$remove: $("#remove"),
+	$modify: $("#modify"),
 	init: function() {
 		$.ajax({
 			type: 'POST',
@@ -71,34 +72,36 @@ var Table = {
 		Table.$table.on('check.bs.table uncheck.bs.table ' +
                 'check-all.bs.table uncheck-all.bs.table', function () {
             Table.$remove.prop('disabled', !Table.$table.bootstrapTable('getSelections').length);
+            Table.$modify.prop('disabled', !Table.$table.bootstrapTable('getSelections').length);
             selections = Table.getSelections();
         });
 	},
 	getSelections: function() {
 		return $.map(Table.$table.bootstrapTable('getSelections'), function (row) {
-            return row.teid
+            return row.number
         });
 	},
 	//删除选中数据
 	removeSelections: function() {
 		$(document).on('click', '#remove', function(event) {
 			event.stopPropagation();
-			var ids = Table.getSelections();
-			Table.$table.bootstrapTable('remove', {
-				field: 'number',
-				values: ids
+			var teNumber = Table.getSelections();
+			$.ajax({
+				type: 'POST',
+				data: {teNumber: teNumber},
+				url: 'admin-delTeacher.action',
+				success: function() {
+					if(teNumber < pageSize) {
+						Table.$table.bootstrapTable('remove', {
+							field: 'number',
+							values: teNumber
+						});
+					}else {
+						pagination(pageSize, currentPage);
+					}
+					
+				}
 			});
-			// $.ajax({
-			// 	type: 'POST',
-			// 	data: {ids: ids},
-			// 	url: '',
-			// 	success: function() {
-			// 		Table.$table.bootstrapTable('remove', {
-			// 			field: 'number',
-			// 			values: ids
-			// 		});
-			// 	}
-			// });
 			Table.$remove.prop('disabled', true);
 		})
 	},
@@ -106,11 +109,15 @@ var Table = {
 	modifySelections: function() {
 		$(document).on('click', '#modify', function(event) {
 			event.stopPropagation();
-			var ids = Table.getSelections();
-			if(ids.length > 1) {
+			var teNumber = Table.getSelections();
+			if(teNumber.length > 1) {
 				alert("只能选中一个");
+			}else {
+				teNumber = teNumber.toString();
+				$.post('admin-modifyFowardTea.action',{teNumber: teNumber}, function() {
+					$("#section-container").load('admin-modifyFowardTea.action');
+				});
 			}
-			$.post('admin-modifyForward.action',{ids: ids});
 		})
 	},
 	disabled: function(currentPage) {

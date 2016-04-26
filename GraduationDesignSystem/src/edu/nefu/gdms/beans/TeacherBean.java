@@ -111,7 +111,7 @@ public class TeacherBean {
 		this.name = teacher.getName();
 		this.phone = teacher.getPhone();
 		this.pwd = teacher.getPwd();
-		this.email = teacher.getMajor();
+		this.email = teacher.getEmail();
 		this.major = teacher.getMajor();
 		this.level = teacher.getLevel();
 		if(teacher.getGroup()!=null){

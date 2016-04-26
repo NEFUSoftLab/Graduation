@@ -186,8 +186,4 @@ public class AdminManagerImpl extends ManagerTemplate implements AdminManager {
 	
 	
 	
-	
-	
-	
-	
 }
