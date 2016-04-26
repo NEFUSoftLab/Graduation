@@ -92,5 +92,14 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 		
 	}
 
+	@Override
+	public List<TitleBean> getAllTitleByTeid(String teid) {
+		List<TitleBean> list = new ArrayList<TitleBean>();
+		for(Title title:titleDao.getAllByTeid(teid)){
+			list.add(new TitleBean(title));
+		}
+		return list;
+	}
+
 	
 }
