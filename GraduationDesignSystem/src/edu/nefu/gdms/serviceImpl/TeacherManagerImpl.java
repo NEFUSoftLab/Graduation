@@ -82,7 +82,8 @@ public class TeacherManagerImpl extends ManagerTemplate implements TeacherManage
 
 	@Override
 	public void modify(TeacherBean teacherBean) {
-		teacherDao.update(new Teacher(teacherBean));
+		Teacher teacher = new Teacher(teacherBean);
+		teacherDao.update(teacher);
 	}
 
 	@Override

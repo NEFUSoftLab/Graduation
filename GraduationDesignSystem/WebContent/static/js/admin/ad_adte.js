@@ -11,19 +11,37 @@ var Manage = {
 			for(var i in params) {
 				var name = params[i].split("=")[0];
 				var value = params[i].split("=")[1];
-				console.log(value);
-				data.name = value;
+				data[name] = value;
 			}
-			console.log(data.);
-//			$.post("admin-modifyTeacher.action", {data: data}, function() {
-//				console.log('123');
-//			})
+			$.ajax({
+				type: 'POST',
+				data: data,
+				url: 'admin-modifyTeacher.action',
+				success: function() {
+					$("#section-container").load('admin-teaForward.action')
+				}
+			});
 			return false;
 		});
 	},
 	add: function() {
 		$("#addTeacher").on('click', function() {
-			console.log(decodeURIComponent(Manage.$teaInfo.serialize(), true));
+			var data = {};
+			var params = decodeURIComponent(Manage.$teaInfo.serialize(), true).split("&");
+			for(var i in params) {
+				var name = params[i].split("=")[0];
+				var value = params[i].split("=")[1];
+				data[name] = value;
+			}
+			$.ajax({
+				type: 'POST',
+				data: data,
+				url: 'admin-addTeacher.action',
+				success: function() {
+					$("#section-container").load('admin-teaForward.action')
+				}
+			});
+			return false;
 		});
 	}
 }
