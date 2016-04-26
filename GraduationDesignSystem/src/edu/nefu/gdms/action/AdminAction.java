@@ -9,6 +9,7 @@ import edu.nefu.gdms.beans.AdminBean;
 import edu.nefu.gdms.beans.PageBean;
 import edu.nefu.gdms.beans.StudentBean;
 import edu.nefu.gdms.beans.TeacherBean;
+import edu.nefu.gdms.domain.Teacher;
 import edu.nefu.gdms.service.AdminManager;
 import edu.nefu.gdms.service.StudentManager;
 import edu.nefu.gdms.service.TeacherManager;
@@ -30,7 +31,9 @@ public class AdminAction extends ActionSupport {
 
 	private String number;
 	private String pwd;
-
+	
+	//Teacher Number
+	private String teNumber;
 	
 
 	private List<TeacherBean> teacherList;
@@ -115,15 +118,28 @@ public class AdminAction extends ActionSupport {
 	}
 
 	// 删除老师
-	public String delTeacher() {
-		adminManager.delTeacher(teacherBean);
-		return "delTeacher";
+	public void delTeacher() {
+		TeacherBean tea = teacherManager.getByTeaNumber(teNumber);
+		adminManager.delTeacher(tea);
+	}
+	
+	//删除多个学生
+	public String delManaTeacher(){
+		
+		return null;
 	}
 
 	// 修改老师
 	public String modifyTeacher() {
+		
 		teacherManager.modify(teacherBean);
 		return "modifyTeacher";
+	}
+	
+	//跳转至修改老师
+	public String modifyFowardTea(){
+		teacherBean = teacherManager.getByTeaNumber(teNumber);
+		return "modifyFowardTea";
 	}
 
 	public TeacherBean getTeacherBean() {
@@ -236,6 +252,22 @@ public class AdminAction extends ActionSupport {
 
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public StudentBean getStudentBean() {
+		return studentBean;
+	}
+
+	public void setStudentBean(StudentBean studentBean) {
+		this.studentBean = studentBean;
+	}
+
+	public String getTeNumber() {
+		return teNumber;
+	}
+
+	public void setTeNumber(String teNumber) {
+		this.teNumber = teNumber;
 	}
 	
 	
