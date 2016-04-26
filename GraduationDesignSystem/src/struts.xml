@@ -21,6 +21,7 @@
 			</result>
 			<result name="index">teacher/teacher.jsp</result>
 			<result name="out">login.jsp</result>
+			<result name="te_title">teacher/te_title.jsp</result>
 		</action>
 
 		<action name="admin-*" method="{1}" class="adminAction">
