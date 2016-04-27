@@ -28,7 +28,10 @@
 	display:none; 
 	z-index:1000;  
 }
-
+.pagination>li {
+	float: left;
+	display: block;
+} 
 .input {
 	padding-left: 0;
 }

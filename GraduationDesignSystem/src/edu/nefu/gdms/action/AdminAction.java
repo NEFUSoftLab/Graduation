@@ -65,6 +65,9 @@ public class AdminAction extends ActionSupport {
 	public String index() {
 		return "index";
 	}
+	public String manageTimeForward() {
+		return "mangetime";
+	}
 
 	// 业务功能模块
 	public String login() {

@@ -37,7 +37,7 @@
 			<result name="addTeacher">admin/admin.jsp</result>
 			<result name="delTeacher">admin/admin.jsp</result>
 			<result name="modifyTeacher">admin/admin.jsp</result>
-			
+			<result name="mangetime">admin/ad_mangetime.jsp</result>
 			<result name="addStudent">admin/admin.jsp</result>
 			<result type="json">
 				<param name="root">{1}</param>
