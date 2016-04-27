@@ -32,6 +32,8 @@ public interface TeacherManager {
 
 	void updatePassword(String pwd, String teid);
 	
+	List<TitleBean> getAllTitleByTeid(String teid);
+	
 	
 }
  

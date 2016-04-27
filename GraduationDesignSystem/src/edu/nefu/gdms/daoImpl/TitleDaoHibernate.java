@@ -75,8 +75,7 @@ public class TitleDaoHibernate extends GdmsHibernateDaoSupport implements TitleD
 
 	@Override
 	public List<Title> getAllByTeid(String teid) {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<Title>) getHibernateTemplate().find("from Title where teid = ?",teid);
 	}
 	
 
