@@ -69,21 +69,21 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-random" aria-hidden="true"></span>学生分配<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">分配情况</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="admin-stuDistribute.action" data-trigger="ajax" data-target="#section-container">分配情况</a></li>
+							<li><a href="admin-" data-trigger="ajax" data-target="#section-container">添加信息</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>分组考核<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">分配情况</a></li>
-							<li><a href="#">添加信息</a></li>
+							<li><a href="#" data-trigger="ajax" data-target="#section-container">分配情况</a></li>
+							<li><a href="#" data-trigger="ajax" data-target="#section-container">添加信息</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu">
-							<li><a href="#">个人信息</a></li>
+							<li><a href="#" data-trigger="ajax" data-target="#section-container">个人信息</a></li>
 						</ul>
 					</li>
 				</ul>

@@ -60,17 +60,16 @@
 			         </c:if>
 			      </div>
 			  </div>
-			  <div class="form-group">
-			      <div class="col-sm-offset-9 col-sm-2 control-label">
-			      	 <c:if test="${empty teacherBean }">
-			          	<button id="addTeacher" class="btn btn-primary">提交</button>
-			         </c:if>
-			      	 <c:if test="${not empty teacherBean }">
-			          	<button id="modifyTeacher" class="btn btn-default">提交</button>
-			         </c:if>
-			      </div>
-		      </div>
 	      </form>
+	  </div>
+	  <div class="panel-footer clearfix">
+	  	  <button class="btn btn-sm btn-default">返回</button>
+		  <c:if test="${empty teacherBean }">
+	       	<button id="addTeacher" class="btn btn-sm btn-primary pull-right">提交</button>
+	      </c:if>
+	   	  <c:if test="${not empty teacherBean }">
+	       	<button id="modifyTeacher" class="btn btn-sm btn-primary pull-right">提交</button>
+	      </c:if>
 	  </div>
 </div>
 <script src="${pageContext.request.contextPath}/static/js/admin/ad_adte.js"></script>

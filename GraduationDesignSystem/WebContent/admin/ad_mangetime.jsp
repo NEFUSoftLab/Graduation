@@ -9,11 +9,19 @@
 		<span>管理时间</span>
 	</div>
 	<!-- Table -->
-	<div class="table-responsive panel-body">
-		<form id="time_info" class="form-horizontal">
+	<div class="panel-body">
+		<form id="allTime_info" class="form-horizontal">
 			<div class="form-group">
 				<label class="col-sm-2 control-label">上传论题</label>
-				<div class="input-daterange input-group col-sm-10" id="datepicker">
+				<div class="input-group date col-sm-8 input-daterange">
+					<input type="text" class="input-sm form-control" name="${123 }.start" />
+				    <span class="input-group-addon">to</span>
+				    <input type="text" class="input-sm form-control" name="end" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">上传论题</label>
+				<div class="input-daterange input-group date col-sm-8">
 					<input type="text" class="input-sm form-control" name="start" />
 				    <span class="input-group-addon">to</span>
 				    <input type="text" class="input-sm form-control" name="end" />
@@ -21,7 +29,7 @@
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">上传论题</label>
-				<div class="input-daterange input-group col-sm-10" id="datepicker">
+				<div class="input-daterange input-group date col-sm-8">
 					<input type="text" class="input-sm form-control" name="start" />
 				    <span class="input-group-addon">to</span>
 				    <input type="text" class="input-sm form-control" name="end" />
@@ -29,15 +37,7 @@
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">上传论题</label>
-				<div class="input-daterange input-group col-sm-10" id="datepicker">
-					<input type="text" class="input-sm form-control" name="start" />
-				    <span class="input-group-addon">to</span>
-				    <input type="text" class="input-sm form-control" name="end" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label">上传论题</label>
-				<div class="input-daterange input-group col-sm-10" id="datepicker">
+				<div class="input-daterange input-group date col-sm-8">
 					<input type="text" class="input-sm form-control" name="start" />
 				    <span class="input-group-addon">to</span>
 				    <input type="text" class="input-sm form-control" name="end" />
@@ -45,8 +45,12 @@
 			</div>
 		</form>
 	</div>
+	<div class="panel-footer clearfix"> 
+		<button id="return" type="button" class="btn btn-sm btn-default">返回</button>
+		<button id="mageTimeSub" type="button" class="btn btn-sm btn-primary pull-right">提交</button>
+	</div>
 </div>
-<script src="${pageContext.request.contextPath}/static/js/admin/ad_time.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/admin/ad_mangetime.js"></script>
 
 
 

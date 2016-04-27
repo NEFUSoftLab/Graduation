@@ -9,7 +9,7 @@
     <button id="remove" class="btn btn-default delete" disabled>
         <i class="glyphicon glyphicon-trash"></i> 删除
     </button>
-    <button href="admin-addTeaForward.action" data-trigger="ajax" data-target="#section-container" class="add btn btn-default">
+    <button class="add btn btn-default">
         <i class="glyphicon glyphicon-plus"></i> 添加
     </button>
     <button id="modify" class="modify btn btn-default" disabled>

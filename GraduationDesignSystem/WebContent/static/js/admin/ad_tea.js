@@ -37,6 +37,7 @@ var Table = {
 		this.changeState();
 		this.removeSelections();
 		this.modifySelections();
+		this.addTeacher();
 	}, 
 	nextPage: function() {
 		$(document).on('click', '.pagination .page-next', function(event) {
@@ -131,6 +132,11 @@ var Table = {
 				});
 			}
 			return false;
+		})
+	},
+	addTeacher: function() {
+		$(".add").on('click', function() {
+			$("#section-container").load('admin-addTeaForward.action');
 		})
 	},
 	disabled: function(currentPage) {

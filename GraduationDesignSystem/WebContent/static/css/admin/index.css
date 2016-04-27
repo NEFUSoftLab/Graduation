@@ -1,11 +1,11 @@
-.modify {
-	color: #3bb4f2!important;
+.modify, .modify:hover {
+	color: #3bb4f2;
 }
-.delete {
-	color: #dd514c!important;
+.delete, .delete:hover {
+	color: #dd514c;
 }
-.add {
-	color: #5cb85c!important;
+.add, .add:hover {
+	color: #1ABC9C;
 }
 #adtea_submit {
 	text-align: right;
@@ -37,4 +37,15 @@
 }
 .input-group.date {
 	padding-right: 15px;
+}
+.form-horizontal .control-label {
+	text-align: center;
+}
+
+.panel-footer {
+	background-color: #fff;
+}
+
+.btn-group-xs>.btn .badge, .btn-xs .badge {
+	top: -2px;
 }
