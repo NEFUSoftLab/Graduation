@@ -40,31 +40,32 @@ var Table = {
 	}, 
 	nextPage: function() {
 		$(document).on('click', '.pagination .page-next', function(event) {
-			event.stopPropagation();
 			currentPage = currentPage + 1;
+			console.log(currentPage);
 			pagination(pageSize, currentPage);
+			return false;
 		});
 	},
 	prePage: function() {
 		$(document).on('click', '.pagination .page-pre', function(event) {
-			event.stopPropagation();
 			currentPage = currentPage - 1;
 			pagination(pageSize, currentPage);
+			return false;
 		});
 	},
 	selectedPage: function() {
 		$(document).on('click', '.pagination .page-number', function(event) {
-			event.stopPropagation();
 			currentPage = $(".pagination .page-number.active").index();
 			pagination(pageSize, currentPage);
+			return false;
 		})
 	},
 	selectedPageSize: function() {
 		$(document).on('click', '.dropdown-menu li', function(event) {
-			event.stopPropagation();
 			pageSize = $('.dropdown-menu li.active a').text();
 			currentPage = 1;
 			pagination(pageSize, currentPage);
+			return false;
 		});
 	},
 	//改变删除按钮的状态
@@ -108,9 +109,10 @@ var Table = {
 	//修改选中数据
 	modifySelections: function() {
 		$(document).on('click', '#modify', function(event) {
-			event.stopPropagation();
 			var teNumber = Table.getSelections();
-			if(teNumber.length > 1) {
+			if(teNumber.length == 0) {
+				alert("请选择修改内容");
+			}else if(teNumber.length > 1) {
 				alert("只能选中一个");
 			}else {
 				teNumber = teNumber.toString();
@@ -118,6 +120,7 @@ var Table = {
 					$("#section-container").load('admin-modifyFowardTea.action');
 				});
 			}
+			event.stopPropagation();
 		})
 	},
 	disabled: function(currentPage) {

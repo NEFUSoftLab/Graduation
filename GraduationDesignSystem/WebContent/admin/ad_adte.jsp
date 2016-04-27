@@ -61,7 +61,7 @@
 			      </div>
 			  </div>
 			  <div class="form-group">
-			      <div class="col-sm-offset-9 col-sm-2">
+			      <div class="col-sm-offset-9 col-sm-2 control-label">
 			      	 <c:if test="${empty teacherBean }">
 			          	<button id="addTeacher" class="btn btn-primary">提交</button>
 			         </c:if>
