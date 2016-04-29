@@ -1,3 +1,4 @@
+@charset 'utf-8';
 .modify, .modify:hover {
 	color: #3bb4f2;
 }
@@ -48,4 +49,8 @@
 
 .btn-group-xs>.btn .badge, .btn-xs .badge {
 	top: -2px;
+}
+
+.container.bs-example.distri:after {
+    content: '分配情况';
 }

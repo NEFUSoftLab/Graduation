@@ -3,6 +3,7 @@ var Manage = {
 	init: function() {
 		this.modify();
 		this.add();
+		this.returnBack();
 	},
 	modify: function() {
 		$("#modifyTeacher").on('click', function(event) {
@@ -42,6 +43,11 @@ var Manage = {
 				}
 			});
 			return false;
+		});
+	},
+	returnBack: function() {
+		$("#returnBack").on('click', function() {
+			$("#section-container").load('admin-teaForward.action');
 		});
 	}
 }

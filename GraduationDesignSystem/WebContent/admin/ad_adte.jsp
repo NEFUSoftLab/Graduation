@@ -63,7 +63,7 @@
 	      </form>
 	  </div>
 	  <div class="panel-footer clearfix">
-	  	  <button class="btn btn-sm btn-default">返回</button>
+	  	  <button id="returnBack" class="btn btn-sm btn-default">返回</button>
 		  <c:if test="${empty teacherBean }">
 	       	<button id="addTeacher" class="btn btn-sm btn-primary pull-right">提交</button>
 	      </c:if>

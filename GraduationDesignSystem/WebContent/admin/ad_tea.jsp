@@ -32,14 +32,6 @@
 		data-pagination-last-text="末页"
 		data-show-columns="true" 
 >
-    <thead>
-        <th data-field="state" data-checkbox="true"></th>
-        <th data-field="teid" data-visible="false"></th>
-        <th data-field="number" data-align="right" data-sortable="true">工号</th>
-        <th data-field="name" data-align="center" data-sortable="true">姓名</th>
-        <th data-field="pwd" data-sortable="true">密码</th>
-        <th data-field="phone" data-sortable="true">电话号码</th>
-    </thead>
 </table>
 <div id="load"></div>
 <script src="${pageContext.request.contextPath}/static/js/admin/ad_tea.js"></script>

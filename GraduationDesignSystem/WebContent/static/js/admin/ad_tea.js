@@ -6,30 +6,7 @@ var Table = {
 	$remove: $("#remove"),
 	$modify: $("#modify"),
 	init: function() {
-		$.ajax({
-			type: 'POST',
-			url: "admin-getAllTeacher.action",
-			dataType: 'json',
-			data: {
-				page: 1,
-				pageSize: 10
-			},
-			beforeSend: function() {
-				$("#load").fadeIn();
-			},
-			success: function(data) {
-				var dataJSON = $.parseJSON(data);
-				var data = $.parseJSON(JSON.stringify(dataJSON.list));
-				Table.$table.bootstrapTable({
-					data: data,
-					totalRows: dataJSON.allRows,
-					pageNumber: 1,
-					pageSize: pageSize
-				});
-				$(".pagination .page-pre").addClass("disabled");
-				$("#load").fadeOut();
-			}
-		});
+		pagination(pageSize, currentPage);
 		this.selectedPageSize();
 		this.nextPage();
 		this.prePage();
@@ -42,11 +19,9 @@ var Table = {
 	nextPage: function() {
 		$(document).on('click', '.pagination .page-next', function(event) {
 			event.stopImmediatePropagation();
-			event.preventDefault();
-			console.log(this);
 			currentPage = currentPage + 1;
-			console.log(currentPage);
 			pagination(pageSize, currentPage);
+			Table.disabled(currentPage);
 		});
 	},
 	prePage: function() {
@@ -54,6 +29,7 @@ var Table = {
 			event.stopImmediatePropagation();
 			currentPage = currentPage - 1;
 			pagination(pageSize, currentPage);
+			Table.disabled(currentPage);
 			return false;
 		});
 	},
@@ -142,7 +118,7 @@ var Table = {
 	disabled: function(currentPage) {
 		var $length = $(".pagination .page-number").size();
 		if(currentPage == 1) {
-			$(".pagination .page-pre").addClass("disabled");
+			$(".page-pre").addClass("disabled");
 		}
 		if(currentPage == $length) { 
 			$(".pagination .page-next").addClass("disabled");
@@ -153,16 +129,86 @@ Table.init();
 
 function pagination(pageSize, page) {
 	var url = 'admin-getAllTeacher.action';
-	$.post(url, {page: page, pageSize: pageSize}, function(data) {
-		var dataJSON = $.parseJSON(data);
-		var data = $.parseJSON(JSON.stringify(dataJSON.list));
-		Table.$table.bootstrapTable('destroy').bootstrapTable({
-			data: data,
-			totalRows: dataJSON.allRows,
-			pageNumber: currentPage,
-			pageSize: pageSize
-		});
-		Table.disabled(page);
+	$.ajax({
+		type: 'POST',
+		url: url,
+		dataType: 'json',
+		data: {
+			page: page,
+			pageSize: pageSize,
+		},
+		beforeSend: function() {
+			$("#load").fadeIn();
+		},
+		success: function(data) {
+			var dataJSON = $.parseJSON(data);
+			var data = $.parseJSON(JSON.stringify(dataJSON.list));
+			Table.$table.bootstrapTable('destroy').bootstrapTable({
+				data: data,
+				totalRows: dataJSON.allRows,
+				pageNumber: page,
+				pageSize: pageSize,
+				columns: [
+				            {
+		                        field: 'state',
+		                        checkbox: true,
+		                        align: 'center',
+		                        valign: 'middle'
+		                    },
+				            {
+				            	field: 'teid',
+				            	title: '序号',
+				            	visible: false
+				            },
+				            {
+				            	field: 'number',
+				            	align: 'center',
+				            	title: '工号'
+				            },
+				            {
+				            	field: 'name',
+				            	align: 'center',
+				            	title: '姓名'
+				            },
+				            {
+				            	field: 'pwd',
+				            	align: 'center',
+				            	title: '密码'
+				            },
+				            {
+				            	field: 'phone',
+				            	align: 'center',
+				            	title: '电话号码'
+				            },
+							{
+							    title: '教师论文',
+							    align: 'center',
+							    events: operateEvents,
+							    formatter: operateFormatter
+							} 
+				         ]
+			});
+			Table.disabled(page);
+			$("#load").fadeOut();
+		},
+		error: function() {
+			$("#load").fadeOut(function() {
+				alert('请求失败');
+			});
+		}
 	});
 }
 
+function operateFormatter(value, row, index) {
+    return [
+        '<a class="more" href="javascript:void(0)" title="Like">',
+        '[详情]',
+        '</a>  ',
+    ].join('');
+}
+
+window.operateEvents = {
+    'click .like': function (e, value, row, index) {
+        alert('You click like action, row: ' + JSON.stringify(row));
+    },
+};
