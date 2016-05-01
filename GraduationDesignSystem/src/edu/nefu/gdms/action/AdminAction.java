@@ -55,23 +55,32 @@ public class AdminAction extends ActionSupport {
 	public String teaForward() {
 		return "tea";
 	}
+	
 	public String addTeaForward() {
 		teacherBean = null;
 		return "adte";
 	}
+	
 	public String timeForward() {
 		return "adtm";
 	}
+	
 	public String index() {
 		return "index";
 	}
+	
 	public String manageTimeForward() {
 		return "mangetime";
 	}
+	
 	public String stuDistribute() {
 		return "stuDistri";
 	}
 
+	public String addStuForward() {
+		return "adstu";
+	}
+	
 	// 业务功能模块
 	public String login() {
 		login = "";

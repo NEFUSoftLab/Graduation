@@ -18,4 +18,4 @@
 </div>
 <table  id="table"></table>
 <div id="load"></div>
-<script src="${pageContext.request.contextPath}/static/js/admin/ad_tea.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/admin/ad_stu.js"></script>

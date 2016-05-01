@@ -56,8 +56,8 @@
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>学生管理<span class="glyphicon glyphicon-chevron-down"></span></div>
 						<ul class="submenu stu_info">
-							<li><a href="#" data-index="3">学生信息</a></li>
-							<li><a href="#" data-index="4">管理学生</a></li>
+							<li><a href="admin-stuForward.action" data-trigger="ajax" data-target="#section-container">学生信息</a></li>
+							<li><a href="admin-addStuForward.action" data-trigger="ajax" data-target="#section-container">管理学生</a></li>
 							<li><a href="#" data-index="4">学生选题</a></li>
 						</ul>
 					</li>

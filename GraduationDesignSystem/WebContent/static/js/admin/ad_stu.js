@@ -80,7 +80,7 @@ var Table = {
 				$.ajax({
 					type: 'POST',
 					data: {teNumber: teNumber},
-					url: 'admin-delTeacher.action',
+					url: 'admin-delStudent.action',
 					success: function() {
 						if(teNumber < pageSize) {
 							Table.$table.bootstrapTable('remove', {
@@ -110,7 +110,7 @@ var Table = {
 			}else {
 				teNumber = teNumber.toString();
 				$.post('admin-modifyFowardTea.action',{teNumber: teNumber}, function() {
-					$("#section-container").load('admin-modifyFowardTea.action');
+					$("#section-container").load('admin-modifyFowardStu.action');
 				});
 			}
 			return false;
@@ -118,7 +118,7 @@ var Table = {
 	},
 	addTeacher: function() {
 		$(".add").on('click', function() {
-			$("#section-container").load('admin-addTeaForward.action');
+			$("#section-container").load('admin-addStuForward.action');
 		})
 	},
 	disabled: function(currentPage) {
@@ -134,7 +134,7 @@ var Table = {
 Table.init();
 
 function pagination(pageSize, page) {
-	var url = 'admin-getAllTeacher.action';
+	var url = 'admin-getAllStudent.action';
 	$.ajax({
 		type: 'POST',
 		url: url,
