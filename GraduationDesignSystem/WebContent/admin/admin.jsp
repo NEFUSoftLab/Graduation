@@ -47,40 +47,42 @@
 				<ul id="accordion" class="accordion">
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>教师管理<span class="glyphicon glyphicon-chevron-down"></span></div>
-						<ul class="submenu">
+						<ul class="submenu tea_info">
 							<li><a href="admin-teaForward.action" data-trigger="ajax" data-target="#section-container">教师信息</a></li>
 							<li><a href="admin-addTeaForward.action" data-trigger="ajax" data-target="#section-container">管理教师</a></li>
+							<li><a href="#">教师论文</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>学生管理<span class="glyphicon glyphicon-chevron-down"></span></div>
-						<ul class="submenu">
+						<ul class="submenu stu_info">
 							<li><a href="#" data-index="3">学生信息</a></li>
 							<li><a href="#" data-index="4">管理学生</a></li>
+							<li><a href="#" data-index="4">学生选题</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>流程控制<span class="glyphicon glyphicon-chevron-down"></span></div>
-						<ul class="submenu">
+						<ul class="submenu time_ctrl">
 							<li><a href="admin-timeForward.action" data-trigger="ajax" data-target="#section-container">时间安排</a></li>
 							<li><a href="admin-manageTimeForward.action" data-trigger="ajax" data-target="#section-container">管理时间</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-random" aria-hidden="true"></span>学生分配<span class="glyphicon glyphicon-chevron-down"></span></div>
-						<ul class="submenu">
+						<ul class="submenu stu_distri">
 							<li><a href="admin-stuDistribute.action" data-trigger="ajax" data-target="#section-container">分配情况</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>分组考核<span class="glyphicon glyphicon-chevron-down"></span></div>
-						<ul class="submenu">
+						<ul class="submenu group">
 							<li><a href="#" data-trigger="ajax" data-target="#section-container">分组信息</a></li>
 						</ul>
 					</li>
 					<li>
 						<div class="title"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>个人信息<span class="glyphicon glyphicon-chevron-down"></span></div>
-						<ul class="submenu">
+						<ul class="submenu person">
 							<li><a href="#" data-trigger="ajax" data-target="#section-container">个人信息</a></li>
 						</ul>
 					</li>
@@ -100,7 +102,7 @@
 			</section>
 		</div>
 	</div>
-		<!-- 	修改密码模态框         -->
+	<!-- 	修改密码模态框         -->
 	<div id="update-password" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">

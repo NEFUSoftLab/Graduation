@@ -1,11 +1,14 @@
 var currentPage = 1;
 var pageSize = 10;
 var selections = [];
+var checked = [];
 var Table = {
 	$table: $("#table"),
 	$remove: $("#remove"),
 	$modify: $("#modify"),
 	init: function() {
+		selections = [];
+		checked = [];
 		pagination(pageSize, currentPage);
 		this.selectedPageSize();
 		this.nextPage();
@@ -21,7 +24,6 @@ var Table = {
 			event.stopImmediatePropagation();
 			currentPage = currentPage + 1;
 			pagination(pageSize, currentPage);
-			Table.disabled(currentPage);
 		});
 	},
 	prePage: function() {
@@ -29,7 +31,6 @@ var Table = {
 			event.stopImmediatePropagation();
 			currentPage = currentPage - 1;
 			pagination(pageSize, currentPage);
-			Table.disabled(currentPage);
 			return false;
 		});
 	},
@@ -57,6 +58,11 @@ var Table = {
             Table.$remove.prop('disabled', !Table.$table.bootstrapTable('getSelections').length);
             Table.$modify.prop('disabled', !Table.$table.bootstrapTable('getSelections').length);
             selections = Table.getSelections();
+            $.grep(selections, function(n) {
+            	if($.inArray(n, checked) == -1) {
+            		checked.push(n);
+            	}
+            });
         });
 	},
 	getSelections: function() {
@@ -68,7 +74,7 @@ var Table = {
 	removeSelections: function() {
 		$(document).on('click', '#remove', function(event) {
 			event.stopImmediatePropagation();
-			var teNumber = Table.getSelections();
+			var teNumber = checked.toString();
 			var confirm = window.confirm('确定是否删除选中数据');
 			if(confirm) {
 				$.ajax({
@@ -150,6 +156,7 @@ function pagination(pageSize, page) {
 				pageSize: pageSize,
 				columns: [
 				            {
+				            	class: "check",
 		                        field: 'state',
 		                        checkbox: true,
 		                        align: 'center',
@@ -188,6 +195,7 @@ function pagination(pageSize, page) {
 							} 
 				         ]
 			});
+			saveCheckBox(checked);
 			Table.disabled(page);
 			$("#load").fadeOut();
 		},
@@ -197,6 +205,23 @@ function pagination(pageSize, page) {
 			});
 		}
 	});
+}
+
+function saveCheckBox(arr) {
+	if(arr != null) {
+		$("#table tr").each(function() {
+			var val = $(this).children("td:nth-child(2)").text();
+			if($.inArray(val, arr) != -1) {
+				if($(this).children("td:nth-child(2)").text() == val) {
+					console.log($(this).children('td:first-child'));
+					$(this).addClass('selected').find('.check input').attr('checked', true);
+					
+				}
+			}
+		});
+	}else {
+		return ;
+	}
 }
 
 function operateFormatter(value, row, index) {

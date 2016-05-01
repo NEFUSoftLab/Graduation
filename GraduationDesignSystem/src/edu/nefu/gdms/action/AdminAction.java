@@ -126,6 +126,7 @@ public class AdminAction extends ActionSupport {
 
 	// 删除老师
 	public void delTeacher() {
+		System.out.println(teNumber);
 		TeacherBean tea = teacherManager.getByTeaNumber(teNumber);
 		adminManager.delTeacher(tea);
 	}

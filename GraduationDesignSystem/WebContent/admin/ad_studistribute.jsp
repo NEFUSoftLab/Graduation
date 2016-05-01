@@ -16,7 +16,7 @@
 				<td>李丹</td>
 				<td><button class="btn btn-xs btn-primary" type="button" data-target="#myStudent" data-toggle="modal"><span class="badge">4</span></button></td>
 				<td>
-					<button id="456" class="btn btn-default btn-xs add"><span class="glyphicon glyphicon-plus"></span> 添加</button>
+					<button id="123" class="btn btn-default btn-xs add"><span class="glyphicon glyphicon-plus"></span> 添加</button>
 					<button id="456" class="btn btn-default btn-xs delete"><span class="glyphicon glyphicon-trash"></span> 删除</button>	
 				</td>
 			</tr>
@@ -25,7 +25,7 @@
 				<td>李丹</td>
 				<td><button class="btn btn-xs btn-primary" type="button"><span class="badge">4</span></button></td>
 				<td>
-					<button id="456" class="btn btn-default btn-xs add"><span class="glyphicon glyphicon-plus"></span> 添加</button>
+					<button id="123" class="btn btn-default btn-xs add"><span class="glyphicon glyphicon-plus"></span> 添加</button>
 					<button id="456" class="btn btn-default btn-xs delete"><span class="glyphicon glyphicon-trash"></span> 删除</button>	
 				</td>
 			</tr>
@@ -178,7 +178,7 @@
 		</div>
 	</div>
 </div>
-<%-- <script src="${pageContext.request.contextPath}/static/js/admin/ad_studistri.js"></script> --%>
+<script src="${pageContext.request.contextPath}/static/js/admin/ad_studistri.js"></script>
 
 
 

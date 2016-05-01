@@ -1,11 +1,11 @@
 @charset 'utf-8';
-.modify, .modify:hover {
+.modify, .modify:hover, .modify:focus {
 	color: #3bb4f2;
 }
-.delete, .delete:hover {
+.delete, .delete:hover, .delete:focus {
 	color: #dd514c;
 }
-.add, .add:hover {
+.add, .add:hover, .add:focus {
 	color: #1ABC9C;
 }
 #adtea_submit {
